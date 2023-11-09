@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The 2nd project of the 2023-2024 school year is to create a version of the game "Pac-Man" using the x86 assembly language on a 16-bits computer.
+The 2nd project of the 2023-2024 school year is to recreate the classic Pac-Man in assembly x86 on DosBox.
 
 ## Team Members
 
