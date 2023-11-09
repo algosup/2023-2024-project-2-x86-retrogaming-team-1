@@ -9,26 +9,37 @@
 
 - [2022-2023 - PROJECT 2 - X86 RETROGAMING - TEAM 1](#2022-2023---project-2---x86-retrogaming---team-1)
 - [Functional Specification](#functional-specification)
-    - [I. Project role distribution](#i-project-role-distribution)
-    - [II. Overview](#ii-overview)
+  - [Project role distribution](#project-role-distribution)
+  - [I. Overview](#i-overview)
       - [1. The Project](#1-the-project)
       - [2. What will happen for the retrogaming](#2-what-will-happen-for-the-retrogaming)
         - [A. Yesterday](#a-yesterday)
         - [B. Today](#b-today)
         - [C. Tomorrow](#c-tomorrow)
-    - [III. Goals and constraints](#iii-goals-and-constraints)
-    - [IV. Personas and scenario](#iv-personas-and-scenario)
+  - [II. Goals and constraints](#ii-goals-and-constraints)
+  - [III. Personas and scenario](#iii-personas-and-scenario)
       - [1. Hervé](#1-hervé)
-    - [V. Use case](#v-use-case)
-    - [VI. Development and environement and Requirements](#vi-development-and-environement-and-requirements)
-    - [VII. Risks and Assumptions](#vii-risks-and-assumptions)
+  - [IV. Use case](#iv-use-case)
+  - [V. Development and environement and Requirements](#v-development-and-environement-and-requirements)
+  - [VI. Risks](#vi-risks)
+  - [VII. Law](#vii-law)
+  - [VIII. Assumptions](#viii-assumptions)
   - [Glossary](#glossary)
 
 </details>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### I. Project role distribution
+| | |
+| ----- | ----- |
+| Author(s) | Grégory Pagnoux |
+| Reviewer(s) |  |
+| Created on | 11/06/2023 |
+| Last updated | 11/09/2023 |
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Project role distribution
 
 | PERSON | ROLE | MAIL |
 | :-: | :-: | :-: |
@@ -39,7 +50,7 @@
 | Abderrazaq MAKRAN | Junior Software Engineer | abderrazaq.makran@algosup.com |
 | Victor LEROY | Quality Assurance | victor.leroy@algosup.com |
 
-### II. Overview
+## I. Overview
 
 #### 1. The Project
 
@@ -53,42 +64,40 @@ He ask us to recreate a Pac-Man game[^2] with some update if possible but to res
 
 ##### A. Yesterday
 
+Pac-Man it's a game out in 1980 and it was a immediate success. It is in the Top 5 of best games of 80's.
+The game created by Tōru Iwatani[^4] is imagined for women because at this time, main player are men. For that, he implement a game without stereotypes and with basic and neutral colors. There is also four ghosts including one feminal which is more intelligent than three others.
 
+*sources :* [Sens Critique](https://www.senscritique.com/top/resultats/les_meilleurs_jeux_video_des_annees_1980/558562) / [Janette](https://janette.lu/les-jeux-video-les-plus-emblematiques-des-annees-80/) / [Holy Gamer Z](https://www.holygamerz.com/fr/meilleurs-jeux-video-des-annees-80-quelques-noms-pour-se-rafraichir-la-memoire)
 
 ##### B. Today
 
-When the administrator, logs in with his account, He has the possibility, thanks to the "scene" tab in the navigation bar, to see the scenes that are shared on the screens, manage the scenes saved on the site for reuse or even modify them. But it can also create scenes in which it can integrate basic widgets like text or images, but also optional widgets like date, time, weather or news.
-Thanks to the second tab "my account" the administrator can manage the various options of his account such as his password or his email address, but he can also have access to the site setting.
-The "home" tab presents the company, its history and these values. You can access the company’s main site and have the site administrators email address so that employees can contact them if a problem is observed when sharing scenes on the screens.
-Of course, employees will have limited access to the site. On their phone they will only be able to access the home page and the shared scene on the screen they decide to view.
+It's again one of the best-known game in the world. Everyone know the little yellow diagram and the colors of his four ghosts.
+Today, we have many new games (last one is Pac-Man World Re-Pac out the 08/26/2022), a little animation serie with 44 episodes and lots of by-products.
+
+*sources :* [Bandai Namco, new game](https://fr.bandainamcoent.eu/pac-man/infos/le-jeu-pac-man-world-re-pac-disponible-le-26-aout-2022) / [Wikipédia](https://en.wikipedia.org/wiki/Pac-Man_(TV_series)) / [Bandai Namco, by-pruduct](https://store.bandainamcoent.eu/fr/games/brands/pac-man/?page=1)
 
 ##### C. Tomorrow
 
+Pac-Man is the first game purchased on the Atari 2600[^5], ninth on the Game Boy Advanced[^6], third on phone and it's the best arcade selling. There is also Ms. Pac-Man which is the fifth arcade game most selling.
+Many new games out again with many by-products, so Pac-Man continue will continue to exist for several decades.
 
+*sources :* [Wikipédia](https://fr.wikipedia.org/wiki/Liste_des_jeux_vidéo_les_plus_vendus)
 
-*sources :* []()
-
-### III. Goals and constraints
+## II. Goals and constraints
 
 **Goals :**
 
-recreate a Pac-Man game from 90's computer
+- recreate a Pac-Man game from 90's computer
+- improve the original game
 
 **Constraints :**
 
-- programming language : Assembly[^4]
-- emulator : DOSBox[^5]
+- programming language : Assembly[^7]
+- emulator : DOSBox[^8]
 - 16 bit processor
 - respect the Pac-Man style
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-Information :
-- [exchange report with Mr JEANNIN]()
-  
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-### IV. Personas and scenario
+## III. Personas and scenario
 
 #### 1. Hervé
 
@@ -98,18 +107,35 @@ He leaves Salbris, his home, and arrives at Jacobi for 7:15 am. He turns on the 
 Saving his scene will allow him to load it later if he wants to use it again and to modify it.
 At 7:30 a.m., When all employees arrive at the plant, they can see the news directly when they prepare in the locker room or when they have their coffee.
 
-### V. Use case
+(detail more again)
+
+## IV. Use case
+
 ![use case](img/)
 
-### VI. Development and environement and Requirements
+## V. Development and environement and Requirements
 
   - Windows/MacOS
   - DOSBox
   - Assembly
 
-### VII. Risks and Assumptions
+## VI. Risks
 
 
+
+## VII. Law
+
+The game is copyright and we need to respect some rule in compliance with the law :
+- the author enjoys a perpetual, inalienable and imprescriptible right to respect for his name, his status and his work (Article L121-1)
+- must in no way interfere with the normal exploitation of the work, nor cause unjustified prejudice to the legitimate interests of the author (Article L122-5)
+- the author may not prohibit the reproduction of excerpts of works for the exclusive purpose of illustration in the context of education and vocational training (Article L122-5 12°)
+- right to reproduce the game for non-profit purposes (Article L122-5-1)
+
+*source :* [French legislature](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
+
+## VIII. Assumptions
+
+Conditions and resources that need to be present and accessible for the solution to work as described.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -128,10 +154,22 @@ Pac-Man is a little circular diagram who navigate in the maze to eat all small p
 K.
 *source :* []()
 
-[^4]: Assembly
+[^4]: Tōru Iwatani
 K.
 *source :* []()
 
-[^5]: DOSBox
+[^5]: Atari 2600
+K.
+*source :* []()
+
+[^6]: Game Boy Advanced
+K.
+*source :* []()
+
+[^7]: Assembly
+K.
+*source :* []()
+
+[^8]: DOSBox
 K.
 *source :* []()
