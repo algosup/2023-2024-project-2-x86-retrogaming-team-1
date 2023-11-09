@@ -12,18 +12,22 @@
   - [Project role distribution](#project-role-distribution)
   - [I. Overview](#i-overview)
       - [1. The Project](#1-the-project)
-      - [2. The current state of Retrogaming](#2-the-current-state-of-retrogaming)
+      - [2. Milestones](#2-milestones)
+      - [3. The current state of Retrogaming](#3-the-current-state-of-retrogaming)
         - [A. Yesterday](#a-yesterday)
         - [B. Today](#b-today)
         - [C. Tomorrow](#c-tomorrow)
   - [II. Goals and constraints](#ii-goals-and-constraints)
   - [III. Personas and scenario](#iii-personas-and-scenario)
-      - [1. Hervé](#1-hervé)
+      - [1. Hervé (old / nostalgic / rediscover)](#1-hervé-old--nostalgic--rediscover)
+      - [2. Jessica (young / discover / kid of Hervé)](#2-jessica-young--discover--kid-of-hervé)
+      - [3. Vanessa (young / rediscover / make the best score)](#3-vanessa-young--rediscover--make-the-best-score)
   - [IV. Use case](#iv-use-case)
   - [V. Development and environment and requirements](#v-development-and-environment-and-requirements)
-  - [VI. Risks](#vi-risks)
+  - [VI. Risks and Assumptions](#vi-risks-and-assumptions)
   - [VII. Law](#vii-law)
-  - [VIII. Assumptions](#viii-assumptions)
+  - [VIII. Solution Overview](#viii-solution-overview)
+  - [IX. Evaluation criteria](#ix-evaluation-criteria)
   - [Glossary](#glossary)
 
 </details>
@@ -60,7 +64,18 @@
 
 The goal of this project is to recreate a Pac-Man game[^2] with some twists while keeping the style of the original game, we will obviously have to get a working game before adding any changes. In order to get a better immersion, we will be using an emulator[^3] from 90's computer to run, display and play the game.
 
-#### 2. The current state of Retrogaming
+#### 2. Milestones
+
+| Date | Deliverable |
+| :-: | :-: |
+| 11/13/2023 | Functional Specifications |
+| 11/27/2023 | technical Specifications |
+| 12/08/2023 | Test plan |
+| 12/11/2023 | Working prototype |
+| 12/21/2023 | Final Product |
+| 12/22/2023 | Presentations |
+
+#### 3. The current state of Retrogaming
 
 ##### A. Yesterday
 
@@ -99,15 +114,25 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 
 ## III. Personas and scenario
 
-#### 1. Hervé
+**Target audience**
 
-Hervé has been Jacobi's communication director for 10 years. He is a vigorous 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan.
+Pac-Man is known by everyone and many of us like the game. Our product is therefore intended to  men and women, young and old people, new player and nostalgic player.
 
-He leaves Salbris, his home, and arrives at Jacobi for 7:15 am. He turns on the two screens in the locker room and in the cafeteria. Then he goes on his computer, on the administrator account of the website, then he chooses the "Create" option and he sets each element of the scene (number of parts, widgets, text, image...) with the news of the day that his boss requested him to share with all the employees of the company the previous day. Once the settings are done, he saves the scene and shares it on both screens simultaneously.
-Saving this scene will allow him to load it later if he wants to use it again or modify it.
-At 7:30 A.M., when all the employees arrive at the plant, they can see the news directly when they prepare themselves in the locker room or when they have their coffee.
+#### 1. Hervé (old / nostalgic / rediscover)
 
-(detail more again)
+Hervé is a nostalgic player who know Pac-Man since the out day of the game. He is 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan. He lives in a little house with a garden in Nançay and he have all nostalgic game like the Game Boy, Atari 7800[^9] or the Apple Pippin[^10].
+
+Jessica show him a new version of Pac-Man on her computer with new features and he want to try to play at this game like in 80's. He install the game on his computer and he launch the game. 
+
+#### 2. Jessica (young / discover / kid of Hervé)
+
+Jessica is 
+
+#### 3. Vanessa (young / rediscover / make the best score)
+
+Vanessa is
+
+Today, Vanessa want to rediscover an old game on his computer and find our game. The goal is always the same : eat all point fastiest as possible without being eaten by ghosts.
 
 ## IV. Use case
 
@@ -119,9 +144,12 @@ At 7:30 A.M., when all the employees arrive at the plant, they can see the news 
   - DOSBox
   - Assembly
 
-## VI. Risks
+## VI. Risks and Assumptions
 
-
+The project has some risks :
+- Too ambitious : want to improve too much the game and forgot the original game or create features unnecessary.
+- Too simple : keep the original game without improvement and not enough features
+- Copyright[^11] regulations : made features which are not in compliance with the copyright law
 
 ## VII. Law
 
@@ -133,9 +161,13 @@ The game is under copyright protection and we need to respect some rules in comp
 
 *source :* [French legislature](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
 
-## VIII. Assumptions
+## VIII. Solution Overview
 
-Conditions and resources that need to be present and accessible for the solution to work as described.
+
+
+## IX. Evaluation criteria
+
+(ask to someone)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -173,3 +205,15 @@ Assembly language is low-level code that relies on a strong relationship between
 [^8]: DOSBox
 DOSBox is a DOS-emulator that uses the SDL-library which makes DOSBox very easy to port to different platforms. DOSBox has already been ported to many different platforms, such as Windows, BeOS, Linux, MacOS X...
 *source :* [dosbox offical website](https://www.dosbox.com/information.php?page=0)
+
+[^9]: Atari 7800
+D.
+*source :* []()
+
+[^10]: Apple Pippin
+D.
+*source :* []()
+
+[^11]: Copyright
+D.
+*source :* []()
