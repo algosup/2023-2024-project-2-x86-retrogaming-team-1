@@ -151,25 +151,25 @@ Pac-Man is a little circular diagram who navigate in the maze to eat all small p
 *source :* [La voie du Nord](https://www.lavoixdunord.fr/755801/article/2020-05-22/pac-man-fete-ses-40-ans-cinq-choses-que-vous-ignorez-peut-etre-sur-lui#) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
 
 [^3]: Emulator
-K.
-*source :* []()
+An emulator is a software that allows a computer system to reproduce the behavior of another computer system. It makes it possible to run programs developed for a specific architecture on a computer with a different architecture.
+*source :* [Wikipédia](https://en.wikipedia.org/wiki/Emulator)
 
 [^4]: Tōru Iwatani
-K.
-*source :* []()
+Tōru Iwatani, born January 25, 1955, is a Japanese video game designer, known for the arcade game Pac-Man
+*source :* [Wikipedia](https://en.wikipedia.org/wiki/Toru_Iwatani)
 
 [^5]: Atari 2600
-K.
-*source :* []()
+The Atari 2600 is a home video game console released in September 1977 by Atari, Inc.
+*source :* [Wikipedia](https://en.wikipedia.org/wiki/Atari_2600)
 
 [^6]: Game Boy Advanced
-K.
-*source :* []()
+The Game Boy Advanced (GBA) is a 32-bit handheld developed by Nintendo.
+*source :* [Wikipedia](https://en.wikipedia.org/wiki/Game_Boy_Advance)
 
 [^7]: Assembly
-K.
-*source :* []()
+Assembly language is low-level code that relies on a strong relationship between the instructions input using the coding language and how a machine interprets the code instructions
+*source :* [Investopedia](https://www.investopedia.com/terms/a/assembly-language.asp#:~:text=Assembly%20language%20is%20low-level,recognizable%20instructions%20for%20the%20machine.)
 
 [^8]: DOSBox
-K.
-*source :* []()
+DOSBox is a DOS-emulator that uses the SDL-library which makes DOSBox very easy to port to different platforms. DOSBox has already been ported to many different platforms, such as Windows, BeOS, Linux, MacOS X...
+*source :* [dosbox offical website](https://www.dosbox.com/information.php?page=0)
