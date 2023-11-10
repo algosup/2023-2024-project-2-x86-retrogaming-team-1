@@ -1,6 +1,6 @@
 # 2022-2023 - PROJECT 2 - X86 RETROGAMING - TEAM 1
 
-# Functional Specification
+## Functional Specification
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -8,28 +8,28 @@
 <summary>📖 Table of content</summary>
 
 - [2022-2023 - PROJECT 2 - X86 RETROGAMING - TEAM 1](#2022-2023---project-2---x86-retrogaming---team-1)
-- [Functional Specification](#functional-specification)
+  - [Functional Specification](#functional-specification)
   - [I. Overview](#i-overview)
-      - [1. Project scope](#1-project-scope)
-      - [2. Milestones](#2-milestones)
-      - [3. The current state of Pac-Man](#3-the-current-state-of-pac-man)
-        - [A. Yesterday](#a-yesterday)
-        - [B. Today](#b-today)
-        - [C. Tomorrow](#c-tomorrow)
+    - [1. Project scope](#1-project-scope)
+    - [2. Milestones](#2-milestones)
+    - [3. The current state of Pac-Man](#3-the-current-state-of-pac-man)
+      - [A. Yesterday](#a-yesterday)
+      - [B. Today](#b-today)
+      - [C. Tomorrow](#c-tomorrow)
   - [II. Requirements](#ii-requirements)
   - [III. Goals and constraints](#iii-goals-and-constraints)
   - [IV Non-functional requirements](#iv-non-functional-requirements)
   - [V. Personas and scenario](#v-personas-and-scenario)
-      - [1. Hervé](#1-hervé)
-      - [2. Jessica](#2-jessica)
-      - [3. Vanessa](#3-vanessa)
+    - [1. Hervé](#1-hervé)
+    - [2. Jessica](#2-jessica)
+    - [3. Vanessa](#3-vanessa)
   - [VI. Solution Overview](#vi-solution-overview)
   - [VII. Risk Mitigation](#vii-risk-mitigation)
   - [VIII. Security](#viii-security)
   - [IX. Cost estimation](#ix-cost-estimation)
-      - [1. Software](#1-software)
-      - [2. Hardware](#2-hardware)
-      - [3. Human and Time](#3-human-and-time)
+    - [1. Software](#1-software)
+    - [2. Hardware](#2-hardware)
+    - [3. Human and Time](#3-human-and-time)
   - [X. Evaluation criteria](#x-evaluation-criteria)
   - [Project role distribution](#project-role-distribution)
   - [Glossary](#glossary)
@@ -49,13 +49,13 @@
 
 ## I. Overview
 
-#### 1. Project scope
+### 1. Project scope
 
 ![ALGOSUP logo's](img/logoALGOSUP.png)
 
 [ALGOSUP](https://algosup.com)[^1] give the project to recreate a Pac-Man game[^2] with some twists while keeping the style of the original game, we will obviously have to get a working game before adding any changes. In order to get a better immersion, we will be using an emulator[^3] from 90's computer to run, display and play the game.
 
-#### 2. Milestones
+### 2. Milestones
 
 | Date | Deliverable |
 | :-: | :-: |
@@ -66,25 +66,25 @@
 | 12/21/2023 | Final Product |
 | 12/22/2023 | Presentation |
 
-#### 3. The current state of Pac-Man
+### 3. The current state of Pac-Man
 
 (explain PAC-MAN game)
 
-##### A. Yesterday
+#### A. Yesterday
 
 Pac-Man is a game released during 1980, that was an immediate success. It is in the Top 5 of the best games from the 80's.
 The game created by Tōru Iwatani[^4] was imagined for women because at this time, main players were men. For that, he implemented a game without stereotypes and with basic and neutral colors. There are also 4 ghosts including one feminal, smarter than the 3 others.
 
 *Sources :* [Sens Critique](https://www.senscritique.com/top/resultats/les_meilleurs_jeux_video_des_annees_1980/558562) / [Janette](https://janette.lu/les-jeux-video-les-plus-emblematiques-des-annees-80/) / [Holy Gamer Z](https://www.holygamerz.com/fr/meilleurs-jeux-video-des-annees-80-quelques-noms-pour-se-rafraichir-la-memoire)
 
-##### B. Today
+#### B. Today
 
 It is still one of the most famous games in the world. Everyone knows the little yellow diagram and the colors of the four ghosts.
 Today, we have many new games (last one is Pac-Man World Re-Pac released the 08/26/2022), a little animated serie composed of 44 episodes, and lots of by-products.
 
 *Sources :* [Bandai Namco, new game](https://fr.bandainamcoent.eu/pac-man/infos/le-jeu-pac-man-world-re-pac-disponible-le-26-aout-2022) / [Wikipédia](https://en.wikipedia.org/wiki/Pac-Man_(TV_series)) / [Bandai Namco, by-product](https://store.bandainamcoent.eu/fr/games/brands/pac-man/?page=1)
 
-##### C. Tomorrow
+#### C. Tomorrow
 
 Pac-Man is the most bought game on the Atari 2600[^5], 9th on the Game Boy Advanced[^6], 3rd on mobile and is the best arcade selling. There is also Ms. Pac-Man which is the 5th most-selling arcade game.
 Many new games keep getting released with tons of by-products, so Pac-Man will continue to exist for several decades.
@@ -95,11 +95,11 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 
 **Requirements :**
 
-  - Windows/MacOS
-  - DOSBox
-  - Assembly
-  - Recreate a Pac-Man game from 90's computer
-  - Improve the original game
+- Windows/MacOS
+- DOSBox
+- Assembly
+- Recreate a Pac-Man game from 90's computer
+- Improve the original game
 
 ## III. Goals and constraints
 
@@ -148,15 +148,19 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 
 ## IV Non-functional requirements
 
+There isn't a lot of non-functional requirements but those that exist are the following one:
 
+- The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
+- The game should be playable on a x86 emulator
+- The game must not be subject to crashes or major bugs during execution.
 
 ## V. Personas and scenario
 
-**Target audience**
+> **Target audience**
 
 Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new player and nostalgic player. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
 
-#### 1. Hervé
+### 1. Hervé
 
 Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan live in UK for his studies. He has all nostalgic game like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
 
@@ -166,7 +170,7 @@ Nothing move but the music start and when he clicks on the right arrow, the Pac-
 He continues to browse the maze but Pinky eat it one time and he loss one life. During 3 minutes, Hervé try to eat all points on the maze but he loss all his lifes. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. Click on the exit button and the game closes.
 He'll take his revenge in the evening.
 
-#### 2. Jessica
+### 2. Jessica
 
 Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies.Her father gave her a passion for retrogames, and for the past two years she has been discovering new versions of arcade games on her computer.
 
@@ -176,7 +180,7 @@ She clicks on play and moves Pac-Man to the left using the left arrow. Jessica d
 She gets caught by the ghosts, who cause her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has the power to eat ghosts for 10 seconds. She finally finishes the game and the Win page is displayed for 5 seconds with her score, then she returns to the home page.
 She then decides to go and see her father to show him the game she's just discovered and loves.
 
-#### 3. Vanessa
+### 3. Vanessa
 
 Vanessa is
 
@@ -184,8 +188,7 @@ Today, Vanessa wants to rediscover an old game on her computer and found our gam
 
 ## VI. Solution Overview
 
-
-
+<!-- TODO -->
 
 ## VII. Risk Mitigation
 
@@ -203,9 +206,10 @@ Today, Vanessa wants to rediscover an old game on her computer and found our gam
 
 ## VIII. Security
 
-**Copyright**
+> **Copyright**
 
 The game is under copyright protection and we need to respect some rules in compliance to the law :
+
 - The author enjoys a perpetual, inalienable and imprescriptible right to respect for his name, his status and his work (Article L121-1)
 - Must in no way interfere with the normal exploitation of the work, nor cause unjustified prejudice to the legitimate interests of the author (Article L122-5)
 - The author may not prohibit the reproduction of excerpts of works for the exclusive purpose of illustration in the context of education and vocational training (Article L122-5 12°)
@@ -213,37 +217,38 @@ The game is under copyright protection and we need to respect some rules in comp
 
 *source :* [French legislature](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
 
-**Data saving**
+> **Data saving**
 
 There are three different archives depending on the type of data :
+
 - Active database archiving where data that are no longer useful to the enterprise (for example, data on job seekers to which they have not followed up) are deleted once the reason for the study has been completed (after a maximum of two years).
 - Intermediate archiving where data are saved even after the purpose of data collection has been achieved as they are still of interest to the enterprise. The duration is set by the person responsible and must be relevant to its usefulness.
 - Final archiving where data that remains of great interest in the future without an end date are saved, after an upstream check.
 
 *source :* [CNIL](https://www.cnil.fr/sites/default/files/atoms/files/guide_durees_de_conservation.pdf)[^14]
 
-**Age**
+> **Age**
 
 The age to play at certain game is regulated by the PEGI limitation in Europeen Union or the ESRB in USA.
 Criterias are the violence, drugs, sex or money game.
 
-<img src="img/ESRB.jpg" alt="PEGI"/>
+![PEGI](img/ESRB.jpg)
 
 *source :* [Culture Game](https://www.culture-games.com/capsule-technique/pegi-le-systeme-devaluation-europeen-des-jeux-video) / [ESRB](https://www.esrb.org/)
 
 ## IX. Cost estimation
 
-#### 1. Software
+### 1. Software
 
+<!-- TODO -->
 
+### 2. Hardware
 
-#### 2. Hardware
+<!-- TODO -->
 
+### 3. Human and Time
 
-
-#### 3. Human and Time
-
-
+<!-- TODO -->
 
 ## X. Evaluation criteria
 
@@ -262,7 +267,7 @@ We will consider this project a success if we have a working game coontaining th
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-##  Glossary
+## Glossary
 
 [^1]: ALGOSUP
 It's a IT school in Vierzon created in 2019 by Franck JEANNIN, Natacha BOEZ and Eric LARCHEVÊQUE. The goal of the school is to form student in the companies conditions, with team work, each roles that we can find in a company. A last thing, all the program is only in english.
