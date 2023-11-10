@@ -40,12 +40,12 @@ Pac-Man is still under copyright, but for our project, only educational and not 
 
 | Name | Role | Github |
 | :-: | :-: | :-: |
-| Alexis Lasselin | Project Manager | [AlexisLasselin](https://github.com/alexislasselin) |
-| Grégory Pagnoux | Program Manager | [GregoryPagnoux](https://github.com/Gregory-Pagnoux) |
-| Salaheddine Namir | Technical Leader | [SalaheddineNamir](https://github.com/T3rryc) |
-| Jason Grosso | Software Engineer "Senior" | [JasonGROSSO](https://github.com/JasonGROSSO) |
-| Abderrazaq Makran | Software Engineer "Junior" | [AbderrazaqMakran](https://github.com/Amakran2003) |
-| Victor Leroy | Quality Assurance | [VictorLeroy](https://github.com/Victor-Leroy) |
+| Alexis Lasselin | Project Manager | [Alexis Lasselin](https://github.com/alexislasselin) |
+| Grégory Pagnoux | Program Manager | [Gregory Pagnoux](https://github.com/Gregory-Pagnoux) |
+| Salaheddine Namir | Technical Leader | [Salaheddine Namir](https://github.com/T3rryc) |
+| Jason Grosso | Software Engineer "Senior" | [Jason GROSSO](https://github.com/JasonGROSSO) |
+| Abderrazaq Makran | Software Engineer "Junior" | [Abderrazaq Makran](https://github.com/Amakran2003) |
+| Victor Leroy | Quality Assurance | [Victor Leroy](https://github.com/Victor-Leroy) |
 
 ## Stakeholders
 
