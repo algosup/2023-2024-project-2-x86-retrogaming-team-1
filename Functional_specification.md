@@ -16,16 +16,17 @@
         - [A. Yesterday](#a-yesterday)
         - [B. Today](#b-today)
         - [C. Tomorrow](#c-tomorrow)
-  - [III. Requirements, Goals and constraints](#iii-requirements-goals-and-constraints)
-  - [IV. Personas and scenario](#iv-personas-and-scenario)
-      - [1. Hervé (old / nostalgic / rediscover)](#1-hervé-old--nostalgic--rediscover)
-      - [2. Jessica (young / discover / kid of Hervé)](#2-jessica-young--discover--kid-of-hervé)
-      - [3. Vanessa (young / rediscover / make the best score)](#3-vanessa-young--rediscover--make-the-best-score)
-  - [V. Use case](#v-use-case)
-  - [VI. Risks and Assumptions](#vi-risks-and-assumptions)
-  - [VII. Security](#vii-security)
-  - [VIII. Cost](#viii-cost)
-  - [IX. Solution Overview](#ix-solution-overview)
+  - [II. Requirements](#ii-requirements)
+  - [III. Goals and constraints](#iii-goals-and-constraints)
+  - [IV Non-functional requirements](#iv-non-functional-requirements)
+  - [V. Personas and scenario](#v-personas-and-scenario)
+      - [1. Hervé](#1-hervé)
+      - [2. Jessica](#2-jessica)
+      - [3. Vanessa](#3-vanessa)
+  - [VI. Solution Overview](#vi-solution-overview)
+  - [VII. Risks and Assumptions](#vii-risks-and-assumptions)
+  - [VIII. Security](#viii-security)
+  - [IX. Cost](#ix-cost)
   - [X. Evaluation criteria](#x-evaluation-criteria)
   - [Project role distribution](#project-role-distribution)
   - [Glossary](#glossary)
@@ -87,7 +88,7 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 
 *sources :* [Wikipédia](https://fr.wikipedia.org/wiki/Liste_des_jeux_vidéo_les_plus_vendus)
 
-## III. Requirements, Goals and constraints
+## II. Requirements
 
 **Requirements :**
 
@@ -97,9 +98,43 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
   - Recreate a Pac-Man game from 90's computer
   - Improve the original game
 
+## III. Goals and constraints
+
 **Goals :**
 
-- 
+- recreate the maze :
+  - wall (blue)
+  - road (black)
+  - ghosts house
+- Implement Pac-Man (yellow)
+- implement key to move with Pac-Man
+- Implement 4 ghosts :
+  - Blinky (red)
+  - Pinky (pink)
+  - Inky (blue)
+  - Clyde (Orange)
+- implement random moves for ghosts
+- point system :
+  - small points = +50 (white)
+  - big points = +200 (white)
+- bonus :
+  - cherry (red)
+  - heart (purple)
+- implement life system :
+  - loose one life
+  - gain one life
+  - game over when life is zero
+- display score
+- display music
+- display sounds :
+  - eat points
+  - eat ghost
+  - ghost kill you
+- create win page
+- create home page :
+  - play
+  - exit
+  - setting
 
 **Constraints :**
 
@@ -108,34 +143,48 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 - 16-bit processor
 - Respect Pac-Man style
 
-## IV. Personas and scenario
+## IV Non-functional requirements
+
+
+
+## V. Personas and scenario
 
 **Target audience**
 
 Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new player and nostalgic player. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
 
-#### 1. Hervé (old / nostalgic / rediscover)
+#### 1. Hervé
 
-Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan. He lives in a little house with a garden in Nançay and haves all nostalgic game like the Game Boy, Atari 7800[^9] or the Apple Pippin[^10].
+Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan live in UK for his studies. He has all nostalgic game like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
 
+Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game.
+He is on the home page of the game with play, exit and setting buttons. He clicks directly on play button and the maze is display with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line on the bottom of the maze and all points on all paths. There is one big point on each end of the the same line of the Pac-Man and of the line three on the top.
+Nothing move but the music start and when he clicks on the right arrow, the Pac-Man start to move on the right. He eats his first points with the sound and earn 50 on the score. After, he goes up with the up arrow, right and down. Hervé eats a big point and the score increase of two hundred.
+He continues to browse the maze but Pinky eat it one time and he loss one life. During 3 minutes, Hervé try to eat all points on the maze but he loss all his lifes. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. Click on the exit button and the game closes.
+He'll take his revenge in the evening.
 
-Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game. 
+#### 2. Jessica
 
-#### 2. Jessica (young / discover / kid of Hervé)
+Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies.Her father gave her a passion for retrogames, and for the past two years she has been discovering new versions of arcade games on her computer.
 
-Jessica is 
+Today, while browsing a site where all the games can be found, she discovered Pac-Man and decided to install it.
+It arrives on the home page with the play, exit and setting buttons. She doesn't know the game, so she clicks on setting and finds the commands she needs to play the game. It can also switch music and sounds on and off. Once she's made her few adjustments, she clicks on the back button to return to the home page.
+She clicks on play and moves Pac-Man to the left using the left arrow. Jessica doesn't like playing with music and sounds, so she turned everything off. All she sees are people passing over the dots to make them disappear and increase her score.
+She gets caught by the ghosts, who cause her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has the power to eat ghosts for 10 seconds. She finally finishes the game and the Win page is displayed for 5 seconds with her score, then she returns to the home page.
+She then decides to go and see her father to show him the game she's just discovered and loves.
 
-#### 3. Vanessa (young / rediscover / make the best score)
+#### 3. Vanessa
 
 Vanessa is
 
 Today, Vanessa wants to rediscover an old game on her computer and found our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts.
 
-## V. Use case
+## VI. Solution Overview
 
-![use case](img/)
 
-## VI. Risks and Assumptions
+
+
+## VII. Risks and Assumptions
 
 The project has some risks :
 - Too ambitious : want to improve too much the game and forgot the original game or create features unnecessary.
@@ -143,7 +192,7 @@ The project has some risks :
 - Too simple : keep the original game without improvement and not enough features.
 - Copyright[^11] regulations : made features which are not in compliance with the copyright law.
 
-## VII. Security
+## VIII. Security
 
 **Copyright**
 
@@ -173,12 +222,7 @@ Criterias are the violence, drugs, sex or money game.
 
 *source :* [Culture Game](https://www.culture-games.com/capsule-technique/pegi-le-systeme-devaluation-europeen-des-jeux-video) / [ESRB](https://www.esrb.org/)
 
-## VIII. Cost
-
-
-
-## IX. Solution Overview
-
+## IX. Cost
 
 
 
