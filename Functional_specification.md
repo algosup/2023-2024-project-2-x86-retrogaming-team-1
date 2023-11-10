@@ -64,12 +64,14 @@
 
 ### 3. The current state of Pac-Man
 
-(explain PAC-MAN game)
+Pac-Man is a maze game in which you play as a little yellow diagram who has to eat lots of little dots call pac-gum without getting caught by the four ghosts, Blinky in red, Pinky in pink, Clyde in pink and Inky in blue. 
+You can move from top to bottom and left to right, but also from left to right thanks to a small passage on each side.
+To finish the game, you need to complete 256 levels and today, the best record was held by American Billy Mitchell, who in 1999 became the first player to achieve a perfect score of 3,333,360 points in the game. He completed all 256 levels in six hours, catching all the fruit, eating all four ghosts at every bonus, and losing no lives on each level.
 
 #### A. Yesterday
 
 Pac-Man is a game released during 1980, that was an immediate success. It is in the Top 5 of the best games from the 80's.
-The game created by Tōru Iwatani[^4] was imagined for women because at this time, main players were men. For that, he implemented a game without stereotypes and with basic and neutral colors. There are also 4 ghosts including one feminal, smarter than the 3 others.
+The game was imagined by Tōru Iwatani[^4] for women because at this time, main players were men. For that, he implemented a game without stereotypes and with basic and neutral colors. There are also 4 ghosts including one feminal, smarter than the 3 others.
 
 *Sources :* [Sens Critique](https://www.senscritique.com/top/resultats/les_meilleurs_jeux_video_des_annees_1980/558562) / [Janette](https://janette.lu/les-jeux-video-les-plus-emblematiques-des-annees-80/) / [Holy Gamer Z](https://www.holygamerz.com/fr/meilleurs-jeux-video-des-annees-80-quelques-noms-pour-se-rafraichir-la-memoire)
 
@@ -114,10 +116,10 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
   - Clyde (Orange)
 - implement random moves for ghosts
 - point system :
-  - small points = +50 (white)
-  - big points = +200 (white)
+  - small pac-gum = +50 (white)
+  - cherry = +200 (red)
 - bonus :
-  - cherry (red)
+  - big pac-gum (white and change the color of ghost)
   - heart (purple)
 - implement life system :
   - loose one life
@@ -126,7 +128,7 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 - display score
 - display music
 - display sounds :
-  - eat points
+  - eat pac-gum
   - eat ghost
   - ghost kill you
 - create win page
@@ -145,14 +147,13 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 ## IV Non-functional requirements
 
 There isn't a lot of non-functional requirements but those that exist are the following one:
-
 - The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
 - The game should be playable on a x86 emulator
 - The game must not be subject to crashes or major bugs during execution.
 
 ## V. Personas and scenario
 
-> **Target audience**
+ **Target audience**
 
 Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new player and nostalgic player. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
 
@@ -161,9 +162,9 @@ Pac-Man is a world-wide known game and built its place in the heart of a lot of 
 Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan live in UK for his studies. He has all nostalgic game like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
 
 Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game.
-He is on the home page of the game with play, exit and setting buttons. He clicks directly on play button and the maze is display with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line on the bottom of the maze and all points on all paths. There is one big point on each end of the the same line of the Pac-Man and of the line three on the top.
-Nothing move but the music start and when he clicks on the right arrow, the Pac-Man start to move on the right. He eats his first points with the sound and earn 50 on the score. After, he goes up with the up arrow, right and down. Hervé eats a big point and the score increase of two hundred.
-He continues to browse the maze but Pinky eat it one time and he loss one life. During 3 minutes, Hervé try to eat all points on the maze but he loss all his lifes. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. Click on the exit button and the game closes.
+He is on the home page of the game with play, exit and setting buttons. He clicks directly on play button and the maze is display with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line on the bottom of the maze and all pac-gum on all paths. There is one big point on each end of the the same line of the Pac-Man and of the line three on the top.
+Nothing move but the music start and when he clicks on the right arrow, the Pac-Man start to move on the right. He eats his first pac-gum with the sound and add fifty points on the score. After, he goes up with the up arrow, right and down. Hervé eats a big pac-gum and it give to him the power to eat ghost during 10 secondes. So he decide to eat Blinky because it is in front of him.
+He continues to browse the maze but Pinky eat it one time and he loss one life. During 3 minutes, Hervé try to eat all pac-gum on the maze but he loss all his lifes. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. Click on the exit button and the game closes.
 He'll take his revenge in the evening.
 
 ### 2. Jessica
@@ -173,14 +174,16 @@ Jessica is the Hervé's daughter, 12 years old and she lives with her father. Sh
 Today, while browsing a site where all the games can be found, she discovered Pac-Man and decided to install it.
 It arrives on the home page with the play, exit and setting buttons. She doesn't know the game, so she clicks on setting and finds the commands she needs to play the game. It can also switch music and sounds on and off. Once she's made her few adjustments, she clicks on the back button to return to the home page.
 She clicks on play and moves Pac-Man to the left using the left arrow. Jessica doesn't like playing with music and sounds, so she turned everything off. All she sees are people passing over the dots to make them disappear and increase her score.
-She gets caught by the ghosts, who cause her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has the power to eat ghosts for 10 seconds. She finally finishes the game and the Win page is displayed for 5 seconds with her score, then she returns to the home page.
+She gets caught by the ghosts, who cause her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has earn 200 points.
+She finally finishes the game and the Win page is displayed for 5 seconds with her score, then she returns to the home page.
 She then decides to go and see her father to show him the game she's just discovered and loves.
 
 ### 3. Vanessa
 
-Vanessa is
+Vanessa is a young woman of 25 years old and she lives alone in Angoulême. Vanessa has been passionate about video games of all kinds since childhood. She grew up watching her older brother play video games. Her love of video games has followed her into adulthood. She specializes in game speed-running, which means that her aim is to finish games as quickly as possible but not with the best score. In fact, she's made it her job to make YouTube videos on these games, which she finishes in no time.
 
-Today, Vanessa wants to rediscover an old game on her computer and found our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts.
+Today, Vanessa wants to rediscover an old game for a little YouTube video on her computer and she founds our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts. She launches the game and the home page appears. She clicks on setting to remove only the music, while keeping the sounds, and launches the game. She starts to move Pac-Man, and goes back and forth up and down and left and right without latency or crash.
+She finishes the game in 1 hour.
 
 ## VI. Solution Overview
 
@@ -192,7 +195,7 @@ Today, Vanessa wants to rediscover an old game on her computer and found our gam
 
 - Too ambitious : improving the game to a point where we forget its roots, but also creating unnecessary features. Which could basically lead us to an unfinished game.
 - Too simple : sticking to the original game without trying to improve it.
-- Copyright[^11] regulations : make features that are not in compliance with the copyright law.
+- Copyright[^13] regulations : make features that are not in compliance with the copyright law.
 
 **Yet those risks can be avoided by :**
 
@@ -202,7 +205,7 @@ Today, Vanessa wants to rediscover an old game on her computer and found our gam
 
 ## VIII. Security
 
-> **Copyright**
+**Copyright**
 
 The game is under copyright protection and we need to respect some rules in compliance to the law :
 
@@ -213,7 +216,7 @@ The game is under copyright protection and we need to respect some rules in comp
 
 *source :* [French legislature](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
 
-> **Data saving**
+**Data saving**
 
 There are three different archives depending on the type of data :
 
@@ -223,7 +226,7 @@ There are three different archives depending on the type of data :
 
 *source :* [CNIL](https://www.cnil.fr/sites/default/files/atoms/files/guide_durees_de_conservation.pdf)[^14]
 
-> **Age**
+**Age**
 
 The age to play at certain game is regulated by the PEGI limitation in Europeen Union or the ESRB in USA.
 Criterias are the violence, drugs, sex or money game.
@@ -257,7 +260,7 @@ It's a IT school in Vierzon created in 2019 by Franck JEANNIN, Natacha BOEZ and 
 
 [^2]: Pac-Man
 It's a game created by Tōru Iwatani and edited by Namco in 1980 with the first arcade game and designed for women. Today, we have 32 game in arcade, flipper and console.
-Pac-Man is a little circular diagram who navigate in the maze to eat all small points, but four ghosts navigate randomly in the maze and Pac-Man doesn't touch one of it. So, we have some bonus like big points, you can eat ghosts, or cherries to earn more points.
+Pac-Man is a little circular diagram who navigate in the maze to eat all small pac-gum, but four ghosts navigate randomly in the maze and Pac-Man doesn't touch one of it. So, we have some bonus like big pac-gum, you can eat ghosts, or cherries to earn more points.
 *source :* [La voie du Nord](https://www.lavoixdunord.fr/755801/article/2020-05-22/pac-man-fete-ses-40-ans-cinq-choses-que-vous-ignorez-peut-etre-sur-lui#) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
 
 [^3]: Emulator
@@ -293,16 +296,16 @@ Since 1994, it ratings provide information about what’s in a game or app so pa
 *source :* [ESRB](https://www.esrb.org/)
 
 [^11]: Atari 7800
-D.
-*source :* []()
+The Atari 7800 ProSystem is a consul for video games produced by Atari, submitted May 21 1984 as a replacement for the 'Atari 5200 and marketed from 1986 until 1992. The console is backward-compatible with cartridges made for the 'Atari 2600.
+*source :* [BooWiki](https://boowiki.info/art/console-atari/atari-7800.html)
 
 [^12]: Apple Pippin
-D.
-*source :* []()
+The Pipp!n (or Pippin, also called Bandai Pippin or Bandai Pipp!n) is a video game console designed by Apple and marketed in 1995 by Bandai.
+*source :* [Emu France](http://www.emu-france.com/emulateurs/5-consoles-de-salon/364-apple-pippin/)
 
 [^13]: Copyright
-D.
-*source :* []()
+Exclusive right held by an author or his representative to exploit a work (symbol ©).
+*source :* [Le Robert](https://dictionnaire.lerobert.com/definition/copyright)
 
 [^14]: CNIL (Comission National Informatique & Libertés)
 It's an administrative authority that has existed since January 6, 1978, and ensures the proper use and security of computer data.
