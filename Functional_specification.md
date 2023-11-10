@@ -34,6 +34,15 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+| | |
+| ----- | ----- |
+| Author(s) | Grégory PAGNOUX |
+| Reviewer(s) | Victor LEROY |
+| Created on | 11/06/2023 |
+| Last updated | 11/09/2023 |
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## I. Overview
 
 #### 1. Project scope
@@ -46,12 +55,12 @@
 
 | Date | Deliverable |
 | :-: | :-: |
-| 11/13/2023 | Functional Specifications |
-| 11/27/2023 | technical Specifications |
+| 11/13/2023 | Functional Specification |
+| 11/27/2023 | Technical Specification |
 | 12/08/2023 | Test plan |
 | 12/11/2023 | Working prototype |
 | 12/21/2023 | Final Product |
-| 12/22/2023 | Presentations |
+| 12/22/2023 | Presentation |
 
 #### 3. The current state of Pac-Man
 
@@ -97,19 +106,20 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 - Programming language : Assembly[^7]
 - Emulator : DOSBox[^8]
 - 16-bit processor
-- Respect the Pac-Man style
+- Respect Pac-Man style
 
 ## IV. Personas and scenario
 
 **Target audience**
 
-Pac-Man is known by everyone and many of us like the game. Our product is therefore intended to  men and women, young and old people, new player and nostalgic player. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
+Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new player and nostalgic player. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
 
 #### 1. Hervé (old / nostalgic / rediscover)
 
-Hervé is a nostalgic player who know Pac-Man since the out day of the game. He is 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan. He lives in a little house with a garden in Nançay and he have all nostalgic game like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12].
+Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan. He lives in a little house with a garden in Nançay and haves all nostalgic game like the Game Boy, Atari 7800[^9] or the Apple Pippin[^10].
 
-Jessica show him a new version of Pac-Man on her computer with new features and he want to try to play at this game like in 80's. He install the game on his computer and he launch the game. 
+
+Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game. 
 
 #### 2. Jessica (young / discover / kid of Hervé)
 
@@ -119,7 +129,7 @@ Jessica is
 
 Vanessa is
 
-Today, Vanessa want to rediscover an old game on his computer and find our game. The goal is always the same : eat all point fastiest as possible without being eaten by ghosts.
+Today, Vanessa wants to rediscover an old game on her computer and found our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts.
 
 ## V. Use case
 
@@ -129,8 +139,9 @@ Today, Vanessa want to rediscover an old game on his computer and find our game.
 
 The project has some risks :
 - Too ambitious : want to improve too much the game and forgot the original game or create features unnecessary.
-- Too simple : keep the original game without improvement and not enough features
-- Copyright[^13] regulations : made features which are not in compliance with the copyright law
+
+- Too simple : keep the original game without improvement and not enough features.
+- Copyright[^11] regulations : made features which are not in compliance with the copyright law.
 
 ## VII. Security
 
@@ -170,9 +181,10 @@ Criterias are the violence, drugs, sex or money game.
 
 
 
+
 ## X. Evaluation criteria
 
-(Victor, at least 30 criteria)
+We will consider this project a success if we have a working game coontaining the original game and some new features. Every knowledge acquired during the project will be a bonus, adding to the global success rating of the project.
 
 ## Project role distribution
 
