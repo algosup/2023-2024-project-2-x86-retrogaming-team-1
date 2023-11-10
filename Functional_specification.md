@@ -24,7 +24,9 @@
       - [2. Jessica](#2-jessica)
       - [3. Vanessa](#3-vanessa)
   - [VI. Solution Overview](#vi-solution-overview)
-  - [VII. Risks and Assumptions](#vii-risks-and-assumptions)
+  - [VI. Risk Mitigation](#vi-risk-mitigation)
+      - [Some risks that could lead to the failure of the project :](#some-risks-that-could-lead-to-the-failure-of-the-project-)
+      - [Yet those risks can be avoided by :](#yet-those-risks-can-be-avoided-by-)
   - [VIII. Security](#viii-security)
   - [IX. Cost](#ix-cost)
   - [X. Evaluation criteria](#x-evaluation-criteria)
@@ -184,13 +186,19 @@ Today, Vanessa wants to rediscover an old game on her computer and found our gam
 
 
 
-## VII. Risks and Assumptions
+## VI. Risk Mitigation
 
-The project has some risks :
-- Too ambitious : want to improve too much the game and forgot the original game or create features unnecessary.
+#### Some risks that could lead to the failure of the project :
+- Too ambitious : improving the game to a point where we forget its roots, but also creating unnecessary features. Which could basically lead us to an unfinished game.
 
-- Too simple : keep the original game without improvement and not enough features.
-- Copyright[^11] regulations : made features which are not in compliance with the copyright law.
+- Too simple : sticking to the original game without trying to improve it.
+  
+- Copyright[^11] regulations : make features that are not in compliance with the copyright law.
+
+#### Yet those risks can be avoided by :
+- Make sure that we are keeping the core gameplay from the original game, not focusing too much on the features in order to provide a complete and working game.
+- Brainstorming and discussing about the features we want to add the game, that could improve the player's game experience.
+- Regarding the copyright law, as we are working on an educational project, there won't be any problem. We won't sell our game nor get any profit from it.
 
 ## VIII. Security
 
