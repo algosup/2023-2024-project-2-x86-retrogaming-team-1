@@ -258,12 +258,12 @@ We will consider this project a success if we have a working game coontaining th
 
 | PERSON | ROLE | MAIL |
 | :-: | :-: | :-: |
-| Alexis LASSELIN | Project Manager | alexis.lasselin@algosup.com |
-| Grégory PAGNOUX | Program Manager | gregory.pagnoux@algosup.com |
-| Salaheddine NAMIR | Tech Leader | salaheddine.namir@algosup.com |
-| Jason GROSSO | Senior Software Engineer | jason.grosso@algosup.com |
-| Abderrazaq MAKRAN | Junior Software Engineer | abderrazaq.makran@algosup.com |
-| Victor LEROY | Quality Assurance | victor.leroy@algosup.com |
+| Alexis LASSELIN | Project Manager | [alexis.lasselin@algosup.com](mailto:alexis.lasselin@algosup.com) |
+| Grégory PAGNOUX | Program Manager | [gregory.pagnoux@algosup.com](mailto:gregory.pagnoux@algosup.com) |
+| Salaheddine NAMIR | Tech Leader | [salaheddine.namir@algosup.com](mailto:salaheddine.namir@algosup.com) |
+| Jason GROSSO | Senior Software Engineer | [jason.grosso@algosup.com](mailto:jason.grosso@algosup.com) |
+| Abderrazaq MAKRAN | Junior Software Engineer | [abderrazaq.makran@algosup.com](mailto:abderrazaq.makran@algosup.com) |
+| Victor LEROY | Quality Assurance | [victor.leroy@algosup.com](mailto:victor.leroy@algosup.com) |
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
