@@ -26,11 +26,7 @@
   - [VI. Solution Overview](#vi-solution-overview)
   - [VII. Risk Mitigation](#vii-risk-mitigation)
   - [VIII. Security](#viii-security)
-  - [IX. Cost estimation](#ix-cost-estimation)
-    - [1. Software](#1-software)
-    - [2. Hardware](#2-hardware)
-    - [3. Human and Time](#3-human-and-time)
-  - [X. Evaluation criteria](#x-evaluation-criteria)
+  - [IX. Evaluation criteria](#ix-evaluation-criteria)
   - [Project role distribution](#project-role-distribution)
   - [Glossary](#glossary)
 
@@ -236,21 +232,7 @@ Criterias are the violence, drugs, sex or money game.
 
 *source :* [Culture Game](https://www.culture-games.com/capsule-technique/pegi-le-systeme-devaluation-europeen-des-jeux-video) / [ESRB](https://www.esrb.org/)
 
-## IX. Cost estimation
-
-### 1. Software
-
-<!-- TODO -->
-
-### 2. Hardware
-
-<!-- TODO -->
-
-### 3. Human and Time
-
-<!-- TODO -->
-
-## X. Evaluation criteria
+## IX. Evaluation criteria
 
 We will consider this project a success if we have a working game coontaining the original game and some new features. Every knowledge acquired during the project will be a bonus, adding to the global success rating of the project.
 
