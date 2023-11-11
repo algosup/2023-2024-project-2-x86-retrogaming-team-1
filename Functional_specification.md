@@ -1,6 +1,6 @@
 # 2022-2023 - PROJECT 2 - X86 RETROGAMING - TEAM 1
 
-## Functional Specification
+# Functional Specification
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -8,14 +8,16 @@
 <summary>📖 Table of content</summary>
 
 - [2022-2023 - PROJECT 2 - X86 RETROGAMING - TEAM 1](#2022-2023---project-2---x86-retrogaming---team-1)
-  - [Functional Specification](#functional-specification)
+- [Functional Specification](#functional-specification)
   - [I. Overview](#i-overview)
     - [1. Project scope](#1-project-scope)
     - [2. Milestones](#2-milestones)
     - [3. The current state of Pac-Man](#3-the-current-state-of-pac-man)
-      - [A. Yesterday](#a-yesterday)
-      - [B. Today](#b-today)
-      - [C. Tomorrow](#c-tomorrow)
+      - [A. What is Pac-Man](#a-what-is-pac-man)
+      - [B. Yesterday](#b-yesterday)
+      - [C. Today](#c-today)
+      - [D. Tomorrow](#d-tomorrow)
+      - [E. Game Mechanics](#e-game-mechanics)
   - [II. Requirements](#ii-requirements)
   - [III. Goals and constraints](#iii-goals-and-constraints)
   - [IV Non-functional requirements](#iv-non-functional-requirements)
@@ -24,6 +26,8 @@
     - [2. Jessica](#2-jessica)
     - [3. Vanessa](#3-vanessa)
   - [VI. Solution Overview](#vi-solution-overview)
+      - [A. User Interface (UI)](#a-user-interface-ui)
+      - [B. Game Mechanics](#b-game-mechanics)
   - [VII. Risk Mitigation](#vii-risk-mitigation)
   - [VIII. Security](#viii-security)
   - [IX. Evaluation criteria](#ix-evaluation-criteria)
@@ -64,34 +68,77 @@
 
 ### 3. The current state of Pac-Man
 
-Pac-Man is a maze game in which you play as a little yellow diagram who has to eat lots of little dots call pac-gum without getting caught by the four ghosts, Blinky in red, Pinky in pink, Clyde in pink and Inky in blue. 
-You can move from top to bottom and left to right, but also from left to right thanks to a small passage on each side.
+#### A. What is Pac-Man
+
+![Pac-Man maze](img/PACMANmaze.jpeg)
+
+Pac-Man is a maze game in which you play as a little yellow diagram who has to eat lots of little dots call pac-gum without getting caught by the four ghosts, Blinky in red, Pinky in orange, Clyde in pink and Inky in blue.
+
 To finish the game, you need to complete 256 levels and today, the best record was held by American Billy Mitchell, who in 1999 became the first player to achieve a perfect score of 3,333,360 points in the game. He completed all 256 levels in six hours, catching all the fruit, eating all four ghosts at every bonus, and losing no lives on each level.
 
-#### A. Yesterday
+#### B. Yesterday
 
 Pac-Man is a game released during 1980, that was an immediate success. It is in the Top 5 of the best games from the 80's.
 The game was imagined by Tōru Iwatani[^4] for women because at this time, main players were men. For that, he implemented a game without stereotypes and with basic and neutral colors. There are also 4 ghosts including one feminal, smarter than the 3 others.
 
 *Sources :* [Sens Critique](https://www.senscritique.com/top/resultats/les_meilleurs_jeux_video_des_annees_1980/558562) / [Janette](https://janette.lu/les-jeux-video-les-plus-emblematiques-des-annees-80/) / [Holy Gamer Z](https://www.holygamerz.com/fr/meilleurs-jeux-video-des-annees-80-quelques-noms-pour-se-rafraichir-la-memoire)
 
-#### B. Today
+#### C. Today
 
 It is still one of the most famous games in the world. Everyone knows the little yellow diagram and the colors of the four ghosts.
 Today, we have many new games (last one is Pac-Man World Re-Pac released the 08/26/2022), a little animated serie composed of 44 episodes, and lots of by-products.
 
 *Sources :* [Bandai Namco, new game](https://fr.bandainamcoent.eu/pac-man/infos/le-jeu-pac-man-world-re-pac-disponible-le-26-aout-2022) / [Wikipédia](https://en.wikipedia.org/wiki/Pac-Man_(TV_series)) / [Bandai Namco, by-product](https://store.bandainamcoent.eu/fr/games/brands/pac-man/?page=1)
 
-#### C. Tomorrow
+#### D. Tomorrow
 
 Pac-Man is the most bought game on the Atari 2600[^5], 9th on the Game Boy Advanced[^6], 3rd on mobile and is the best arcade selling. There is also Ms. Pac-Man which is the 5th most-selling arcade game.
 Many new games keep getting released with tons of by-products, so Pac-Man will continue to exist for several decades.
 
 *sources :* [Wikipédia](https://fr.wikipedia.org/wiki/Liste_des_jeux_vidéo_les_plus_vendus)
 
-## II. Requirements
+#### E. Game Mechanics
 
-**Requirements :**
+**Movements**
+
+Each ghost has his own behaviour in the maze to trick the player into losing:
+- Blinky is the only ghost stalking Pac-Man across the mapand will always find a way to get to him
+- Pinky will try to get in front of Pac-Man to trap him with Inky
+- Clyde is the most harmless, because in his random movement, as soon as he gets too close to Pac-Man, he automatically heads for the bottom-left corner of the maze.
+
+You can move the Pac-Man caractere thanks key arrows from top to bottom and left to right, but also from left to right side of the maze thanks to a small passage on each side.
+
+One of the basic rules in a labyrinth is that Pac-Man can't through walls, just like ghosts.
+
+**Items**
+
+As you progress through the game, new bonuses appear to help you overcome the difficulty, which increases with each level passed.
+Here's a list of all the items you can find in right ordeer in the original game :
+| ITEMS | BONUS | COLOR | SPAWN LOCATION | Spawn Time |
+| :-: | :-: | :-: | :-: | :-: |
+| Pac-Man |  | yellow | in the middle of the seventh line of the maze from bottom | at the start |
+| Blinky |  | red | above and outside the house of ghosts | at the start |
+| Pinky | the most instelligent than other ghosts | pink | on the house of ghosts | at the start |
+| Inky |  | blue | on the house of ghosts | 5 secondes after the start |
+| Clyde | the most harmless than other ghosts | orange | on the house of ghosts | 20 secondes after start |
+| small pac-gum | +10 points | beige | on all paths except those around the ghost house | at the start |
+| big pac-gum | +50 points, <br> change the color of ghosts, <br> Pac-Man can eat ghost during 10 secondes | beige | each end on the seventh line and on the third line from top. | at the start |
+| cherry | +100 points | red | Pac-Man starting point | all 25 secondes |
+| strawberry | +300 points | red | Pac-Man starting point | all 25 secondes |
+| orange | +500 points | orange | Pac-Man starting point | all 25 secondes |
+| apple | +700 points | red | Pac-Man starting point | all 25 secondes |
+| melon | +1000 points | green | Pac-Man starting point | all 25 secondes |
+| spaceship | +2000 points | yellow | Pac-Man starting point | all 25 secondes |
+| bell | +3000 points | orange | Pac-Man starting point | all 25 secondes |
+| key | +5000 points | blue | Pac-Man starting point | all 25 secondes |
+
+**Life**
+
+The player has three lifes which he can loss when he gets eaten by a ghost before the Game Over.
+
+*sources :* [Etale ta Culture](https://www.etaletaculture.fr/geek/les-4-fantomes-de-pac-man-ont-un-secret/) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
+
+## II. Requirements
 
 - Windows/MacOS
 - DOSBox
@@ -104,23 +151,20 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 **Goals :**
 
 - recreate the maze :
-  - wall (blue)
+  - wall (blue, with colision)
   - road (black)
   - ghosts house
 - Implement Pac-Man (yellow)
 - implement key to move with Pac-Man
 - Implement 4 ghosts :
-  - Blinky (red)
-  - Pinky (pink)
-  - Inky (blue)
-  - Clyde (Orange)
 - implement random moves for ghosts
 - point system :
-  - small pac-gum = +50 (white)
-  - cherry = +200 (red)
+  - small and big pac-gum
+  - eat 4 ghosts
+  - cherry
 - bonus :
-  - big pac-gum (white and change the color of ghost)
-  - heart (purple)
+  - big pac-gum
+  - heart (purple, can add 1 life)
 - implement life system :
   - loose one life
   - gain one life
@@ -143,6 +187,7 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 - Emulator : DOSBox[^8]
 - 16-bit processor
 - Respect Pac-Man style
+- 
 
 ## IV Non-functional requirements
 
@@ -162,14 +207,14 @@ Pac-Man is a world-wide known game and built its place in the heart of a lot of 
 Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan live in UK for his studies. He has all nostalgic game like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
 
 Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game.
-He is on the home page of the game with play, exit and setting buttons. He clicks directly on play button and the maze is display with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line on the bottom of the maze and all pac-gum on all paths. There is one big point on each end of the the same line of the Pac-Man and of the line three on the top.
-Nothing move but the music start and when he clicks on the right arrow, the Pac-Man start to move on the right. He eats his first pac-gum with the sound and add fifty points on the score. After, he goes up with the up arrow, right and down. Hervé eats a big pac-gum and it give to him the power to eat ghost during 10 secondes. So he decide to eat Blinky because it is in front of him.
+He is on the home page of the game with play, exit and setting buttons. He clicks directly on play button and the maze is display with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line from bottom of the maze.
+Nothing move but the music start and when he clicks on the right arrow, the Pac-Man start to move on the right. He eats his first pac-gum with the sound and add fifty points on the score. After, he goes up with the up arrow, right and down. Hervé eats a big pac-gum and it give to him 50 points and the power to eat ghosts during 10 secondes. So he decides to eat Blinky because it is in front of him.
 He continues to browse the maze but Pinky eat it one time and he loss one life. During 3 minutes, Hervé try to eat all pac-gum on the maze but he loss all his lifes. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. Click on the exit button and the game closes.
 He'll take his revenge in the evening.
 
 ### 2. Jessica
 
-Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies.Her father gave her a passion for retrogames, and for the past two years she has been discovering new versions of arcade games on her computer.
+Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies. She's a middle school student. Her father gave her a passion for retrogames, and for the past two years she has been discovering new versions of arcade games on her computer.
 
 Today, while browsing a site where all the games can be found, she discovered Pac-Man and decided to install it.
 It arrives on the home page with the play, exit and setting buttons. She doesn't know the game, so she clicks on setting and finds the commands she needs to play the game. It can also switch music and sounds on and off. Once she's made her few adjustments, she clicks on the back button to return to the home page.
@@ -187,7 +232,14 @@ She finishes the game in 1 hour.
 
 ## VI. Solution Overview
 
-<!-- TODO -->
+#### A. User Interface (UI)
+
+The product must has a simple game play like the original, with only keys arrows of the keyboard. With must keep simple and neutral colors, the music and each sound must also keep the period style the first game. 
+
+#### B. Game Mechanics
+
+The game will have the same mechanics to move in the maze and to eat points or ghosts.
+Some improvements will be made like new bonuses but always in compliance with the game style.
 
 ## VII. Risk Mitigation
 
@@ -304,7 +356,7 @@ The Pipp!n (or Pippin, also called Bandai Pippin or Bandai Pipp!n) is a video ga
 *source :* [Emu France](http://www.emu-france.com/emulateurs/5-consoles-de-salon/364-apple-pippin/)
 
 [^13]: Copyright
-Exclusive right held by an author or his representative to exploit a work (symbol ©).
+Exclusive right held by an author or his representative to exploit a work (symbol : ©).
 *source :* [Le Robert](https://dictionnaire.lerobert.com/definition/copyright)
 
 [^14]: CNIL (Comission National Informatique & Libertés)
