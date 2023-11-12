@@ -53,7 +53,7 @@
 
 ![ALGOSUP logo's](img/logoALGOSUP.png)
 
-[ALGOSUP](https://algosup.com)[^1] give the project to recreate a Pac-Man game[^2] with some twists while keeping the style of the original game, we will obviously have to get a working game before adding any changes. In order to get a better immersion, we will be using an emulator[^3] from 90's computer to run, display and play the game.
+[ALGOSUP](https://algosup.com)[^1] requested us to recreate a Pac-Man game[^2] with some twists while keeping the style of the original game, we will obviously have to get a working game before adding any changes. In order to get a better immersion, we will be using an emulator[^3] from 90's computer to run, display and play the game.
 
 ### 2. Milestones
 
@@ -72,9 +72,9 @@
 
 ![Pac-Man maze](img/PACMANmaze.jpeg)
 
-Pac-Man is a maze game in which you play as a little yellow diagram who has to eat lots of little dots call pac-gum without getting caught by the four ghosts, Blinky in red, Pinky in orange, Clyde in pink and Inky in blue.
+Pac-Man is a maze game in which you play as a little yellow diagram who has to eat little dots named pac-gum without getting caught by the four ghosts, Blinky in red, Pinky in orange, Clyde in pink and Inky in blue.
 
-To finish the game, you need to complete 256 levels and today, the best record was held by American Billy Mitchell, who in 1999 became the first player to achieve a perfect score of 3,333,360 points in the game. He completed all 256 levels in six hours, catching all the fruit, eating all four ghosts at every bonus, and losing no lives on each level.
+To finish the game, you need to complete 256 levels and today, the best record was held by American Billy Mitchell, who in 1999 became the first player to achieve a perfect score of 3,333,360 points in the game. He completed all 256 levels in six hours, catching all the fruits, eating all four ghosts with every bonuses, and losing no lives on each level.
 
 #### B. Yesterday
 
@@ -102,39 +102,39 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 **Movements**
 
 Each ghost has his own behaviour in the maze to trick the player into losing:
-- Blinky is the only ghost stalking Pac-Man across the mapand will always find a way to get to him
+- Blinky is the only ghost stalking Pac-Man across the map and will always find a way to get to him
 - Pinky will try to get in front of Pac-Man to trap him with Inky
-- Clyde is the most harmless, because in his random movement, as soon as he gets too close to Pac-Man, he automatically heads for the bottom-left corner of the maze.
+- Clyde is the most harmless, because he has random movement, as soon as he gets too close to Pac-Man, he automatically heads for the bottom-left corner of the maze.
 
-You can move the Pac-Man caractere thanks key arrows from top to bottom and left to right, but also from left to right side of the maze thanks to a small passage on each side.
+You can move the Pac-Man character using key arrows from top to bottom and left to right, but also from left to right side of the maze thanks to a small corridor on each side.
 
-One of the basic rules in a labyrinth is that Pac-Man can't through walls, just like ghosts.
+One of the basic rules in a labyrinth is that Pac-Man can't go through walls, just like ghosts.
 
 **Items**
 
-As you progress through the game, new bonuses appear to help you overcome the difficulty, which increases with each level passed.
-Here's a list of all the items you can find in right ordeer in the original game :
+As you progress through the game, new bonuses appear to help you overcome the difficulty, which increases the further you get.
+Here's a list of all the items you can find in the order of the original game :
 | ITEMS | BONUS | COLOR | SPAWN LOCATION | Spawn Time |
 | :-: | :-: | :-: | :-: | :-: |
 | Pac-Man |  | yellow | in the middle of the seventh line of the maze from bottom | at the start |
 | Blinky |  | red | above and outside the house of ghosts | at the start |
-| Pinky | the most instelligent than other ghosts | pink | on the house of ghosts | at the start |
-| Inky |  | blue | on the house of ghosts | 5 secondes after the start |
-| Clyde | the most harmless than other ghosts | orange | on the house of ghosts | 20 secondes after start |
-| small pac-gum | +10 points | beige | on all paths except those around the ghost house | at the start |
-| big pac-gum | +50 points, <br> change the color of ghosts, <br> Pac-Man can eat ghost during 10 secondes | beige | each end on the seventh line and on the third line from top. | at the start |
-| cherry | +100 points | red | Pac-Man starting point | all 25 secondes |
-| strawberry | +300 points | red | Pac-Man starting point | all 25 secondes |
-| orange | +500 points | orange | Pac-Man starting point | all 25 secondes |
-| apple | +700 points | red | Pac-Man starting point | all 25 secondes |
-| melon | +1000 points | green | Pac-Man starting point | all 25 secondes |
-| spaceship | +2000 points | yellow | Pac-Man starting point | all 25 secondes |
-| bell | +3000 points | orange | Pac-Man starting point | all 25 secondes |
-| key | +5000 points | blue | Pac-Man starting point | all 25 secondes |
+| Pinky | the smartest ghost | pink | on the house of ghosts | at the start |
+| Inky |  | blue | on the house of ghosts | 5 seconds after the start |
+| Clyde | the most harmless ghost | orange | on the house of ghosts | 20 seconds after start |
+| Pac-dot | +10 points, slows Pac-Man for 1/60 frame everytime it's eaten | beige | on all paths except those around the ghost house | at the start |
+| Pac-gum | +50 points, <br> changes the color of ghosts, <br> Pac-Man can eat ghost during 10 seconds | beige | each end on the seventh line and on the third line from top. | at the start |
+| cherry | +100 points | red | Pac-Man starting point | all 25 seconds |
+| strawberry | +300 points | red | Pac-Man starting point | all 25 seconds |
+| orange | +500 points | orange | Pac-Man starting point | all 25 seconds |
+| apple | +700 points | red | Pac-Man starting point | all 25 seconds |
+| melon | +1000 points | green | Pac-Man starting point | all 25 seconds |
+| spaceship | +2000 points | yellow | Pac-Man starting point | all 25 seconds |
+| bell | +3000 points | orange | Pac-Man starting point | all 25 seconds |
+| key | +5000 points | blue | Pac-Man starting point | all 25 seconds |
 
-**Life**
+**Lives**
 
-The player has three lifes which he can loss when he gets eaten by a ghost before the Game Over.
+The player has three lives that can get lost when he gets eaten by a ghost. When the player loses all his lives, the game is over and has to start over from the beginning.
 
 *sources :* [Etale ta Culture](https://www.etaletaculture.fr/geek/les-4-fantomes-de-pac-man-ont-un-secret/) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
 
@@ -155,31 +155,32 @@ The player has three lifes which he can loss when he gets eaten by a ghost befor
   - road (black)
   - ghosts house
 - Implement Pac-Man (yellow)
-- implement key to move with Pac-Man
+- implement keybindings to move with Pac-Man
 - Implement 4 ghosts :
-- implement random moves for ghosts
+- implement the ghosts AI
 - point system :
-  - small and big pac-gum
-  - eat 4 ghosts
+  - pac-dot and pac-gum
+  - eaten ghosts
   - cherry
 - bonus :
-  - big pac-gum
+  - pac-gum
   - heart (purple, can add 1 life)
 - implement life system :
-  - loose one life
+  - lose one life
   - gain one life
-  - game over when life is zero
+  - game over when the player have no lives left
 - display score
-- display music
-- display sounds :
+- play music
+- play sounds :
   - eat pac-gum
   - eat ghost
-  - ghost kill you
-- create win page
-- create home page :
+  - ghost kills you
+- create winning screen
+- create game over screen
+- create home menu:
   - play
   - exit
-  - setting
+  - settings
 
 **Constraints :**
 
@@ -187,11 +188,10 @@ The player has three lifes which he can loss when he gets eaten by a ghost befor
 - Emulator : DOSBox[^8]
 - 16-bit processor
 - Respect Pac-Man style
-- 
 
 ## IV Non-functional requirements
 
-There isn't a lot of non-functional requirements but those that exist are the following one:
+There aren't a lot of non-functional requirements but those that exist are the following one:
 - The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
 - The game should be playable on a x86 emulator
 - The game must not be subject to crashes or major bugs during execution.
@@ -200,41 +200,41 @@ There isn't a lot of non-functional requirements but those that exist are the fo
 
  **Target audience**
 
-Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new player and nostalgic player. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
+Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new players and nostalgic players. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
 
 ### 1. Hervé
 
-Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan live in UK for his studies. He has all nostalgic game like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
+Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan lives in the UK for his studies. He has all the nostalgic games like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
 
 Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game.
-He is on the home page of the game with play, exit and setting buttons. He clicks directly on play button and the maze is display with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line from bottom of the maze.
-Nothing move but the music start and when he clicks on the right arrow, the Pac-Man start to move on the right. He eats his first pac-gum with the sound and add fifty points on the score. After, he goes up with the up arrow, right and down. Hervé eats a big pac-gum and it give to him 50 points and the power to eat ghosts during 10 secondes. So he decides to eat Blinky because it is in front of him.
-He continues to browse the maze but Pinky eat it one time and he loss one life. During 3 minutes, Hervé try to eat all pac-gum on the maze but he loss all his lifes. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. Click on the exit button and the game closes.
+He is on the home page of the game with play, exit and settings buttons. He directly clicks on the play button and the maze is displayed with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line from the bottom of the maze.
+Nothing moves but the music starts and when he clicks on the right arrow, Pac-Man starts to move to the right. He eats his first pac-gum with the sound and add fifty points on the score. After, he goes up with the up arrow, right and down. Hervé eats a pac-gum and it gives him 50 points and the power to eat ghosts during 10 seconds. So he decides to eat Blinky because he is in front of him.
+He continues to browse the maze but Pinky eats him once and he loses one life. During 3 minutes, Hervé tries to eat all the pac-dots on the maze but loses all his lives. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. He clicks on the exit button and the game closes.
 He'll take his revenge in the evening.
 
 ### 2. Jessica
 
-Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies. She's a middle school student. Her father gave her a passion for retrogames, and for the past two years she has been discovering new versions of arcade games on her computer.
+Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies. She's a middle school student. Her father gave her a passion for retrogaming, and for the past two years she has been discovering new versions of arcade games on her computer.
 
 Today, while browsing a site where all the games can be found, she discovered Pac-Man and decided to install it.
-It arrives on the home page with the play, exit and setting buttons. She doesn't know the game, so she clicks on setting and finds the commands she needs to play the game. It can also switch music and sounds on and off. Once she's made her few adjustments, she clicks on the back button to return to the home page.
+She arrives on the home page with the play, exit and setting buttons. She doesn't know the game, so she clicks on settings and finds the bindings required to play the game. She can also switch music and sounds, or turn them on and off. Once she's made her few adjustments, she clicks on the back button to return to the home page.
 She clicks on play and moves Pac-Man to the left using the left arrow. Jessica doesn't like playing with music and sounds, so she turned everything off. All she sees are people passing over the dots to make them disappear and increase her score.
-She gets caught by the ghosts, who cause her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has earn 200 points.
+She gets caught by the ghosts, which causes her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has earn 200 points.
 She finally finishes the game and the Win page is displayed for 5 seconds with her score, then she returns to the home page.
 She then decides to go and see her father to show him the game she's just discovered and loves.
 
 ### 3. Vanessa
 
-Vanessa is a young woman of 25 years old and she lives alone in Angoulême. Vanessa has been passionate about video games of all kinds since childhood. She grew up watching her older brother play video games. Her love of video games has followed her into adulthood. She specializes in game speed-running, which means that her aim is to finish games as quickly as possible but not with the best score. In fact, she's made it her job to make YouTube videos on these games, which she finishes in no time.
+Vanessa is a young woman of 25 years old and she lives alone in Angoulême. Vanessa has been passionate about video games of all kinds since childhood. She grew up watching her older brother play video games. Her love of video games has followed her into adulthood. She specializes in game speed-running, which means that her aim is to finish games as quickly as possible but not with the best score (any%). In fact, she's made it her job to make YouTube videos on these games, which she finishes in no time.
 
-Today, Vanessa wants to rediscover an old game for a little YouTube video on her computer and she founds our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts. She launches the game and the home page appears. She clicks on setting to remove only the music, while keeping the sounds, and launches the game. She starts to move Pac-Man, and goes back and forth up and down and left and right without latency or crash.
+Today, Vanessa wants to rediscover an old game for a little YouTube video on her computer and she finds our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts. She launches the game and the home page appears. She clicks on setting to remove only the music, while keeping the sounds, and launches the game. She starts to move Pac-Man, and goes back and forth up and down and left and right without latency or crash.
 She finishes the game in 1 hour.
 
 ## VI. Solution Overview
 
 #### A. User Interface (UI)
 
-The product must has a simple game play like the original, with only keys arrows of the keyboard. With must keep simple and neutral colors, the music and each sound must also keep the period style the first game. 
+The product must be a simple game play like the original, with only keys arrows of the keyboard. We must keep simple and neutral colors, the music and sounds must also keep the style of the first game. 
 
 #### B. Game Mechanics
 
@@ -280,7 +280,7 @@ There are three different archives depending on the type of data :
 
 **Age**
 
-The age to play at certain game is regulated by the PEGI limitation in Europeen Union or the ESRB in USA.
+The age to play certain games is regulated by the PEGI limitation in Europeen Union or the ESRB in USA.
 Criterias are the violence, drugs, sex or money game.
 
 ![PEGI](img/ESRB.jpg)
@@ -307,7 +307,7 @@ We will consider this project a success if we have a working game coontaining th
 ## Glossary
 
 [^1]: ALGOSUP
-It's a IT school in Vierzon created in 2019 by Franck JEANNIN, Natacha BOEZ and Eric LARCHEVÊQUE. The goal of the school is to form student in the companies conditions, with team work, each roles that we can find in a company. A last thing, all the program is only in english.
+ALGOSUP is an IT school in Vierzon created in 2019 by Franck JEANNIN, Natacha BOEZ and Eric LARCHEVÊQUE. The goal of the school is to form student in the companies conditions, with team work, each roles that we can find in a company. A last thing, all the program is only in english.
 *source :* [ALGOSUP site](https://algosup.com)
 
 [^2]: Pac-Man
@@ -332,7 +332,7 @@ The Game Boy Advanced (GBA) is a 32-bit handheld developed by Nintendo.
 *source :* [Wikipedia](https://en.wikipedia.org/wiki/Game_Boy_Advance)
 
 [^7]: Assembly
-Assembly language is low-level code that relies on a strong relationship between the instructions input using the coding language and how a machine interprets the code instructions
+Assembly language is a low-level language that relies on a strong relationship between the instructions input using the coding language and how a machine interprets the code instructions.
 *source :* [Investopedia](https://www.investopedia.com/terms/a/assembly-language.asp#:~:text=Assembly%20language%20is%20low-level,recognizable%20instructions%20for%20the%20machine.)
 
 [^8]: DOSBox
@@ -344,7 +344,7 @@ The ISFE (Interactive Software Federation of Europe) founded PEGI in 2003, a sys
 *source :* [Culture Game](https://www.culture-games.com/capsule-technique/pegi-le-systeme-devaluation-europeen-des-jeux-video)
 
 [^10]: ESRB (Entertainment Software Rating Board)
-Since 1994, it ratings provide information about what’s in a game or app so parents and consumers can make informed choices about which games are right for their family. Ratings have 3 parts: Rating Categories, Content Descriptors, and Interactive Elements.
+Since 1994, ratings provides informations about what’s in a game or app so parents and consumers can make informed choices about which games are right for their family. Ratings have 3 parts: Rating Categories, Content Descriptors, and Interactive Elements.
 *source :* [ESRB](https://www.esrb.org/)
 
 [^11]: Atari 7800
@@ -360,5 +360,5 @@ Exclusive right held by an author or his representative to exploit a work (symbo
 *source :* [Le Robert](https://dictionnaire.lerobert.com/definition/copyright)
 
 [^14]: CNIL (Comission National Informatique & Libertés)
-It's an administrative authority that has existed since January 6, 1978, and ensures the proper use and security of computer data.
+CNIL is an administrative authority that has existed since January 6, 1978, and ensures the proper use and security of computer data.
 *source :* [CNIL](https://www.cnil.fr/en/cnil/cnils-missions) / [Wikipédia](https://en.wikipedia.org/wiki/Commission_nationale_de_l%27informatique_et_des_libertés)
