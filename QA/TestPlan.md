@@ -103,4 +103,4 @@ We will use GitHub issues to track the defects of the game. We will create a new
 
 This is an example of an issue that we will create for a defect:
 
-![Issue example](issue-example.png)
+![Issue example](./img/issue-example.png)
