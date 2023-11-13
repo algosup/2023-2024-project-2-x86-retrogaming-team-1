@@ -43,6 +43,23 @@ The testing strategy for this game is to test the game manually. The tester will
 
 This test plan is written before the development of the game, so the testing schedule is not yet defined. We started the development of the game on the 6th of November and the deadline is on the 21st of December. We will update this section when we have a better idea of the testing schedule, based on how the development of the game is going.
 
+# Test Cases
+
+The following table will be an example of a test case that we will use to test the game. We will create a test case for each test that we will do during the testing of the game. We will also add a label to the test case to indicate the priority of the test case.
+
+| Test Case ID | ID |
+| --- | --- |
+| Test Case Name | Name of the test case |
+| Test Case Description | Description of the test case |
+| Test Case Pre-conditions | Requirements for the test |
+| Test Case Steps | Steps to go from the current state to the expected result |
+| Test Case Expected Result | Result expected after following the steps |
+| Test Case Actual Result | Actual result of the test (could differ from what's expected) |
+| Test Case Status | Status of the test (To Test ⏳, Testing 🔎, Tested ✅) |
+| Test Case Priority | Defines if a test is important or not. Using symbols : Low 🟢 / Medium 🟠 / High 🔴|
+| Test Case Assigned To | Name of the tester |
+
+
 # Testing Tools
 
 ## Hardware
@@ -89,6 +106,4 @@ We will use GitHub issues to track the defects of the game. We will create a new
 This is an example of an issue that we will create for a defect:
 
 ![Issue example](./images/issue-example.png)
-
-
 
