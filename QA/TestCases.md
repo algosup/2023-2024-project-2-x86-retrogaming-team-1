@@ -1,6 +1,6 @@
 # Test Cases
 
-In the following document, we will describe the test cases that we have used to test our game. We will also describe the results of these tests. 
+In the following document, we will describe the test cases that we have used to test our game. We will also describe the results of these tests.
 
 ## Test Case 1: Start the game
 
@@ -156,7 +156,7 @@ In the following document, we will describe the test cases that we have used to 
 | Test Case Priority | High 🔴 |
 | Test Case Assigned To | QA (Victor) |
 
-## Test Case 12: Decrease lives 
+## Test Case 12: Decrease lives
 
 | Test Case ID | 12 |
 | --- | --- |
@@ -184,7 +184,7 @@ In the following document, we will describe the test cases that we have used to 
 | Test Case Priority | High 🔴 |
 | Test Case Assigned To | QA (Victor) |
 
-## Test Case 14: Lives cap:
+## Test Case 14: Lives cap
 
 | Test Case ID | 14 |
 | --- | --- |
@@ -260,7 +260,6 @@ In the following document, we will describe the test cases that we have used to 
 | Test Case Status | To Test ⏳ |
 | Test Case Priority | Medium 🟠 |
 | Test Case Assigned To | QA (Victor) |
-
 
 ## Test Case 19: Game over
 

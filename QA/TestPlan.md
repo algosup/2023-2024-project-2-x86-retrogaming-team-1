@@ -1,30 +1,29 @@
 # Test Plan
 
-
+---
 
 <details>
 
 <summary>📖 Table of content</summary>
 
 - [Test Plan](#test-plan)
-- [Testing Strategy](#testing-strategy)
-- [Testing Schedule](#testing-schedule)
-- [Test Cases](#test-cases)
-- [Testing Tools](#testing-tools)
-  - [Hardware](#hardware)
-  - [Software](#software)
-  - [Defects Tracking](#defects-tracking)
+  - [Testing Strategy](#testing-strategy)
+  - [Testing Schedule](#testing-schedule)
+  - [Test Cases](#test-cases)
+  - [Testing Tools](#testing-tools)
+    - [Hardware](#hardware)
+    - [Software](#software)
+    - [Defects Tracking](#defects-tracking)
 
 </details>
 
-<hr>
+---
 
-
-The following document describes the test plan for the Pac-man project. 
+The following document describes the test plan for the Pac-man project.
 
 The main goal of this game testing plan is to ensure that the game is working as expected and that the game is playable.
 
-# Testing Strategy
+## Testing Strategy
 
 The testing strategy for this game is to test the game manually. The tester will test the gamed during and after the development process to ensure that the game is playable and that the game is working as expected.
 
@@ -47,12 +46,11 @@ The testing strategy for this game is to test the game manually. The tester will
 | Game | Collision | The player should be able to collide with the walls |
 | Game | Collision | The player should be able to collide with the ghosts |
 
-
-# Testing Schedule
+## Testing Schedule
 
 This test plan is written before the development of the game, so the testing schedule is not yet defined. We started the development of the game on the 6th of November and the deadline is on the 21st of December. We will update this section when we have a better idea of the testing schedule, based on how the development of the game is going.
 
-# Test Cases
+## Test Cases
 
 The following table will be an example of a test case that we will use to test the game. We will create a test case for each test that we will do during the testing of the game. We will also add a label to the test case to indicate the priority of the test case.
 
@@ -68,15 +66,14 @@ The following table will be an example of a test case that we will use to test t
 | Test Case Priority | Defines if a test is important or not. Using symbols : Low 🟢 / Medium 🟠 / High 🔴|
 | Test Case Assigned To | Name of the tester |
 
+## Testing Tools
 
-# Testing Tools
-
-## Hardware
+### Hardware
 
 - [MacBook Air 2020](https://www.apple.com/fr/macbook-air-m1/)
-    - 13.3 inch (2560 x 1600)
-    - macOS Ventura 13.0
-    - Apple M1 Chip
+  - 13.3 inch (2560 x 1600)
+  - macOS Ventura 13.0
+  - Apple M1 Chip
 
 - [Lenovo Thinkbook 14](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkbook-series/thinkbook-14-iil/20sl)
   - Windows 11 Pro
@@ -92,27 +89,18 @@ The following table will be an example of a test case that we will use to test t
   - RAM: 16.0 GB
   - System type: 64-bit operating system, x64-based processor
 
-## Software
+### Software
 
 - [Visual Studio Code](https://code.visualstudio.com/) for the development of the game
-
-
 - [GitHub](https://github.com) for the version control
-
-
 - [NASM](https://www.nasm.us/) for the assembly language
-
-
 - [DOSBox 0.74-3 for macOS](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox-0.74-3-3.dmg/download) for the testing of the game on macOS
-
-
 - [DOSBox 0.74-3 for Windows](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download) for the testing of the game on Windows
 
-## Defects Tracking
+### Defects Tracking
 
 We will use GitHub issues to track the defects of the game. We will create a new issue for each defect that we find during the testing of the game. Every issue will be labeled with the `bug` label and will be assigned to the developer who will fix the defect. But also with a description of the defect, the steps to reproduce the defect and the expected result and finally the actual result. We will also add a screenshot of the defect if it's possible. Finally we will add a label to the issue to indicate the priority of the issue.
 
 This is an example of an issue that we will create for a defect:
 
 ![Issue example](issue-example.png)
-
