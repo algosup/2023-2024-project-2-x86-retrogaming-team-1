@@ -41,7 +41,7 @@
 | | |
 | ----- | ----- |
 | Author(s) | Grégory PAGNOUX |
-| Reviewer(s) | Victor LEROY |
+| Reviewer(s) | Victor LEROY, Salaheddine NAMIR |
 | Created on | 11/06/2023 |
 | Last updated | 11/09/2023 |
 
@@ -120,7 +120,7 @@ Here's a list of all the items you can find in the order of the original game :
 | Blinky |  | red | above and outside the house of ghosts | at the start |
 | Pinky | the smartest ghost | pink | on the house of ghosts | at the start |
 | Inky |  | blue | on the house of ghosts | 5 seconds after the start |
-| Clyde | the most harmless ghost | orange | on the house of ghosts | 20 seconds after start |
+| Clyde | the most random behave ghost | orange | on the house of ghosts | 20 seconds after start |
 | Pac-dot | +10 points, slows Pac-Man for 1/60 frame everytime it's eaten | beige | on all paths except those around the ghost house | at the start |
 | Pac-gum | +50 points, <br> changes the color of ghosts, <br> Pac-Man can eat ghost during 10 seconds | beige | each end on the seventh line and on the third line from top. | at the start |
 | cherry | +100 points | red | Pac-Man starting point | all 25 seconds |
@@ -134,7 +134,7 @@ Here's a list of all the items you can find in the order of the original game :
 
 **Lives**
 
-The player has three lives that can get lost when he gets eaten by a ghost. When the player loses all his lives, the game is over and has to start over from the beginning.
+The player has three lives that can get lost when he gets eaten by a ghost. When the player loses all his lives, the game is over and has to start over from the beginning. However, every 10.000 points, Pac-Man get a 1 extra life (1up).
 
 *sources :* [Etale ta Culture](https://www.etaletaculture.fr/geek/les-4-fantomes-de-pac-man-ont-un-secret/) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
 
@@ -142,7 +142,7 @@ The player has three lives that can get lost when he gets eaten by a ghost. When
 
 - Windows/MacOS
 - DOSBox
-- Assembly
+- Assembly x86
 - Recreate a Pac-Man game from 90's computer
 - Improve the original game
 
@@ -184,7 +184,7 @@ The player has three lives that can get lost when he gets eaten by a ghost. When
 
 **Constraints :**
 
-- Programming language : Assembly[^7]
+- Programming language : Assembly x86[^7]
 - Emulator : DOSBox[^8]
 - 16-bit processor
 - Respect Pac-Man style
