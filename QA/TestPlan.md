@@ -6,6 +6,15 @@
 
 <summary>📖 Table of content</summary>
 
+- [Test Plan](#test-plan)
+- [Testing Strategy](#testing-strategy)
+- [Testing Schedule](#testing-schedule)
+- [Test Cases](#test-cases)
+- [Testing Tools](#testing-tools)
+  - [Hardware](#hardware)
+  - [Software](#software)
+  - [Defects Tracking](#defects-tracking)
+
 </details>
 
 <hr>
