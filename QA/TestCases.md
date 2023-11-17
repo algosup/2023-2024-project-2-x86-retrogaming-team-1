@@ -471,3 +471,50 @@ In the following document, we will describe the test cases that we have used to 
 | Test Case Status | To Test ⏳ |
 | Test Case Priority | Low 🟢 |
 | Test Case Assigned To | QA (Victor) |
+
+## Test Case 33: Increase score Ghost
+
+| Test Case ID | 33 |
+| --- | --- |
+| Test Case Name | Increase score eating a Ghost |
+| Test Case Description | The game should increase the score when the player eats a ghost, for instance if the player eats 1 ghost, the score is increased by 200 points, 2 ghosts 400 points, 3 ghosts 800 points and 4 ghosts 1600 points |
+| Test Case Pre-conditions | The game is started and a pac-gum has been eaten |
+| Test Case Steps | 1. Eat a ghost |
+| Test Case Steps | 2. Eat a 2nd ghost |
+| Test Case Steps | 3. Eat a 3rd ghost |
+| Test Case Steps | 4. Eat a 4th ghost |
+| Test Case Expected Result | The score is increased by 200, 400, 800 and 1600 points |
+| Test Case Actual Result | ------ |
+| Test Case Status | To Test ⏳ |
+| Test Case Priority | Low 🟢 |
+| Test Case Assigned To | QA (Victor) |
+
+## Test Case 34: Music and sounds on
+
+| Test Case ID | 34 |
+| --- | --- |
+| Test Case Name | Music and sounds on |
+| Test Case Description | The game should play music when the player starts the game, and play various sounds when the player do particular action, such as moving or eating a fruit |
+| Test Case Pre-conditions | The game launched |
+| Test Case Steps | 1. Start a game |
+| Test Case Steps | 2. Move Pac-Man |
+| Test Case Steps | 3. Eat a fruit |
+| Test Case Expected Result | The game is playing music, and played the sounds corresponding to the actions of the player |
+| Test Case Actual Result | ------ |
+| Test Case Status | To Test ⏳ |
+| Test Case Priority | Low 🟢 |
+
+## Test Case 35: Music off
+
+| Test Case ID | 35 |
+| --- | --- |
+| Test Case Name | Music off |
+| Test Case Description | The game should stop playing music or sounds when the player clicks on the mute button |
+| Test Case Pre-conditions | The game launched |
+| Test Case Steps | 1. Start a game |
+| Test Case Steps | 2. Click on the mute button |
+| Test Case Expected Result | The game is not playing music or sounds anymore |
+| Test Case Actual Result | ------ |
+| Test Case Status | To Test ⏳ |
+| Test Case Priority | Low 🟢 |
+
