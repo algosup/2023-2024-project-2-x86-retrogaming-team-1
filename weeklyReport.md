@@ -136,8 +136,87 @@ Victor Leroy
 |-|-|-|
 | 1 half-day | 1 half-day | 08/12/2023 |
 
+### What is planned for the next week
+
+- Finish the functional specifications
+- Continue the technical specifications and the test plan
+- Start to code the PACMAN game
+- Start a gantt chart
+
+---
+
 ## Week 2 - 13/11/2023 - 17/11/2023
 
 ### Functional specifications
 
 The functional specifications deadline arrived, but we are not impacted by it. The functional specifications writing and reviewing has been done during the week-end of the 11/11/2023.
+
+Done
+
+Gregory Pagnoux
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 13/11/2023 |
+
+### Technical specifications
+
+After the feedbacks on the functional specifications, we improved the technical specifications.
+
+WIP
+
+Salaheddine Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+|2 half-days|2 half-days|27/11/2023|
+
+### Test plan
+
+The test plan is nearly completed, some test cases are missing.
+
+WIP
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 half-days | 2 half-days | 08/12/2023 |
+
+### PACMAN start
+
+This week, after Garry's classes, our software engineers started to code the PACMAN game, currently, you're able to move the sprite on the screen, even if there is no map and no collision against the borders yet.
+
+WIP
+
+Jason Grosso
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 11/12/2023 |
+
+### Project follow-up
+
+Instead of using a gantt chart, we're using a follow-up table to follow the project.
+
+WIP
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 24/11/2023 |
+
+### What is planned for the next week
+
+- Finish the technical specifications
+- Conclude the test plan
+- Continue the PACMAN game by adding the following element:
+  - fix left procedure, look into clearScreen and drawPacman
+  - implement up and down procedure
+  - finish commenting clearScreen and drawPacman
+  - create a bin folder
+  - create a bash file to put the .com file into
+  - create a .cmd file to launch DosBox with the good config + mount
+- Update all the management documents
+- Search ways to implement music in the game
