@@ -66,7 +66,7 @@ Here's the breakdown of the RACI roles:
 |Test Plan | I | I | C| C| C| R |
 |Working Prototype | I | I | C | R | R | A |
 |Final Product | C | I | C | R | R | R/A |
-|Presentation | R | R | R | R | R | R
+|Presentation | R | R | R | R | R | R |
 
 ## Stakeholders
 
