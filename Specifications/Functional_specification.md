@@ -206,7 +206,7 @@ Between each levels, there is different little scenes with Pac-Man and Blinky
 - display score
 - play music
 - play sounds :
-  - eat pac-gum
+  - eat pac-dot
   - eat ghost
   - ghost kills you
 
@@ -223,8 +223,9 @@ There aren't a lot of non-functional requirements but those that exist are the f
 - The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
 - The game should be playable on a x86 emulator
 - The game must not be subject to crashes or major bugs during execution.
-- The music played during the game is 
-- We have the ghost eaten sound, the pac-gum eaten sound, the pac-man death sound, the fruit eaten sound, the life lost sound, the earn life sound and the start game sound (when you click on start button)
+- We have the [ghost eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/eating-ghosts.mp3), the [pac-dot eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/chomping.mp3), the [pac-man death sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-dies.mp3), the [fruit eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-fruit-eaten.mp3), the [life lost sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-life-lost.mp3), the [earn life sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/extra-life.mp3) and the [start game sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/start-game.mp3) (when you click on start button)
+*To access to the audio, you need to click on "View ram".*
+- The music that we played during the game is [Reset](), a music copyright-free written by [Jaunter](https://www.auboutdufil.com/index.php?tag=8-bit).
 
 ## V. Personas and scenario
 
