@@ -2,7 +2,7 @@
 
 # Functional Specification
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 <details>
 <summary>📖 Table of content</summary>
@@ -17,7 +17,12 @@
       - [B. Yesterday](#b-yesterday)
       - [C. Today](#c-today)
       - [D. Tomorrow](#d-tomorrow)
-      - [E. Game Mechanics](#e-game-mechanics)
+  - [II. Game Mechanics](#ii-game-mechanics)
+    - [1. Movements](#1-movements)
+    - [2. Items](#2-items)
+    - [3. Lives](#3-lives)
+    - [4. Levels](#4-levels)
+    - [5. Audio](#5-audio)
   - [II. Requirements](#ii-requirements)
   - [III. Goals and constraints](#iii-goals-and-constraints)
   - [IV Non-functional requirements](#iv-non-functional-requirements)
@@ -36,16 +41,16 @@
 
 </details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 | | |
 | ----- | ----- |
 | Author(s) | Grégory PAGNOUX |
 | Reviewer(s) | Victor LEROY, Salaheddine NAMIR |
 | Created on | 11/06/2023 |
-| Last updated | 11/09/2023 |
+| Last updated | 11/17/2023 |
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 ## I. Overview
 
@@ -97,9 +102,9 @@ Many new games keep getting released with tons of by-products, so Pac-Man will c
 
 *sources :* [Wikipédia](https://fr.wikipedia.org/wiki/Liste_des_jeux_vidéo_les_plus_vendus)
 
-#### E. Game Mechanics
+## II. Game Mechanics
 
-**Movements**
+### 1. Movements
 
 Each ghost has his own behaviour in the maze to trick the player into losing:
 - Blinky is the only ghost stalking Pac-Man across the map and will always find a way to get to him
@@ -110,19 +115,19 @@ You can move the Pac-Man character using key arrows from top to bottom and left 
 
 One of the basic rules in a labyrinth is that Pac-Man can't go through walls, just like ghosts.
 
-**Items**
+### 2. Items
 
-As you progress through the game, new bonuses appear to help you overcome the difficulty, which increases the further you get.
+As you progress through the game, new bonuses appear to help you overcome the difficulty, which increases the further you get. When the bonus appear you can eat it dirrectly by moving over it.
 Here's a list of all the items you can find in the order of the original game :
 | ITEMS | BONUS | COLOR | SPAWN LOCATION | Spawn Time |
 | :-: | :-: | :-: | :-: | :-: |
 | Pac-Man |  | yellow | in the middle of the seventh line of the maze from bottom | at the start |
-| Blinky |  | red | above and outside the house of ghosts | at the start |
-| Pinky | the smartest ghost | pink | on the house of ghosts | at the start |
-| Inky |  | blue | on the house of ghosts | 5 seconds after the start |
-| Clyde | the most random behave ghost | orange | on the house of ghosts | 20 seconds after start |
-| Pac-dot | +10 points, slows Pac-Man for 1/60 frame everytime it's eaten | beige | on all paths except those around the ghost house | at the start |
-| Pac-gum | +50 points, <br> changes the color of ghosts, <br> Pac-Man can eat ghost during 10 seconds | beige | each end on the seventh line and on the third line from top. | at the start |
+| Blinky (Japanese : Akabei = red) |  | red | above and outside the house of ghosts | at the start |
+| Pinky* (Japanese : Machibuse = ambush) |  | pink | on the house of ghosts | at the start |
+| Inky (Japanese : Aosuke = blue) |  | blue | on the house of ghosts | 5 seconds after the start |
+| Clyde** (Japanese : Guzuta = stupid) |  | orange | on the house of ghosts | 20 seconds after start |
+| Pac-dot*** | +10 points | beige | on all paths except those around the ghost house | at the start |
+| Pac-gum**** | +50 points, <br> changes the color of ghosts, <br> Pac-Man can eat ghost during 10 seconds | beige | each end on the seventh line and on the third line from top. | at the start |
 | cherry | +100 points | red | Pac-Man starting point | all 25 seconds |
 | strawberry | +300 points | red | Pac-Man starting point | all 25 seconds |
 | orange | +500 points | orange | Pac-Man starting point | all 25 seconds |
@@ -132,9 +137,27 @@ Here's a list of all the items you can find in the order of the original game :
 | bell | +3000 points | orange | Pac-Man starting point | all 25 seconds |
 | key | +5000 points | blue | Pac-Man starting point | all 25 seconds |
 
-**Lives**
+*Pinky is the smartest ghost. She doesn't chase Pac-Man directly, but tries to predict his movements in order to anticipate and capture him alone or with other ghosts.
+**Clyde is the most random behave ghost and often counter-productive. He never chases Pac-Man if another ghost is already chasing him.
+***there is 240 of Pac-dot, which is equal to 2400 points.
+****there is 4 Pac-gum, which is equal to 200 points. When he eat 1 ghost, he earn 200 points, 2 ghosts equal 400 points, 3 ghosts = 800 points and 4 ghosts = 1600 points.
+
+### 3. Lives
 
 The player has three lives that can get lost when he gets eaten by a ghost. When the player loses all his lives, the game is over and has to start over from the beginning. However, every 10.000 points, Pac-Man get a 1 extra life (1up).
+
+### 4. Levels
+
+In theory, Pac-Man only ends when the player loses. None of the levels have a final level function. But in practice, it's different due to a bug.
+The number of levels is stored on one byte in hexadecimal, FF corresponds to 256 values from 0 to 255. So when the level goes to number 256, which corresponds to 100 in hexadecimal, there's an overflow and the program only takes 00 into account.
+The game can therefore only be played on the first 255 levels.
+All levels have increasing difficulty, which increases the speed of both Pac-Man and the ghosts, but the difference in speed between Pac-Man and the four ghosts is greater and greater, in favor of the ghosts.
+
+Between each levels, there is different little scenes with Pac-Man and Blinky
+
+### 5. Audio
+
+
 
 *sources :* [Etale ta Culture](https://www.etaletaculture.fr/geek/les-4-fantomes-de-pac-man-ont-un-secret/) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
 
@@ -148,15 +171,15 @@ The player has three lives that can get lost when he gets eaten by a ghost. When
 
 ## III. Goals and constraints
 
-**Goals :**
+**Prototypes Goals :**
 
 - recreate the maze :
   - wall (blue, with colision)
   - road (black)
   - ghosts house
-- Implement Pac-Man (yellow)
+- Implement Pac-Man
 - implement keybindings to move with Pac-Man
-- Implement 4 ghosts :
+- Implement 2 ghosts
 - implement the ghosts AI
 - point system :
   - pac-dot and pac-gum
@@ -164,23 +187,28 @@ The player has three lives that can get lost when he gets eaten by a ghost. When
   - cherry
 - bonus :
   - pac-gum
-  - heart (purple, can add 1 life)
 - implement life system :
   - lose one life
   - gain one life
-  - game over when the player have no lives left
+
+**Final game Goals**
+
+- create pages : 
+  - home page :
+    - play
+    - exit
+    - setting
+  - game over
+  - win page
+- implement two others ghosts
+- bonus :
+  - earn 1 life with 10 000 points
 - display score
 - play music
 - play sounds :
   - eat pac-gum
   - eat ghost
   - ghost kills you
-- create winning screen
-- create game over screen
-- create home menu:
-  - play
-  - exit
-  - settings
 
 **Constraints :**
 
@@ -195,6 +223,8 @@ There aren't a lot of non-functional requirements but those that exist are the f
 - The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
 - The game should be playable on a x86 emulator
 - The game must not be subject to crashes or major bugs during execution.
+- The music played during the game is 
+- We have the ghost eaten sound, the pac-gum eaten sound, the pac-man death sound, the fruit eaten sound, the life lost sound, the earn life sound and the start game sound (when you click on start button)
 
 ## V. Personas and scenario
 
@@ -266,17 +296,7 @@ The game is under copyright protection and we need to respect some rules in comp
 - The author may not prohibit the reproduction of excerpts of works for the exclusive purpose of illustration in the context of education and vocational training (Article L122-5 12°)
 - Right to reproduce the game for non-profit purposes (Article L122-5-1)
 
-*source :* [French legislature](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
-
-**Data saving**
-
-There are three different archives depending on the type of data :
-
-- Active database archiving where data that are no longer useful to the enterprise (for example, data on job seekers to which they have not followed up) are deleted once the reason for the study has been completed (after a maximum of two years).
-- Intermediate archiving where data are saved even after the purpose of data collection has been achieved as they are still of interest to the enterprise. The duration is set by the person responsible and must be relevant to its usefulness.
-- Final archiving where data that remains of great interest in the future without an end date are saved, after an upstream check.
-
-*source :* [CNIL](https://www.cnil.fr/sites/default/files/atoms/files/guide_durees_de_conservation.pdf)[^14]
+*source :* [French legislation](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
 
 **Age**
 
@@ -302,7 +322,7 @@ We will consider this project a success if we have a working game coontaining th
 | Abderrazaq MAKRAN | Junior Software Engineer | [abderrazaq.makran@algosup.com](mailto:abderrazaq.makran@algosup.com) |
 | Victor LEROY | Quality Assurance | [victor.leroy@algosup.com](mailto:victor.leroy@algosup.com) |
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 ## Glossary
 
@@ -362,3 +382,13 @@ Exclusive right held by an author or his representative to exploit a work (symbo
 [^14]: CNIL (Comission National Informatique & Libertés)
 CNIL is an administrative authority that has existed since January 6, 1978, and ensures the proper use and security of computer data.
 *source :* [CNIL](https://www.cnil.fr/en/cnil/cnils-missions) / [Wikipédia](https://en.wikipedia.org/wiki/Commission_nationale_de_l%27informatique_et_des_libertés)
+
+
+
+
+
+± “The game must react to the player's action in less than a second”, it’s good to quantify, but if the game responds to the player actions in 900ms, for instance, it will be extremely frustrating for the player.
+- It’s unclear what the personas are for here. You tell long and winded stories, but why? Is this going to affect your project?
+- Sticking to the original game without improving it doesn’t sound like a risk, since it will not imply failure.
+- “The game must not be subject to crashes or major bugs during execution.” is a very generic and self-evident point. If there’s something specific to this project, describe a precise, measurable requirement.
+- Why not contact Bandai Namco Entertainment Inc. to ask them about potential copyright issues? Will your code be hosted on your public git repository?
