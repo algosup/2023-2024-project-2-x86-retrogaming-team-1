@@ -30,7 +30,7 @@ section .text
 
     ; Display the sprite:
     ;mov si, pacman             ; select the sprite to be displayed
-    mov di, [xPos, yPos]        ; set the original position of the character
+    mov di, [xPos, yPos]        ; set the original coordinate of the character
     call drawPacman             ; call the function to display the character
 
 
@@ -76,8 +76,8 @@ section .text
     rep stosb                   ; repeat till its done
     ret                         ; return to the main loop
 
-    ; si most have the sprite address
-    ; di most have the target address
+    ; si must have the sprite address
+    ; di must have the target address
     drawPacman:
     mov ax, 0xA000              ; memory location of the video mode
     mov es, ax
@@ -93,15 +93,15 @@ section .text
     right:
     ; Move the sprite to the right
     mov bx, [xPos]              ; the position (xPos) is inserted into the register bx
-    add bx, [xVelocity]         ; add to the position the speed (xVelocity)
+    add bx, [velocity]         ; add to the position the speed (velocity)
     mov [xPos], bx              ; update the position of the character 
     jmp mainLoop                ; return to the main loop
 
     left:
     ; Move the sprite to the left
     mov bx, [xPos]              ; the position is inserted to the register bx 
-    neg word [xVelocity]        ; reverse the speed (xVelocity) from 1 to -1
-    add bx, [xVelocity]         ; add it to the position
+    neg word [velocity]        ; reverse the speed (velocity) from 1 to -1
+    add bx, [velocity]         ; add it to the position
     mov [xPos], bx              ; update the position of the character
     jmp mainLoop                ; return to the main loop
 
