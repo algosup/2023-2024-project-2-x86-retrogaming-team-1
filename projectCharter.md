@@ -16,6 +16,7 @@
   - [Project Overview](#project-overview)
   - [Project Scope](#project-scope)
   - [Team Members](#team-members)
+  - [RACI](#raci)
   - [Stakeholders](#stakeholders)
   - [Milestones](#milestones)
   - [Deliverables](#deliverables)
@@ -46,6 +47,26 @@ Pac-Man is still under copyright, but for our project, only educational and not 
 | Jason Grosso | Software Engineer "Senior" | [Jason GROSSO](https://github.com/JasonGROSSO) |
 | Abderrazaq Makran | Software Engineer "Junior" | [Abderrazaq Makran](https://github.com/Amakran2003) |
 | Victor Leroy | Quality Assurance | [Victor Leroy](https://github.com/Victor-Leroy) |
+
+## RACI
+
+Here's the breakdown of the RACI roles:
+
+- **R** stands for `Responsible` indicating the person responsible for executing the task.
+- **A** stands for `Accountable` indicating the person ultimately accountable for the task's success.
+- **C** stands for `Consulted` meaning individuals who provide input and expertise but are not directly responsible for the task's completion.
+- **I** stands for `Informed` indicating individuals that need to be informed about task progress but have no direct responsibility for it.
+
+| Task | Alexis Lasselin | Grégory Pagnoux | Salaheddine Namir | Jason Grosso | Abderrazaq Makran | Victor Leroy |
+|-|-|-|-|-|-|-|
+|Project Brief | I | I | I | I | I | I |
+|Project Charter | R | A | C | C | C | C |
+|Functional Specifications | C | R | C | I | I | A |
+|Technical Specifications | C | C | R | I | I | A |
+|Test Plan | I | I | C| C| C| R |
+|Working Prototype | I | I | C | R | R | A |
+|Final Product | C | I | C | R | R | R/A |
+|Presentation | R | R | R | R | R | R
 
 ## Stakeholders
 
