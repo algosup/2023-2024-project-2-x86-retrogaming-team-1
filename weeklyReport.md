@@ -135,3 +135,9 @@ Victor Leroy
 |Time allocated|Time needed|Deadline|
 |-|-|-|
 | 1 half-day | 1 half-day | 08/12/2023 |
+
+## Week 2 - 13/11/2023 - 17/11/2023
+
+### Functional specifications
+
+The functional specifications deadline arrived, but we are not impacted by it. The functional specifications writing and reviewing has been done during the week-end of the 11/11/2023.
