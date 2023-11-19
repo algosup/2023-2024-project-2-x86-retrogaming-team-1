@@ -1,10 +1,7 @@
 ; TODO:
-; fix left procedure, look into clearScreen and drawPacman for the error
 ; implement up and down procedure
-; finish commenting clearScreen and drawPacman
-; create a bin folder
-; create a bash file to put the .com file into 
-; create a .cmd file to launch DosBox with the good config + mount 
+; loop left until we detect a keypress then act i.e. go left for 'q' up for 'z' or the main menue for 'esc'
+; do the same for the other direction
 
 org 100h
 
@@ -19,22 +16,23 @@ section .data
 
 section .text
 
-    _start
+    _start:
 
     mov ah, 00h                 ; set video mode requirement
     mov al, 13h                 ; set video mode option to 320 x 200 256 colors
     int 10h                     ; interupt the process
+
+
+    mainLoop:
 
     mov al, 0FFh                ; select the color of the background
     call clearScreen            ; set the backround to the selected color
 
     ; Display the sprite:
     ;mov si, pacman             ; select the sprite to be displayed
-    mov di, [xPos, yPos]        ; set the original coordinate of the character
+    mov di, [xPos]              ; set the original coordinate of the character
     call drawPacman             ; call the function to display the character
 
-
-    mainLoop:
     ; This loop is to slow down the animation
     mov cx, 20000               ; 20000 is the time we wait before moving the sprite
     waitloop:                   ; cx is a loop register
@@ -69,41 +67,51 @@ section .text
 
     ; need to set the color of filling in al
     clearScreen:
-    mov ax, 0xA000              ; memory location of the video mode
-    mov es, ax
-    mov di, 0
-    mov cx, 200*320             ; loop trougth the screen 
-    rep stosb                   ; repeat till its done
-    ret                         ; return to the main loop
+    mov ax, 0xA000              ; set the video memory segment to 0xA000
+    mov es, ax                  
+    mov di, 0                   ; set the destination index to 0 (starting position in video memory)
+    mov cx, 200*320             ; set the count register to the total number of pixel on the screen
+    rep stosb                   ; repeat the store byte operation (set byte to a specific color)
+    ret                         ; return to the main function
 
     ; si must have the sprite address
     ; di must have the target address
     drawPacman:
     mov ax, 0xA000              ; memory location of the video mode
     mov es, ax
-    mov dx, 8                   ; insert the width of the sprite
+    mov dx, 8                   ; set the destination index to 8 (starting position in video memory)
     .eachLine:                  ; loop till each line of the sprite is printed
-        mov cx, 8
-        rep movsb               ; repeat while whats inside al equal whats inside dx
-        add di, 320-8
-        dec dx
+        mov cx, 8               ; setthe count register to 8 (number of pixel to copy per line)
+        rep movsb               ; repeat the move byte action (copying pixel)
+        add di, 320-8           ; move the destination index to the next line (320 pixel per line)
+        dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
         jnz .eachLine
         ret                     ; return to the main loop
 
-    right:
-    ; Move the sprite to the right
-    mov bx, [xPos]              ; the position (xPos) is inserted into the register bx
-    add bx, [velocity]         ; add to the position the speed (velocity)
-    mov [xPos], bx              ; update the position of the character 
-    jmp mainLoop                ; return to the main loop
+right:
+   ; Move the sprite to the right
+   cmp word [velocity], 0      ; check if velocity is positif
+   jl .reverse                  ; if not go to sub procedure .reverse
+   mov bx, [xPos]               ; the position is increased by the speed of the character (here 1)
+   add bx, [velocity]
+   mov [xPos], bx               ; update the new position and speed of the character
+   jmp mainLoop                 ; return to the main loop
+   .reverse:
+        neg word [velocity]    ; reverse the value of velocity to 1
+        jmp right               ; return to the procedure right
 
-    left:
-    ; Move the sprite to the left
-    mov bx, [xPos]              ; the position is inserted to the register bx 
-    neg word [velocity]        ; reverse the speed (velocity) from 1 to -1
-    add bx, [velocity]         ; add it to the position
-    mov [xPos], bx              ; update the position of the character
-    jmp mainLoop                ; return to the main loop
+
+left:
+   ; Move the sprite to the right
+   cmp word [velocity], 0      ; check if velocity is negatif
+   jg .reverse                  ; if not go to sub procedure .reverse
+   mov bx, [xPos]               ; the position is increased by the speed of the character (here -1)
+   add bx, [velocity]
+   mov [xPos], bx               ; update the new position and speed of the character
+   jmp mainLoop                 ; return to the main loop
+   .reverse:
+        neg word [velocity]    ; reverse the value of velocity to -1
+        jmp left                ; return to the procedure left 
 
     up:
 
