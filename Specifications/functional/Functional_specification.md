@@ -224,7 +224,7 @@ There aren't a lot of non-functional requirements but those that exist are the f
 - The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
 - The game should be playable on a x86 emulator
 - The game must not be subject to crashes or major bugs during execution
-- The game responds must to do between 1 and 5ms
+- The game must responds between 1 and 5ms
 - We have the [ghost eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/eating-ghosts.mp3), the [pac-dot eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/chomping.mp3), the [pac-man death sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-dies.mp3), the [fruit eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-fruit-eaten.mp3), the [life lost sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-life-lost.mp3), the [earn life sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/extra-life.mp3) and the [start game sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/start-game.mp3) (when you click on start button)
 *To access to the audio, you need to click on "View ram".*
 - The music that we played during the game is [Reset](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/Jaunter-Reset_music.mp3), a music copyright-free written by Jaunter.
@@ -300,8 +300,8 @@ The game is under copyright protection and we need to respect some rules in comp
 - The author may not prohibit the reproduction of excerpts of works for the exclusive purpose of illustration in the context of education and vocational training (Article L122-5 12°)
 - Right to reproduce the game for non-profit purposes (Article L122-5-1)
   
-We decided contact [Bandai Namco Entertainment Europe](https://en.bandainamcoent.eu/?_gl=1*w7r7ca*_gcl_au*MTkxMDYzNDMwMy4xNzAwNDcwMjQz) to have an official authorization to realize the projecy without problem of copyright.
-[mail to Bandai Namco Entertainment Europe]()
+We decided to contact [Bandai Namco Entertainment Europe](https://en.bandainamcoent.eu/?_gl=1*w7r7ca*_gcl_au*MTkxMDYzNDMwMy4xNzAwNDcwMjQz) to have an official authorization to realize the project without copyright problem.
+Mail to : [Bandai Namco Entertainment Europe](mail_Bandai_Namco_ent_eu.pdf)
 
 *source :* [French legislation](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
 
