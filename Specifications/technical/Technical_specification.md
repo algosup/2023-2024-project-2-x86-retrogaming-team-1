@@ -6,8 +6,8 @@
 | ----- | ----- |
 | Author(s) |[Salaheddine NAMIR](https://github.com/T3rryc)|
 | Reviewer(s) |...|
-| Created on |...|
-| Last updated |...|
+| Created on |11/20/2023|
+| Last updated |11/20/2023|
 
 
 
@@ -197,28 +197,28 @@ The Pacman game is intricately designed to leverage the capabilities of the **[I
 |**ES**|Extra Segment|**FS**|Extra Segment|
 |**GS**|Extra Segement|**FLAGS**|Flags|
 
-#####Additional Segments
+##### Additional Segments
 In addition to the standard segments, the Intel 8086 architecture introduces Extra Segments (FS and GS), providing extra storage space and flexibility for advanced programming.
 
-#####Flags Register (FLAGS)
+##### Flags Register (FLAGS)
 The FLAGS register is pivotal for program control and condition monitoring. It comprises individual flags, including Zero Flag (ZF), Sign Flag (SF), Carry Flag (CF), Overflow Flag (OF), and others. These flags reflect the outcome of arithmetic and logical operations, guiding program flow.
 
-#####Memory Segmentation
+##### Memory Segmentation
 The Intel 8086 architecture utilizes a segmented memory model, where the memory address space is divided into segments. Each segment is 64KB in size and is identified by a 16-bit segment register. The segment registers are CS (Code Segment), DS (Data Segment), SS (Stack Segment), and ES (Extra Segment). The segment registers are used to calculate the physical memory address of a data item, combining with the offset address to form a 20-bit physical address.
 
-#####Memory Addressing
+##### Memory Addressing
 The Intel 8086 architecture supports two types of memory addressing: direct addressing and indirect addressing. Direct addressing involves specifying the memory address of the data item directly in the instruction. Indirect addressing involves specifying the address of a memory location that contains the address of the data item. Indirect addressing is useful for accessing data items stored in arrays or other data structures.
 
-#####Instruction Set
+##### Instruction Set
 The Intel 8086 architecture supports a wide range of instructions, including arithmetic, logical, and control instructions. The instructions are encoded in binary format and are executed by the CPU. The instruction set is designed to provide a rich set of operations for manipulating data and controlling program flow.
 
-#####Interrupts
+##### Interrupts
 The Intel 8086 architecture supports interrupts, which are signals that interrupt the normal flow of program execution. Interrupts are used for handling events such as user input, hardware errors, and other asynchronous events. The CPU responds to interrupts by suspending the current program and executing an interrupt handler. The interrupt handler is a special routine that handles the interrupt and resumes the execution of the interrupted program.
 
-#####Input/Output
+##### Input/Output
 The Intel 8086 architecture supports input/output (I/O) operations, allowing the CPU to interact with external devices such as keyboards, displays, and storage devices. I/O operations are performed using special instructions that transfer data between the CPU and the I/O device. The I/O device is connected to the CPU via an I/O port, which is a special addressable location in memory.
 
-#####Memory Management
+##### Memory Management
 The Intel 8086 architecture supports memory management, allowing the CPU to manage the memory address space. The CPU can allocate and deallocate memory, ensuring that the memory address space is used efficiently. Memory management is essential for the proper functioning of the Pacman game, as it allows the CPU to allocate memory for the game's code and data.
 
 ##### Performance Considerations
@@ -253,19 +253,19 @@ The compilation process is a crucial step in transforming the high-level source 
 
 Source Code: The development of Pacman begins with the creation of high-level source code, typically written in a programming language like Assembly language or a higher-level language compatible with the Intel 8086 architecture.
 
-#####Preprocessing
+##### Preprocessing
 In this initial stage, a preprocessor may handle tasks such as file inclusion, macro expansion, and conditional compilation. This ensures that the source code is well-prepared for subsequent stages of compilation.
 
-#####Compilation
+##### Compilation
 The compiler takes the preprocessed source code and translates it into assembly language or intermediate code. For Pacman, an assembly language compatible with the Intel 8086 CPU architecture is often chosen to maximize control over low-level details.
 
-#####Assembly
+##### Assembly
 The assembly code generated in the compilation stage is then processed by an assembler. The assembler converts the human-readable assembly code into machine code, consisting of binary instructions that the Intel 8086 CPU can understand.
 
-#####Linking
+##### Linking
 The linker combines the machine code generated for different modules or files, resolving references between them. It creates a single executable file that contains all the necessary code and data for the Pacman game.
 
-#####Loading
+##### Loading
 The loader loads the executable file into memory, preparing it for execution on the Intel 8086 CPU. It manages memory allocation and ensures that the game's code and data are in the correct locations for efficient runtime execution.
 
 ##### Execution
