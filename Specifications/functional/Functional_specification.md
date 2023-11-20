@@ -56,7 +56,7 @@
 
 ### 1. Project scope
 
-![ALGOSUP logo's](img/logoALGOSUP.png)
+![ALGOSUP logo's](../img/logoALGOSUP.png)
 
 [ALGOSUP](https://algosup.com)[^1] requested us to recreate a Pac-Man game[^2] with some twists while keeping the style of the original game, we will obviously have to get a working game before adding any changes. In order to get a better immersion, we will be using an emulator[^3] from 90's computer to run, display and play the game.
 
@@ -75,7 +75,7 @@
 
 #### A. What is Pac-Man
 
-![Pac-Man maze](img/PACMANmaze.jpeg)
+![Pac-Man maze](../img/PACMANmaze.jpeg)
 
 Pac-Man is a maze game in which you play as a little yellow diagram who has to eat little dots named pac-gum without getting caught by the four ghosts, Blinky in red, Pinky in orange, Clyde in pink and Inky in blue.
 
@@ -157,7 +157,8 @@ Between each levels, there is different little scenes with Pac-Man and Blinky
 
 ### 5. Audio
 
-
+Pac-Man have a little music at the beginning of the game and during animations between levels. During the game time, there are only sounds. music and sounds are made in 8-bits.
+One years ago, a [new official music](https://www.youtube.com/watch?v=5_JzxszEpmc) has been created for Pac-Man by Bandai Namco Entertainment Inc.
 
 *sources :* [Etale ta Culture](https://www.etaletaculture.fr/geek/les-4-fantomes-de-pac-man-ont-un-secret/) / [Le guide du collectionneur](https://leguideducollectionneur.fr/2017/12/22/bonus-pac-man/)
 
@@ -222,7 +223,8 @@ Between each levels, there is different little scenes with Pac-Man and Blinky
 There aren't a lot of non-functional requirements but those that exist are the following one:
 - The game must keep the classic PAC-MAN feeling, even if we're allowed to improve it
 - The game should be playable on a x86 emulator
-- The game must not be subject to crashes or major bugs during execution.
+- The game must not be subject to crashes or major bugs during execution
+- The game responds must to do between 1 and 5ms
 - We have the [ghost eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/eating-ghosts.mp3), the [pac-dot eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/chomping.mp3), the [pac-man death sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-dies.mp3), the [fruit eaten sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-fruit-eaten.mp3), the [life lost sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/pac-man-life-lost.mp3), the [earn life sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/extra-life.mp3) and the [start game sound](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/start-game.mp3) (when you click on start button)
 *To access to the audio, you need to click on "View ram".*
 - The music that we played during the game is [Reset](https://github.com/algosup/2023-2024-project-2-x86-retrogaming-team-1/blob/Document/Specifications/sounds/Jaunter-Reset_music.mp3), a music copyright-free written by Jaunter.
@@ -279,7 +281,6 @@ Some improvements will be made like new bonuses but always in compliance with th
 **Some risks that could lead to the failure of the project :**
 
 - Too ambitious : improving the game to a point where we forget its roots, but also creating unnecessary features. Which could basically lead us to an unfinished game.
-- Too simple : sticking to the original game without trying to improve it.
 - Copyright[^13] regulations : make features that are not in compliance with the copyright law.
 
 **Yet those risks can be avoided by :**
@@ -298,6 +299,9 @@ The game is under copyright protection and we need to respect some rules in comp
 - Must in no way interfere with the normal exploitation of the work, nor cause unjustified prejudice to the legitimate interests of the author (Article L122-5)
 - The author may not prohibit the reproduction of excerpts of works for the exclusive purpose of illustration in the context of education and vocational training (Article L122-5 12°)
 - Right to reproduce the game for non-profit purposes (Article L122-5-1)
+  
+We decided contact [Bandai Namco Entertainment Europe](https://en.bandainamcoent.eu/?_gl=1*w7r7ca*_gcl_au*MTkxMDYzNDMwMy4xNzAwNDcwMjQz) to have an official authorization to realize the projecy without problem of copyright.
+[mail to Bandai Namco Entertainment Europe]()
 
 *source :* [French legislation](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069414/LEGISCTA000006146349/#:~:text=L%27auteur%20jouit%2C%20sa%20vie,soixante%2Ddix%20années%20qui%20suivent.)
 
@@ -306,7 +310,7 @@ The game is under copyright protection and we need to respect some rules in comp
 The age to play certain games is regulated by the PEGI limitation in Europeen Union or the ESRB in USA.
 Criterias are the violence, drugs, sex or money game.
 
-![PEGI](img/ESRB.jpg)
+![PEGI](../img/ESRB.jpg)
 
 *source :* [Culture Game](https://www.culture-games.com/capsule-technique/pegi-le-systeme-devaluation-europeen-des-jeux-video) / [ESRB](https://www.esrb.org/)
 
@@ -385,13 +389,3 @@ Exclusive right held by an author or his representative to exploit a work (symbo
 [^14]: CNIL (Comission National Informatique & Libertés)
 CNIL is an administrative authority that has existed since January 6, 1978, and ensures the proper use and security of computer data.
 *source :* [CNIL](https://www.cnil.fr/en/cnil/cnils-missions) / [Wikipédia](https://en.wikipedia.org/wiki/Commission_nationale_de_l%27informatique_et_des_libertés)
-
-
-
-
-
-± “The game must react to the player's action in less than a second”, it’s good to quantify, but if the game responds to the player actions in 900ms, for instance, it will be extremely frustrating for the player.
-- It’s unclear what the personas are for here. You tell long and winded stories, but why? Is this going to affect your project?
-- Sticking to the original game without improving it doesn’t sound like a risk, since it will not imply failure.
-- “The game must not be subject to crashes or major bugs during execution.” is a very generic and self-evident point. If there’s something specific to this project, describe a precise, measurable requirement.
-- Why not contact Bandai Namco Entertainment Inc. to ask them about potential copyright issues? Will your code be hosted on your public git repository?
