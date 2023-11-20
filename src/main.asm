@@ -2,6 +2,8 @@
 ; loop left until we detect a keypress then act i.e. go left for 'q' up for 'z' or the main menu for 'esc'
 ; do the same for the other direction
 
+%include "bitmaps.asm"
+
 org 100h    
 
 section .data
@@ -11,7 +13,6 @@ section .data
     yVelocity dw 320            ; to go from one line to another
     xVelocity dw 1              ; horizontal speed
 
-    ;sprite db '@'               ; place holder for the sprite
 
 section .text
 
@@ -24,11 +25,11 @@ section .text
 
     mainLoop:
 
-    mov al, 0FFh                ; select the color of the background
+    mov al, 0FFh                 ; select the color of the background
     call clearScreen            ; set the backround to the selected color
 
     ; Display the sprite:
-    ;mov si, sprite              ; select the sprite to be displayed
+    mov si, pacmanR             ; select the sprite to be displayed
     mov di, [xPos]              ; set the original coordinate of the sprite
     call drawPacman             ; call the function to display the sprite
 
@@ -40,13 +41,13 @@ section .text
     ; Read keyboard input
     mov ah, 01h                 ; BIOS function to read keyboard input
     int 21h                     ; Call BIOS interrupt
-    cmp al, 77                ; 'd' in ascii is 100
+    cmp al, 77                  ; 'd' in ascii is 100
     je right                    ; If 'd' is pressed, jump to label 'right'
-    cmp al, 75                 ; 'q' in ascii is 113
+    cmp al, 75                  ; 'q' in ascii is 113
     je left                     ; If 'q' is pressed, jump to label 'left'
-    cmp al, 72                ; 'z' in ascii is 122
+    cmp al, 72                  ; 'z' in ascii is 122
     je up                       ; If 'z' is pressed, jump to label 'up'
-    cmp al, 80                 ; 's' in ascii is 115
+    cmp al, 80                  ; 's' in ascii is 115
     je down                     ; If 's' is pressed, jump to label 'down'
 
     ; Exit the program if the escape key is pressed
