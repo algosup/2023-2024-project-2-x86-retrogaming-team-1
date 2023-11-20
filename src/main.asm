@@ -1,18 +1,19 @@
 ; TODO:
-; implement up and down procedure
-; loop left until we detect a keypress then act i.e. go left for 'q' up for 'z' or the main menue for 'esc'
+; make up and down procedures works
+; loop left until we detect a keypress then act i.e. go left for 'q' up for 'z' or the main menu for 'esc'
 ; do the same for the other direction
 
-org 100h
+org 100h    
 
 section .data
 
-    xPos dw 0                   ; the starting x coordinate of the character
-    yPos dw 0                   ; the starting y coordinate of the character      
+    xPos dw 0                   ; the starting x coordinate of the sprite
+    yPos dw 0                   ; the starting y coordinate of the sprite     
 
-    velocity dw 1               ; the speed of the character
-       
-    spriteW dw 8                ; the width of the sprite
+    yVelocity dw 320            ; to go from one line to another
+    xVelocity dw 1              ; horizontal speed
+
+    ;sprite db '@'               ; place holder for the sprite
 
 section .text
 
@@ -29,25 +30,25 @@ section .text
     call clearScreen            ; set the backround to the selected color
 
     ; Display the sprite:
-    ;mov si, pacman             ; select the sprite to be displayed
-    mov di, [xPos]              ; set the original coordinate of the character
-    call drawPacman             ; call the function to display the character
+    ;mov si, sprite              ; select the sprite to be displayed
+    mov di, [xPos]              ; set the original coordinate of the sprite
+    call drawPacman             ; call the function to display the sprite
 
     ; This loop is to slow down the animation
-    mov cx, 20000               ; 20000 is the time we wait before moving the sprite
+    mov cx, 50000               ; 20000 is the time we wait before moving the sprite
     waitloop:                   ; cx is a loop register
     loop waitloop               ; once count = 0 exit the loop
 
     ; Read keyboard input
     mov ah, 01h                 ; BIOS function to read keyboard input
     int 21h                     ; Call BIOS interrupt
-    cmp al, 100                 ; 'd' in ascii is 100
+    cmp al, 77                ; 'd' in ascii is 100
     je right                    ; If 'd' is pressed, jump to label 'right'
-    cmp al, 113                 ; 'q' in ascii is 113
+    cmp al, 75                 ; 'q' in ascii is 113
     je left                     ; If 'q' is pressed, jump to label 'left'
-    cmp al, 122                 ; 'z' in ascii is 122
+    cmp al, 72                ; 'z' in ascii is 122
     je up                       ; If 'z' is pressed, jump to label 'up'
-    cmp al, 115                 ; 's' in ascii is 115
+    cmp al, 80                 ; 's' in ascii is 115
     je down                     ; If 's' is pressed, jump to label 'down'
 
     ; Exit the program if the escape key is pressed
@@ -89,33 +90,53 @@ section .text
         ret                     ; return to the main loop
 
 right:
-   ; Move the sprite to the right
-   cmp word [velocity], 0      ; check if velocity is positif
-   jl .reverse                  ; if not go to sub procedure .reverse
-   mov bx, [xPos]               ; the position is increased by the speed of the character (here 1)
-   add bx, [velocity]
-   mov [xPos], bx               ; update the new position and speed of the character
-   jmp mainLoop                 ; return to the main loop
-   .reverse:
-        neg word [velocity]    ; reverse the value of velocity to 1
+    ; Move the sprite to the right
+    cmp word [xVelocity], 0     ; check if velocity is positif
+    jl .reverse                 ; if not go to sub procedure .reverse
+    mov bx, [xPos]              ; the position is increased by the speed of the character (here 1)
+    add bx, [xVelocity]
+    mov [xPos], bx              ; update the new position and speed of the character
+    jmp mainLoop                ; return to the main loop
+    .reverse:
+        neg word [xVelocity]    ; reverse the value of velocity to 1
         jmp right               ; return to the procedure right
 
 
-left:
-   ; Move the sprite to the right
-   cmp word [velocity], 0      ; check if velocity is negatif
-   jg .reverse                  ; if not go to sub procedure .reverse
-   mov bx, [xPos]               ; the position is increased by the speed of the character (here -1)
-   add bx, [velocity]
-   mov [xPos], bx               ; update the new position and speed of the character
-   jmp mainLoop                 ; return to the main loop
-   .reverse:
-        neg word [velocity]    ; reverse the value of velocity to -1
+    left:
+    ; Move the sprite to the left
+    cmp word [xVelocity], 0     ; check if velocity is negatif
+    jg .reverse                 ; if not go to sub procedure .reverse
+    mov bx, [xPos]              ; the position is increased by the speed of the character (here -1)
+    add bx, [xVelocity]
+    mov [xPos], bx              ; update the new position and speed of the character
+    jmp mainLoop                ; return to the main loop
+    .reverse:
+        neg word [xVelocity]    ; reverse the value of velocity to -1
         jmp left                ; return to the procedure left 
 
     up:
+    ; Move the sprite upward
+    cmp word [yVelocity], 0     ; check the value of velocity
+    jg .reverse                 ; if the value is positive go to sub procedure .reverse
+    mov bx, [yPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
+    add bx, [yVelocity]
+    mov [yPos], bx              ; update the position and speed of the sprite
+    jmp mainLoop                ; return to the main loop
+    .reverse:
+        neg word [yVelocity]    ; negate the value of velocity to -320
+        jmp up                  ; return to the procedure up
 
     down:
+    ; Move the sprite down
+    cmp word [yVelocity], 0     ; check the value of velocity
+    jl .reverse                 ; if the value is negative go to sub procedure .reverse
+    mov bx, [yPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
+    add bx, [yVelocity]
+    mov [yPos], bx              ; update the position and speed of the sprite 
+    jmp mainLoop                ; return to the main loop
+    .reverse:
+        neg word [yVelocity]    ; negate the value of velocity to +320
+        jmp down                ; return to the procedure down
 
     exit:                       ; If escape key is pressed, jump to label 'exit'
     mov ah, 4ch                 ; DOS function to exit program
