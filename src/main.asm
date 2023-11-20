@@ -1,5 +1,4 @@
 ; TODO:
-; make up and down procedures works
 ; loop left until we detect a keypress then act i.e. go left for 'q' up for 'z' or the main menu for 'esc'
 ; do the same for the other direction
 
@@ -8,7 +7,6 @@ org 100h
 section .data
 
     xPos dw 0                   ; the starting x coordinate of the sprite
-    yPos dw 0                   ; the starting y coordinate of the sprite     
 
     yVelocity dw 320            ; to go from one line to another
     xVelocity dw 1              ; horizontal speed
@@ -118,9 +116,9 @@ right:
     ; Move the sprite upward
     cmp word [yVelocity], 0     ; check the value of velocity
     jg .reverse                 ; if the value is positive go to sub procedure .reverse
-    mov bx, [yPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
+    mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
     add bx, [yVelocity]
-    mov [yPos], bx              ; update the position and speed of the sprite
+    mov [xPos], bx              ; update the position and speed of the sprite
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to -320
@@ -130,9 +128,9 @@ right:
     ; Move the sprite down
     cmp word [yVelocity], 0     ; check the value of velocity
     jl .reverse                 ; if the value is negative go to sub procedure .reverse
-    mov bx, [yPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
+    mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
     add bx, [yVelocity]
-    mov [yPos], bx              ; update the position and speed of the sprite 
+    mov [xPos], bx              ; update the position and speed of the sprite 
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to +320
