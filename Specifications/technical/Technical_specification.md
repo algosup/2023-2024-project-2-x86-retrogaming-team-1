@@ -287,7 +287,9 @@ The compilation process for Pacman is carefully orchestrated to leverage the cap
 ##### Compilation Process Diagram
 <img src="../img/diagramCompilationProcess.png" alt="diagram" width="125"/>
 
-#### 
+#### NASM version
+ver 2.16.01 (2021-03-22), is the lastest stable version of NASM.
+This version will be used due to long term supported.
 
 
 
