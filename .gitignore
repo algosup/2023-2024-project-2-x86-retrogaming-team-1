@@ -11,6 +11,7 @@
 *.lo
 *.slo
 *.lai
+!bin/
 
 # Shared objects (inc. Windows DLLs)
 *.dll
