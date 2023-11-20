@@ -241,6 +241,16 @@ The Intel 8086 architecture supports memory management, allowing the CPU to mana
 ![CPU Architecture Diagram](../img/8086cpu_diagram.jpg)
 
 #### Video 
+##### Graphics Rendering
+The Pacman game will utilize the **[VGA](https://en.wikipedia.org/wiki/Video_Graphics_Array)** (Video Graphics Array) standard for graphics rendering. The VGA standard supports a resolution of 640x480 pixels with 16 colors. The game will be designed to render graphics within these constraints, providing a visually engaging experience while maintaining compatibility with the 16-bit CPU architecture.
+
+##### Colors Palette
+![VGA Color Palette](../img/colorsPalette.png)
+
+##### Graphics Rendering Diagram
+![Graphics Rendering Diagram](../img/rendering_diagram.jpeg)
+
+
 
 
 
@@ -251,10 +261,11 @@ The Intel 8086 architecture supports memory management, allowing the CPU to mana
 
 The compilation process is a crucial step in transforming the high-level source code of the Pacman game into executable machine code that can run on the Intel 8086 CPU. The process involves several stages, each contributing to the creation of an efficient and functional executable.
 
-Source Code: The development of Pacman begins with the creation of high-level source code, typically written in a programming language like Assembly language or a higher-level language compatible with the Intel 8086 architecture.
+##### Source Code
+The source code is written in NASM assembly language, a low-level programming language that is compatible with the Intel 8086 CPU architecture. The source code is organized into modules, each handling a specific aspect of the game. The modules are compiled separately and linked together to create the final executable.
 
 ##### Preprocessing
-In this initial stage, a preprocessor may handle tasks such as file inclusion, macro expansion, and conditional compilation. This ensures that the source code is well-prepared for subsequent stages of compilation.
+The preprocessor performs text substitution and macro expansion, preparing the source code for compilation. It removes comments, expands macros, and includes header files, ensuring that the source code is ready for compilation.
 
 ##### Compilation
 The compiler takes the preprocessed source code and translates it into assembly language or intermediate code. For Pacman, an assembly language compatible with the Intel 8086 CPU architecture is often chosen to maximize control over low-level details.
@@ -272,6 +283,13 @@ The loader loads the executable file into memory, preparing it for execution on 
 Finally, the Pacman game is ready to run on the Intel 8086 CPU. The CPU fetches instructions from memory, executes them, and interacts with other hardware components to provide an engaging gaming experience.
 
 The compilation process for Pacman is carefully orchestrated to leverage the capabilities of the Intel 8086 architecture, translating high-level concepts into machine code that efficiently utilizes the CPU's registers and instructions. This well-organized process is fundamental to the successful execution of the game on the target hardware.
+
+##### Compilation Process Diagram
+<img src="../img/diagramCompilationProcess.png" alt="diagram" width="125"/>
+
+#### 
+
+
 
 ###  Out of Scope
 
@@ -298,13 +316,13 @@ Implement a system for tracking high scores and achievements, adding a competiti
 
 
 ### Assumptions
-#####Emulator Compatibility
+##### Emulator Compatibility
 The game assumes that players will use the DOSBox emulator for running the Pac-Man game on both Windows and MacOS.
 
-#####Copyright Compliance
+##### Copyright Compliance
 It is assumed that the development team will adhere to copyright regulations and that the project is solely for educational purposes, without commercial intent.
 
-#####Stable Development Environment
+##### Stable Development Environment
 The development team assumes a stable and well-configured development environment with the necessary tools and libraries readily available.
 
 ##### No External Dependencies
