@@ -74,8 +74,6 @@ _ReSharper*/
 .project
 .settings/
 build/
-!/bin/.dummy
-/bin/.com
 
 # CMake
 CMakeCache.txt
