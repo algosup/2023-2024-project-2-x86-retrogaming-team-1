@@ -205,18 +205,83 @@ Alexis Lasselin
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
-| 1 half-day | 1 half-day | 24/11/2023 |
+| 1 half-day | 1 half-day | 17/11/2023 |
 
 ### What is planned for the next week
 
 - Finish the technical specifications
 - Conclude the test plan
-- Continue the PACMAN game by adding the following element:
-  - fix left procedure, look into clearScreen and drawPacman
-  - implement up and down procedure
-  - finish commenting clearScreen and drawPacman
-  - create a bin folder
-  - create a bash file to put the .com file into
-  - create a .cmd file to launch DosBox with the good config + mount
+- Continue the PACMAN game
 - Update all the management documents
 - Search ways to implement music in the game
+
+---
+
+## Week 3 - 20/11/2023 - 24/11/2023
+
+### Technical specifications
+
+The technical specifications are completed and reviewed. Ready to meet the deadline.
+
+Done
+
+Salaheddine Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 3 half-days | 3 half-days | 27/11/2023 |
+
+### QA's review
+
+The QA reviewed the technical specifications.
+
+Done
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 27/11/2023 |
+
+### Test plan
+
+Victor nearly completed the test cases but completed the test plan.
+
+WIP
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 half-days | 2 half-days | 08/12/2023 |
+
+### PACMAN
+
+This week, our softwares engineers worked on the PACMAN game. They implemented the controls and the different sprites.
+
+WIP
+
+Jason Grosso & Abderrazaq Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 3 half-days | 3 half-days | 11/12/2023 |
+
+### Project follow-up
+
+The project follow-up is updated.
+
+Done
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 24/11/2023 |
+
+### What is planned for the next week
+
+- Merge the technical specifications to the main branch
+- Create the map for the PACMAN game
+- Add the collision against the borders and the ghosts
+- Update all the management documents
