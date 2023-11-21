@@ -2,6 +2,8 @@
 ; connect each direction to it's sprite
 ; start of a map
 ; collisions
+; fix color of the clearScreen;
+; fix character printing
 
 %include "bitmaps.asm"          ; include the file with the sprites
 
