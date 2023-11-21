@@ -133,33 +133,7 @@ pacman/
 |-- README.md
 |-- LICENSE
 ```             
-#### Source Code Modules
-##### main.asm
-Entry point of the game.
-Initializes game components and starts the game loop.
-##### pacman.asm
-Manages Pac-Man's movement, collision detection, and scoring.
-##### ghosts.asm
-Implements the behavior and movement of ghosts.
-Ghost AI and collision detection with Pac-Man.
-##### display.asm
-Handles rendering of the game screen.
-Displays maze, Pac-Man, ghosts, and game UI.
-##### input.asm
-Manages user input using arrow keys.
-Handles keyboard events for controlling Pac-Man.
-##### sound.asm
-Integrates sound effects and music into the game.
-Plays sounds for eating pac-dot, pac-gum, and other in-game events.
-### Game Architecture
-##### Game Loop
-The game will follow a typical game loop structure.
-Input processing, game logic, rendering, and sound playback will be sequential within the loop.
-##### Maze Generation
-The maze will be represented using a 2D array.
-Maze data will be loaded from the **maze.bmp** file.
-##### Character Animation
-Pac-Man and ghosts will have simple **bitmaps** character animations for movement.
+
 
 ### Implementation Details
 #### Pac-Man Movement
@@ -287,13 +261,83 @@ The compilation process for Pacman is carefully orchestrated to leverage the cap
 ##### Compilation Process Diagram
 <img src="../img/diagramCompilationProcess.png" alt="diagram" width="125"/>
 
+#### Source Code Modules
+##### main.asm
+Entry point of the game.
+Initializes game components and starts the game loop.
+##### pacman.asm
+Manages Pac-Man's movement, collision detection, and scoring.
+##### ghosts.asm
+Implements the behavior and movement of ghosts.
+Ghost AI and collision detection with Pac-Man.
+##### display.asm
+Handles rendering of the game screen.
+Displays maze, Pac-Man, ghosts, and game UI.
+##### input.asm
+Manages user input using arrow keys.
+Handles keyboard events for controlling Pac-Man.
+##### sound.asm
+Integrates sound effects and music into the game.
+Plays sounds for eating pac-dot, pac-gum, and other in-game events.
+#### Game Architecture
+##### Game Loop
+The game will follow a typical game loop structure.
+Input processing, game logic, rendering, and sound playback will be sequential within the loop.
+##### Maze Generation
+The maze will be represented using a 2D array.
+Maze data will be loaded from the **maze.bmp** file.
+##### Character Animation
+Pac-Man and ghosts will have simple **bitmaps** character animations for movement.
+
+
+
+
+
+
+### Software requirements
+
 #### NASM version
 ver 2.16.01 (2021-03-22), is the lastest stable version of NASM.
-This version will be used due to long term supported.
+This version will be used due to long term support.
+
+#### NASM installation
+##### Windows
+Latest stable version of [NASM](https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/win64/) for Windows 
+
+##### MacOS
+Latest stable version of [NASM](https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/macosx/) for MacOS
+
+
+#### NASM setup
+##### Windows
+After installing NASM, run the **nasmSetup.cmd** script to add NASM on the Pacman folder on Windows.
+
+
+##### MacOS
+After installing NASM, run the **nasmSetup.sh** script to add NASM on the Pacman folder on MacOS.
+
+#### Compilation
+##### Windows
+Run the **buildPacman.cmd** script to compile the Pacman game on Windows.
+
+##### MacOS
+Run the **buildPacman.sh** script to compile the Pacman game on MacOS.
+
+#### Execution
+##### Windows
+Run the **runDOSbox.cmd** script to run the Pacman game on Windows.
+
+##### MacOS
+Run the **runDOSbox.sh** script to run the Pacman game on MacOS.
+
+
+
 
 
 
 ###  Out of Scope
+
+
 
 
 
@@ -336,6 +380,13 @@ To achieve the development of the Pacman game in x86 assembly language for DOS, 
 
 ### Suggested or Proposed Solution / Design
 
+#### Design Considerations
+To ensure a good working game, the game will be divided into several modules, each handling a specific aspect of the game. The modules will be compiled and linked together to create the final executable.
+NASM has the avantage to have more recent feature than other assemblers, for the conception of the game. The game will be written in NASM assembly language, a low-level programming language that is compatible with the Intel 8086 CPU architecture.
+Script will be created to automate the compilation process and the execution of the game.
+
+
+
 
 
 #### Data Model / Schema Changes
@@ -353,11 +404,6 @@ The presentation layer will involve rendering graphics and text within the DOS e
 
 
 
-#### Other questions to answer
-How will the game handle user input for character movement?
-Are there any specific audio considerations for sound effects or background music?
-What is the strategy for handling different levels and increasing game difficulty?
-
 
 
 ### Testing
@@ -369,12 +415,7 @@ Test the integration of different modules to ensure seamless interaction.
 #### User Acceptance Testing (UAT)
 Conduct UAT to validate that the game meets the functional requirements.
 
-### Monitoring and Alerting Plan
 
-
-
-
-### Release / Roll-out and Deployment Plan
 
 ### Alternate Solutions / Designs
 Exploration of alternate solutions and designs will be conducted to ensure flexibility and adaptability. This may involve considering different assembly language approaches or alternative methods for graphics rendering within the DOS environment.
@@ -382,9 +423,6 @@ Exploration of alternate solutions and designs will be conducted to ensure flexi
 
 ## Further Considerations
 
-### Third-party services and platforms considerations
-
-### Security considerations
 
 ### Risks
 Identification and mitigation strategies for potential risks, such as compatibility issues with different DOS configurations, performance bottlenecks, or unforeseen challenges during development, will be addressed to ensure a smooth and successful project execution.
