@@ -1,8 +1,9 @@
-; TODO:
-; loop left until we detect a keypress then act i.e. go left for 'q' up for 'z' or the main menu for 'esc'
-; do the same for the other direction
+; TODO
+; connect each direction to it's sprite
+; start of a map
+; collisions
 
-%include "bitmaps.asm"
+%include "bitmaps.asm"          ; include the file with the sprites
 
 org 100h    
 
@@ -49,11 +50,11 @@ section .text
     je up                       ; If 'z' is pressed, jump to label 'up'
     cmp al, 80                  ; 's' in ascii is 115
     je down                     ; If 's' is pressed, jump to label 'down'
-
-    ; Exit the program if the escape key is pressed
     cmp al, 27                  ; ASCII value of escape key
     je exit                     ; go to the exit function if the comparison return an equal
-    jmp mainLoop                ; else return to the main loop
+    
+    mov bl, 0xFF                ; move into bl the color we want to clear with
+    call clearGhost             ; call clearGhost
 
     jmp mainLoop
 
@@ -65,31 +66,49 @@ section .text
 
     ; procedures:
 
-    ; need to set the color of filling in al
     clearScreen:
-    mov ax, 0xA000              ; set the video memory segment to 0xA000
-    mov es, ax                  
-    mov di, 0                   ; set the destination index to 0 (starting position in video memory)
-    mov cx, 200*320             ; set the count register to the total number of pixel on the screen
-    rep stosb                   ; repeat the store byte operation (set byte to a specific color)
-    ret                         ; return to the main function
+    ; Clear the screen
+    mov ah, 06h                 ; BIOS function to clear screen
+    mov al, 0                   ; Clear entire screen
+    mov bh, 07h                 ; Attribute
+    mov cx, 0                   ; Upper left corner
+    mov dx, 184fh               ; Lower right corner  
+    int 10h                     ; Call BIOS interrupt
+
+    clearGhost:
+    mov di, [xPos]              ; input the position of the sprite
+    push bx                     
+    mov bx, 0xA000              ; set the video memory segment to 0xA000
+    mov es, bx
+    pop bx
+    mov dx, 16                   ; set the destination index to 8
+    .eachLine:      
+        mov cx, 16              ; set the count register to 8(number of pixel to copy per line)
+        rep stosb               ; repeat the move byte action (copying pixel)
+        add di, 320-16          ; move the destination index to the next line (320 pixel per line)
+        dec dx                  ; decrement the loop counter (dx)
+        jnz .eachLine           ; jump to .eachline if not zero
+    ret                         ; return to the caller
+
 
     ; si must have the sprite address
     ; di must have the target address
     drawPacman:
-    mov ax, 0xA000              ; memory location of the video mode
-    mov es, ax
-    mov dx, 8                   ; set the destination index to 8 (starting position in video memory)
+    mov bx, 0xA000              ; memory location of the video mode
+    mov es, bx
+    mov dx, 16                   ; set the destination index to 8 (starting position in video memory)
     .eachLine:                  ; loop till each line of the sprite is printed
-        mov cx, 8               ; setthe count register to 8 (number of pixel to copy per line)
+        mov cx, 16               ; set the count register to 8 (number of pixel to copy per line)
         rep movsb               ; repeat the move byte action (copying pixel)
-        add di, 320-8           ; move the destination index to the next line (320 pixel per line)
+        add di, 320-16           ; move the destination index to the next line (320 pixel per line)
         dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
         jnz .eachLine
         ret                     ; return to the main loop
 
-right:
+    right:
     ; Move the sprite to the right
+    mov ax, 0C01h               ; reset the keyboard buffer
+    int 21h
     cmp word [xVelocity], 0     ; check if velocity is positif
     jl .reverse                 ; if not go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the character (here 1)
@@ -103,6 +122,8 @@ right:
 
     left:
     ; Move the sprite to the left
+    mov ax, 0C01h               ; reset the keyboard buffer
+    int 21h
     cmp word [xVelocity], 0     ; check if velocity is negatif
     jg .reverse                 ; if not go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the character (here -1)
@@ -115,6 +136,8 @@ right:
 
     up:
     ; Move the sprite upward
+    mov ax, 0C01h               ;reset the keyboard buffer
+    int 21h
     cmp word [yVelocity], 0     ; check the value of velocity
     jg .reverse                 ; if the value is positive go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
@@ -127,11 +150,13 @@ right:
 
     down:
     ; Move the sprite down
+    mov ax, 0C01h               ; reset the keyboard buffer
+    int 21h
     cmp word [yVelocity], 0     ; check the value of velocity
     jl .reverse                 ; if the value is negative go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
     add bx, [yVelocity]
-    mov [xPos], bx              ; update the position and speed of the sprite 
+    mov [xPos], bx              ; update the position and speed of the sprite
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to +320
