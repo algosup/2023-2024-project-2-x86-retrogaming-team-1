@@ -7,7 +7,7 @@
 | Author(s) |[Salaheddine NAMIR](https://github.com/T3rryc)|
 | Reviewer(s) |...|
 | Created on |11/20/2023|
-| Last updated |11/20/2023|
+| Last updated |11/26/2023|
 
 
 
@@ -23,11 +23,15 @@ The Pacman game is a classic arcade game where the player controls a character t
 
 | Term               | Description                                                                                                                                                                       |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **[x86 Assembly](https://en.wikipedia.org/wiki/X86_assembly_language)** | A low-level programming language.                                                                                                                                                   |
+| **[x86 Assembly](https://en.wikipedia.org/wiki/X86_assembly_language)** | A low-level programming language specific to the x86 architecture, It provides a human-readable representation of machine code instructions that can be executed by x86-compatible CPUs, such as those manufactured by Intel and AMD. Assembly language involves direct manipulation of registers, memory, and CPU instructions, offering fine-grained control over hardware.                                                                                                                                                  |
 | **[DOSBox](https://www.dosbox.com/)**                           | An x86 emulator with DOS.                                                                                                                                                           |
 | **[NASM](https://www.nasm.us/) (Netwide Assembler)**            | NASM is an assembly language compiler for the x86 architecture. It translates assembly language source code into machine code, which can be executed by the computer's CPU. NASM is widely used for writing low-level system software and is known for its portability across various operating systems. It supports Intel-style syntax and is an essential tool in the development of x86 assembly programs. |
 |**[Registers](https://en.wikipedia.org/wiki/Processor_register)**|Registers are small, fast storage locations within the CPU that hold data temporarily during program execution. These are used to store operands for arithmetic and logic operations, addresses for memory access, and intermediate results. Registers play a critical role in the CPU's ability to perform operations efficiently.|
 |**[CPU](https://en.wikipedia.org/wiki/Central_processing_unit)**|The Central Processing Unit, often referred to as the CPU, is the primary component of a computer responsible for executing instructions of a computer program. It performs arithmetic and logic operations, manages data movement between different storage locations, and controls the overall execution of instructions. The CPU is often considered the "brain" of a computer.|
+|**[Interrupts](https://en.wikipedia.org/wiki/Interrupt)**|An interrupt is a signal that interrupts the normal flow of program execution. Interrupts are used for handling events such as user input, hardware errors, and other asynchronous events. The CPU responds to interrupts by suspending the current program and executing an interrupt handler. The interrupt handler is a special routine that handles the interrupt and resumes the execution of the interrupted program.|
+|**[I/O](https://en.wikipedia.org/wiki/Input/output)**|Input/Output (I/O) operations involve transferring data between the CPU and external devices such as keyboards, displays, and storage devices. I/O operations are performed using special instructions that transfer data between the CPU and the I/O device. The I/O device is connected to the CPU via an I/O port, which is a special addressable location in memory.|
+|**[Memory Management](https://en.wikipedia.org/wiki/Memory_management)**|Memory management is the process of managing the memory address space. The CPU can allocate and deallocate memory, ensuring that the memory address space is used efficiently. Memory management is essential for the proper functioning of the Pacman game, as it allows the CPU to allocate memory for the game's code and data.|
+
 
 ### Functional and Technical Requirements
 
@@ -72,7 +76,7 @@ Assembly language x86 will be used for the implementation of the Pac-Man game.
 #### Emulator
 **[DOSBox](https://www.dosbox.com/)** will serve as the emulator for testing and running the developed game.
 #### Tools and Libraries
-#####IDE
+##### IDE
 **[Visual Studio Code](https://code.visualstudio.com/)**  will be the primary code editor for coding.
 ##### Build Tools
 **[NASM](https://www.nasm.us/)** will be used for assembling the x86 assembly code.
@@ -290,6 +294,111 @@ Maze data will be loaded from the **maze.bmp** file.
 Pac-Man and ghosts will have simple **bitmaps** character animations for movement.
 
 
+#### Ghost AI
+Ghost AI will be implemented two kind of pattern, Chase mode and Scatter Mode.
+##### Chase Mode
+During this phase, ghosts have a path finder for catching pacman depend of the pacman x and y position and which directition he goes up, down, right or left as an input of the player does.
+Each ghost will have a different path finder for chasing pacman.
+##### Scatter Mode
+During this phase, ghosts have a path finder for going to a specific corner of the maze.
+#####Frightened mode
+When pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman.
+
+##### Mode
+Exept the Frightened one, the mode will be implemented with a timer, when the timer is over, the mode will change from chase to scatter and vice versa.
+**1st level timer** will be set as follow:
+|Mode|Timer|Wave |
+|----|-----|-----|
+|Scatter|7 seconds|1|
+|Chase|20 seconds|1|
+|Scatter|7 seconds|2|
+|Chase|20 seconds| 2|
+|Scatter|5 seconds|3|
+|Chase|20 seconds|3|
+|Scatter|5 seconds|4|
+|Chase|permanently|4|
+
+The timer will be implemented with the **[RTC](https://en.wikipedia.org/wiki/Real-time_clock)** (Real Time Clock) of the computer. The RTC is a battery-powered clock that keeps track of the current time and date. It is often used for timekeeping in computers and other electronic devices. The RTC will be used to implement the timer for the ghost AI.
+At each second, the RTC will send an interrupt to the CPU, which will be handled by the interrupt handler. The interrupt handler will update the timer and check if the timer has expired. If the timer has expired, the interrupt handler will change the mode of the ghost AI.
+The timer is reset at each level, pacman death and game over.
+The timer is froezen when the game is paused, when pacman eat pullet or ghost are on frightened mode.
+Each level will have a different timer, the timer will be shorter at each level, however the number of waves stay the same.
+##### Ghost Behavior
+Each ghost will have a different path finder for chasing pacman.
+The path finder will be implemented with the **[A* algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** (A Star algorithm), a graph traversal and path search algorithm that is often used in artificial intelligence. The A* algorithm will be used to implement the path finder for the ghost AI.
+
+##### Blinky
+Blinky is the red ghost, he will have a path finder for chasing pacman behind him. According the number of pullet eaten, this speed is slightly increase.
+In scatter mode, he will go to the top right corner of the maze.
+![Blinky](..\img\blinky-targeting.png)
+##### Pinky
+Pinky is the pink ghost, he will have a path finder for ambushing pacman in front of him.
+In scatter mode, he will go to the top left corner of the maze.
+![Pinky](..\img\pinky-targeting.png)
+##### Inky
+Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according the Pacman and Blinky position. He will try to ambush pacman in front of him and go to the way where Blinky goes.
+In scatter mode, he will go to the top right corner of the maze.
+![Inky](..\img\inky-targeting.png)
+##### Clyde
+Clyde is the orange ghost, he will have a path finder for chasing pacman behind him. However, when he is close to pacman, he will go to the bottom left corner of the maze (scatter mode).
+![Clyde](..\img\clyde-targeting2.png)
+![Clyde](..\img\clyde-targeting.png)
+
+
+
+#### Pacman movement
+When the player press an arrow key, the pacman will move in the direction of the arrow key, however pacman stay on the same way until the player press other key or a wall block this path.
+Pacman is able to move in the 4 directions, up, down, right and left.
+#### Collectible
+
+##### Pullet
+Pullet are the most common collectible in the game,it disposes on all path on the maze and according to number eaten and the level, the speed of the ghost slighly change.Eat all pullet on the maze to complete the level and earn point.
+
+##### Power Pellet
+When pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman. When pacman eat a ghost, the ghost will be sent to the ghost house and pacman will earn points. The timer is frozen when ghost is eaten.
+
+##### Fruit
+Fruit are bonus collectible, they appear on the maze at a specific time, when pacman eat a fruit, he will earn points. The fruit will disappear after a certain time.
+
+
+
+
+
+##### Lives
+Pacman will have 3 lives at the beginning of the game, when he is eaten by a ghost, he will lose a life and respawn at the center of the maze. When pacman lose all his lives, the game is over.
+
+#### User Interface
+
+##### Score Display
+The Score Display is a crucial component of the user interface, providing real-time feedback on the player's performance. It is prominently positioned on the screen, ensuring visibility throughout gameplay. The score is dynamically updated as the player collects points by consuming pellets, eating ghosts, and achieving other in-game milestones. A clear and legible font is employed, and animations may be implemented to enhance the visual appeal when the score increments.
+
+##### Lives Display
+The Lives Display communicates the number of lives remaining to the player. Typically located near the Score Display, it provides a quick reference for the player to gauge their progress and resilience. Each decrement in lives is accompanied by a brief animation or sound effect to draw attention to the change. When a life is lost, the game briefly pauses to allow the player to comprehend the situation before the next life begins.
+##### Game Screens
+The Game Screens encompass various states of the game, offering a seamless transition between different phases such as start screens, level transitions, and game-over screens. Each screen is meticulously designed with relevant graphics, ensuring a visually engaging experience. Transitions between screens are accompanied by smooth animations or effects, maintaining player immersion.
+
+Start Screen: Welcomes the player and provides options to start a new game, access settings, or view high scores. This screen sets the tone for the gaming experience.
+
+Pause Screen: Accessible during gameplay, the Pause Screen allows players to temporarily halt the game, adjust settings, or quit. It includes options to resume play or return to the main menu.
+
+Level Transition Screen: Displays pertinent information such as the current level, score, and any additional challenges or objectives. It smoothly transitions between levels, maintaining the game's flow.
+
+Game-Over Screen: Appears when the player exhausts all lives. It presents the final score, allows for a new game initiation, and may showcase high scores for added motivation.
+#### Sound Integration
+
+
+##### Sound Effects
+Sound Effects play a pivotal role in enhancing the gaming experience by providing auditory feedback for various in-game events. These effects include:
+
+Pac-Man Movement: Audible cues accompany Pac-Man's movement, indicating direction changes and interactions with the environment.
+
+Ghost Movement: Each ghost has a distinctive sound, contributing to the immersive experience. Ghost sounds intensify during moments of pursuit or when transitioning to the frightened state.
+
+Collectibles: Consuming pellets, power pellets, and fruits trigger unique sound effects, providing satisfying feedback for successful actions.
+
+Collision Events: When Pac-Man collides with a ghost or an obstacle, a distinct sound is played to signify the event.
+##### Background Music
+Background Music sets the overall tone of the game, creating an immersive atmosphere. The soundtrack dynamically adapts to different game states, intensifying during moments of tension and becoming more subdued during less critical phases. Transitions between levels or during significant events are accompanied by seamless shifts in the musical score.
 
 
 
@@ -437,5 +546,3 @@ Conduct thorough testing and bug fixing.
 #####  Milestone 4 (12/21/2023)
 Finalize documentation and prepare for project delivery.
 
-### Conclusion
-The technical specification provides a detailed roadmap for the implementation of the Pac-Man game, ensuring adherence to the functional requirements while maintaining the retro gaming experience. Developers, testers, and other stakeholders should refer to this document throughout the development process for guidance.
