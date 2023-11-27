@@ -111,7 +111,7 @@ Sound effects and background music will be implemented using **.wav** files.
 ## Code Organization
 ### Directory Structure
 ```
-pacman/
+Pacman/
 |-- bin/
 |-- build/
 |   |-- buildPacman.cmd
@@ -125,7 +125,7 @@ pacman/
 |   |-- Windows/   
 |-- srcs/
 |   |-- main.asm
-|   |-- pacman.asm
+|   |-- Pacman.asm
 |   |-- ghosts.asm
 |   |-- display.asm
 |   |-- input.asm
@@ -134,8 +134,8 @@ pacman/
 |   |-- maze/
 |   |    |-- maze.bmp
 |   |-- sprites/
-|   |    |-- pacman/
-|   |    |       |-- (pacman sprites in .bmp format)
+|   |    |-- Pacman/
+|   |    |       |-- (Pacman sprites in .bmp format)
 |   |    |-- ghosts/
 |   |    |       |-- (ghost sprites in .bmp format) 
 |   |    |-- collectibles/
@@ -291,7 +291,7 @@ The compilation process for Pacman is carefully orchestrated to leverage the cap
 #### main.asm
 Entry point of the game.
 Initializes game components and starts the game loop.
-#### pacman.asm
+#### Pacman.asm
 Manages Pac-Man's movement, collision detection, and scoring.
 #### ghosts.asm
 Implements the behavior and movement of ghosts.
@@ -319,12 +319,12 @@ Pac-Man and ghosts will have simple **bitmaps** character animations for movemen
 ### Ghost AI
 Ghost AI will be implemented two kind of pattern, Chase mode and Scatter Mode.
 #### Chase Mode
-During this phase, ghosts have a path finder for catching pacman depend of the pacman x and y position and which directition he goes up, down, right or left as an input of the player does.
-Each ghost will have a different path finder for chasing pacman.
+During this phase, ghosts have a path finder for catching Pacman depend of the Pacman x and y position and which directition he goes up, down, right or left as an input of the player does.
+Each ghost will have a different path finder for chasing Pacman.
 #### Scatter Mode
 During this phase, ghosts have a path finder for going to a specific corner of the maze.
 #### Frightened mode
-When pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman.
+When Pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from Pacman.
 
 #### Mode
 Exept the Frightened one, the mode will be implemented with a timer, when the timer is over, the mode will change from chase to scatter and vice versa.
@@ -342,34 +342,34 @@ Exept the Frightened one, the mode will be implemented with a timer, when the ti
 
 The timer will be implemented with the **[RTC](https://en.wikipedia.org/wiki/Real-time_clock)** (Real Time Clock) of the computer. The RTC is a battery-powered clock that keeps track of the current time and date. It is often used for timekeeping in computers and other electronic devices. The RTC will be used to implement the timer for the ghost AI.
 At each second, the RTC will send an interrupt to the CPU, which will be handled by the interrupt handler. The interrupt handler will update the timer and check if the timer has expired. If the timer has expired, the interrupt handler will change the mode of the ghost AI.
-The timer is reset at each level, pacman death and game over.
-The timer is froezen when the game is paused, when pacman eat pullet or ghost are on frightened mode.
+The timer is reset at each level, Pacman death and game over.
+The timer is froezen when the game is paused, when Pacman eat pullet or ghost are on frightened mode.
 Each level will have a different timer, the timer will be shorter at each level, however the number of waves stay the same.
 #### Ghost Behavior
-Each ghost will have a different path finder for chasing pacman.
+Each ghost will have a different path finder for chasing Pacman.
 The path finder will be implemented with the **[A* algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** (A Star algorithm), a graph traversal and path search algorithm that is often used in artificial intelligence. The A* algorithm will be used to implement the path finder for the ghost AI.
 
 #### Blinky
-Blinky is the red ghost, he will have a path finder for chasing pacman behind him. According the number of pullet eaten, this speed is slightly increase.
+Blinky is the red ghost, he will have a path finder for chasing Pacman behind him. According to the number of pellet eaten, this speed is slightly increased.
 In scatter mode, he will go to the top right corner of the maze.<br>
 ![Blinky](../img/blinky-targeting.png)
 #### Pinky
-Pinky is the pink ghost, he will have a path finder for ambushing pacman in front of him.
+Pinky is the pink ghost, he will have a path finder for ambushing Pacman in front of him.
 In scatter mode, he will go to the top left corner of the maze.<br>
 ![Pinky](../img/pinky-targeting.png)
 #### Inky
-Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according to Pacman and Blinky position. He will try to ambush pacman in front of him and go to the way where Blinky goes.
+Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according to Pacman and Blinky position. He will try to ambush Pacman in front of him and go to the way where Blinky goes.
 In scatter mode, he will go to the top right corner of the maze.<br>
 ![Inky](../img/inky-targeting.png)
 #### Clyde
-Clyde is the orange ghost, he will have a path finder for chasing pacman behind him. However, when he is close to pacman, he will go to the bottom left corner of the maze (scatter mode).<br>
+Clyde is the orange ghost, he will have a path finder for chasing Pacman behind him. However, when he is close to Pacman, he will go to the bottom left corner of the maze (scatter mode).<br>
 ![Clyde](../img/clyde-targeting2.png)<br>
 ![Clyde](../img/clyde-targeting.png)
 
 
 
 ### Pacman movement
-When the player press an arrow key, the pacman will move in the direction of the arrow key, however pacman stay on the same way until the player press other key or a wall block this path.
+When the player press an arrow key, the Pacman will move in the direction of the arrow key, however Pacman stay on the same way until the player press other key or a wall block this path.
 Pacman is able to move in the 4 directions, up, down, right and left.
 #### Collectible
 
@@ -377,17 +377,17 @@ Pacman is able to move in the 4 directions, up, down, right and left.
 Pellet are the most common collectible in the game, it disposes on all path on the maze and according to the number eaten and the level, the speed of the ghosts slightly changes. Eat all pellets on the maze to complete the level and earn points.
 
 ##### Power Pellet
-When Pacman eats a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman. When Pacman eats a ghost, the ghosts will be sent to the ghost house and pacman will earn points. The timer is frozen when a ghost is eaten.
+When Pacman eats a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from Pacman. When Pacman eats a ghost, the ghosts will be sent to the ghost house and Pacman will earn points. The timer is frozen when a ghost is eaten.
 
 #### Fruit
-Fruit are bonus collectible, they appear on the maze at a specific time, when pacman eat a fruit, he will earn points. The fruit will disappear after a certain time.
+Fruit are bonus collectible, they appear on the maze at a specific time, when Pacman eat a fruit, he will earn points. The fruit will disappear after a certain time.
 
 
 
 
 
 #### Lives
-Pacman will have 3 lives at the beginning of the game, when he is eaten by a ghost, he will lose a life and respawn at the center of the maze. When pacman lose all his lives, the game is over.
+Pacman will have 3 lives at the beginning of the game, when he is eaten by a ghost, he will lose a life and respawn at the center of the maze. When Pacman lose all his lives, the game is over.
 
 ### User Interface
 
