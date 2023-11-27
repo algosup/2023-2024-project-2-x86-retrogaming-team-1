@@ -9,6 +9,23 @@
 | Created on |11/20/2023|
 | Last updated |11/27/2023|
 
+# Table of Contents
+1. [Introduction](#introduction)
+2. [Glossary](#glossary)
+3. [Functional and Technical Requirements](#functional-and-technical-requirements)
+4. [Code Organization](#code-organization)
+5. [Hardware architecture](#hardware-architecture)
+6. [Software architecture](#software-architecture)
+7. [Software requirements](#software-requirements)
+8. [Out of Scope](#out-of-scope)
+9. [Future Goals](#future-goals)
+10. [Assumptions](#assumptions)
+11. [Solutions](#solutions)
+12. [Further Considerations](#further-considerations)
+
+
+
+
 
 
 
@@ -21,7 +38,7 @@ The Pacman game is a classic arcade game where the player controls a character t
 
 
 
-### Glossary
+## Glossary
 
 | Term               | Description                                                                                                                                                                       |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -35,38 +52,38 @@ The Pacman game is a classic arcade game where the player controls a character t
 |**[Memory Management](https://en.wikipedia.org/wiki/Memory_management)**|Memory management is the process of managing the memory address space. The CPU can allocate and deallocate memory, ensuring that the memory address space is used efficiently. Memory management is essential for the proper functioning of the Pacman game, as it allows the CPU to allocate memory for the game's code and data.|
 
 
-### Functional and Technical Requirements
+## Functional and Technical Requirements
 
 The development and execution of the Pacman game in x86 assembly language for DOS entail specific technical requirements to ensure compatibility, performance, and adherence to project goals.
 
-#### Platform Compatibility
+### Platform Compatibility
 The primary platform for running the Pacman game is DOSBox. The compiled program should function seamlessly within the DOSBox environment. Compatibility testing will be conducted to ensure optimal performance and user experience.
 
-#### Compilation Process
+### Compilation Process
 The source code for the Pacman game will be written in x86 assembly language. The NASM (Netwide Assembler) will be employed for compiling the source code into executable machine code. The compilation process should generate a .com file that is compatible with the 16-bit architecture.
 
-#### Hardware Specification
+### Hardware Specification
 The Pacman game is designed to run on a 16-bit CPU architecture. Compatibility with hardware configurations featuring a 16-bit CPU is a crucial requirement for the proper execution of the game. The game's performance and functionality will be optimized for this specific hardware specification.
 
-#### Execution Environment
+### Execution Environment
 The compiled Pacman program, in the form of a **.com** file, should be capable of running within the DOSBox environment without encountering compatibility issues. The execution environment will be thoroughly tested to ensure the game behaves as intended and leverages the capabilities of DOSBox effectively.
 
-#### User Interface
+### User Interface
 The user interface elements, including graphics rendering and text display, will be tailored to the limitations and capabilities of the DOS environment. The Pacman game should provide a visually engaging and nostalgic experience while maintaining compatibility with the 16-bit CPU architecture.
 
-#### Input Handling
+### Input Handling
 User input for controlling Pacman's movement will be processed efficiently within the DOS environment. The game should respond accurately to keyboard inputs, facilitating an intuitive and enjoyable gaming experience.
 
-#### Sound Support
+### Sound Support
 Consideration will be given to incorporating sound effects within the limitations of the DOS environment. The game may include basic audio cues for actions such as pellet consumption, ghost encounters, and level completion.
 
-#### Performance Optimization
+### Performance Optimization
 The Pacman game will undergo rigorous testing to identify and address any performance bottlenecks. Optimization strategies will be implemented to ensure smooth gameplay on hardware featuring a 16-bit CPU, providing an enjoyable experience for users running the game on DOSBox.
 
-#### Error Handling
+### Error Handling
 Robust error-handling mechanisms will be integrated to gracefully manage unexpected scenarios, ensuring the game's stability and preventing crashes. Error messages, when necessary, will be informative and user-friendly.
 
-#### Documentation
+### Documentation
 Comprehensive documentation will be provided for the source code, compilation process, and any additional configurations required for running the Pacman game on DOSBox. This documentation will serve as a valuable resource for developers, reviewers, and users.
 
 ### Development Environment
@@ -88,8 +105,8 @@ Assembly language x86 will be used for the implementation of the Pac-Man game.
 Simple graphics will be created using **bitmaps** files for the maze, UI and sprites.
 ##### Sounds
 Sound effects and background music will be implemented using **.wav** files.
-### Code Organization
-#### Directory Structure
+## Code Organization
+### Directory Structure
 ```
 pacman/
 |-- bin/
@@ -158,7 +175,7 @@ Create game screens for start, win, and game-over scenarios.
 Integrate sound effects for in-game events.
 Include background music during gameplay.
 
-### Hardware architecture
+## Hardware architecture
 The Pacman game is intricately designed to leverage the capabilities of the **[Intel 8086 CPU](https://en.wikipedia.org/wiki/Intel_8086)**, featuring a 16-bit architecture that provides a foundation for efficient and responsive gameplay.
 #### CPU 
 ##### Registers
@@ -234,79 +251,79 @@ The Pacman game will utilize the **[VGA](https://en.wikipedia.org/wiki/Video_Gra
 
 
 
-### Software architecture
+## Software architecture
 
 
-#### Compilation process
+####Compilation process
 
 The compilation process is a crucial step in transforming the high-level source code of the Pacman game into executable machine code that can run on the Intel 8086 CPU. The process involves several stages, each contributing to the creation of an efficient and functional executable.
 
-##### Source Code
+#### Source Code
 The source code is written in NASM assembly language, a low-level programming language that is compatible with the Intel 8086 CPU architecture. The source code is organized into modules, each handling a specific aspect of the game. The modules are compiled separately and linked together to create the final executable.
 
-##### Preprocessing
+#### Preprocessing
 The preprocessor performs text substitution and macro expansion, preparing the source code for compilation. It removes comments, expands macros, and includes header files, ensuring that the source code is ready for compilation.
 
-##### Compilation
+#### Compilation
 The compiler takes the preprocessed source code and translates it into assembly language or intermediate code. For Pacman, an assembly language compatible with the Intel 8086 CPU architecture is often chosen to maximize control over low-level details.
 
-##### Assembly
+#### Assembly
 The assembly code generated in the compilation stage is then processed by an assembler. The assembler converts the human-readable assembly code into machine code, consisting of binary instructions that the Intel 8086 CPU can understand.
 
-##### Linking
+#### Linking
 The linker combines the machine code generated for different modules or files, resolving references between them. It creates a single executable file that contains all the necessary code and data for the Pacman game.
 
-##### Loading
+#### Loading
 The loader loads the executable file into memory, preparing it for execution on the Intel 8086 CPU. It manages memory allocation and ensures that the game's code and data are in the correct locations for efficient runtime execution.
 
-##### Execution
+#### Execution
 Finally, the Pacman game is ready to run on the Intel 8086 CPU. The CPU fetches instructions from memory, executes them, and interacts with other hardware components to provide an engaging gaming experience.
 
 The compilation process for Pacman is carefully orchestrated to leverage the capabilities of the Intel 8086 architecture, translating high-level concepts into machine code that efficiently utilizes the CPU's registers and instructions. This well-organized process is fundamental to the successful execution of the game on the target hardware.
 
-##### Compilation Process Diagram
+#### Compilation Process Diagram
 <img src="../img/diagramCompilationProcess.png" alt="diagram" width="125"/>
 
-#### Source Code Modules
-##### main.asm
+### Source Code Modules
+#### main.asm
 Entry point of the game.
 Initializes game components and starts the game loop.
-##### pacman.asm
+#### pacman.asm
 Manages Pac-Man's movement, collision detection, and scoring.
-##### ghosts.asm
+#### ghosts.asm
 Implements the behavior and movement of ghosts.
 Ghost AI and collision detection with Pac-Man.
-##### display.asm
+#### display.asm
 Handles rendering of the game screen.
 Displays maze, Pac-Man, ghosts, and game UI.
-##### input.asm
+#### input.asm
 Manages user input using arrow keys.
 Handles keyboard events for controlling Pac-Man.
-##### sound.asm
+#### sound.asm
 Integrates sound effects and music into the game.
 Plays sounds for eating pac-dot, pac-gum, and other in-game events.
-#### Game Architecture
-##### Game Loop
+### Game Architecture
+#### Game Loop
 The game will follow a typical game loop structure.
 Input processing, game logic, rendering, and sound playback will be sequential within the loop.
-##### Maze Generation
+#### Maze Generation
 The maze will be represented using a 2D array.
 Maze data will be loaded from the **maze.bmp** file.
-##### Character Animation
+#### Character Animation
 Pac-Man and ghosts will have simple **bitmaps** character animations for movement.
 
 
-#### Ghost AI
+### Ghost AI
 Ghost AI will be implemented two kind of pattern, Chase mode and Scatter Mode.
-##### Chase Mode
+#### Chase Mode
 During this phase, ghosts have a path finder for catching pacman depend of the pacman x and y position and which directition he goes up, down, right or left as an input of the player does.
 Each ghost will have a different path finder for chasing pacman.
-##### Scatter Mode
+#### Scatter Mode
 During this phase, ghosts have a path finder for going to a specific corner of the maze.
-#####Frightened mode
+#### Frightened mode
 When pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman.
 
-##### Mode
+#### Mode
 Exept the Frightened one, the mode will be implemented with a timer, when the timer is over, the mode will change from chase to scatter and vice versa.
 **1st level timer** will be set as follow:
 |Mode|Timer|Wave |
@@ -325,58 +342,58 @@ At each second, the RTC will send an interrupt to the CPU, which will be handled
 The timer is reset at each level, pacman death and game over.
 The timer is froezen when the game is paused, when pacman eat pullet or ghost are on frightened mode.
 Each level will have a different timer, the timer will be shorter at each level, however the number of waves stay the same.
-##### Ghost Behavior
+#### Ghost Behavior
 Each ghost will have a different path finder for chasing pacman.
 The path finder will be implemented with the **[A* algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** (A Star algorithm), a graph traversal and path search algorithm that is often used in artificial intelligence. The A* algorithm will be used to implement the path finder for the ghost AI.
 
-##### Blinky
+#### Blinky
 Blinky is the red ghost, he will have a path finder for chasing pacman behind him. According the number of pullet eaten, this speed is slightly increase.
 In scatter mode, he will go to the top right corner of the maze.
-![Blinky](..\img\blinky-targeting.png)
-##### Pinky
+![Blinky](../img\blinky-targeting.png)
+#### Pinky
 Pinky is the pink ghost, he will have a path finder for ambushing pacman in front of him.
 In scatter mode, he will go to the top left corner of the maze.
-![Pinky](..\img\pinky-targeting.png)
-##### Inky
+![Pinky](../img\pinky-targeting.png)
+#### Inky
 Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according to Pacman and Blinky position. He will try to ambush pacman in front of him and go to the way where Blinky goes.
 In scatter mode, he will go to the top right corner of the maze.
-![Inky](..\img\inky-targeting.png)
-##### Clyde
+![Inky](../img\inky-targeting.png)
+#### Clyde
 Clyde is the orange ghost, he will have a path finder for chasing pacman behind him. However, when he is close to pacman, he will go to the bottom left corner of the maze (scatter mode).
-![Clyde](..\img\clyde-targeting2.png)
-![Clyde](..\img\clyde-targeting.png)
+![Clyde](../img\clyde-targeting2.png)
+![Clyde](../img\clyde-targeting.png)
 
 
 
-#### Pacman movement
+### Pacman movement
 When the player press an arrow key, the pacman will move in the direction of the arrow key, however pacman stay on the same way until the player press other key or a wall block this path.
 Pacman is able to move in the 4 directions, up, down, right and left.
 #### Collectible
 
-##### Pullet
+#### Pullet
 Pullet are the most common collectible in the game,it disposes on all path on the maze and according to number eaten and the level, the speed of the ghost slighly change.Eat all pullet on the maze to complete the level and earn point.
 
-##### Power Pellet
+#### Power Pellet
 When pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman. When pacman eat a ghost, the ghost will be sent to the ghost house and pacman will earn points. The timer is frozen when ghost is eaten.
 
-##### Fruit
+#### Fruit
 Fruit are bonus collectible, they appear on the maze at a specific time, when pacman eat a fruit, he will earn points. The fruit will disappear after a certain time.
 
 
 
 
 
-##### Lives
+#### Lives
 Pacman will have 3 lives at the beginning of the game, when he is eaten by a ghost, he will lose a life and respawn at the center of the maze. When pacman lose all his lives, the game is over.
 
-#### User Interface
+### User Interface
 
-##### Score Display
+#### Score Display
 The Score Display is a crucial component of the user interface, providing real-time feedback on the player's performance. It is prominently positioned on the screen, ensuring visibility throughout gameplay. The score is dynamically updated as the player collects points by consuming pellets, eating ghosts, and achieving other in-game milestones. A clear and legible font is employed, and animations may be implemented to enhance the visual appeal when the score increments.
 
-##### Lives Display
+#### Lives Display
 The Lives Display communicates the number of lives remaining to the player. Typically located near the Score Display, it provides a quick reference for the player to gauge their progress and resilience. Each decrement in lives is accompanied by a brief animation or sound effect to draw attention to the change. When a life is lost, the game briefly pauses to allow the player to comprehend the situation before the next life begins.
-##### Game Screens
+#### Game Screens
 The Game Screens encompass various states of the game, offering a seamless transition between different phases such as start screens, level transitions, and game-over screens. Each screen is meticulously designed with relevant graphics, ensuring a visually engaging experience. Transitions between screens are accompanied by smooth animations or effects, maintaining player immersion.
 
 Start Screen: Welcomes the player and provides options to start a new game, access settings, or view high scores. This screen sets the tone for the gaming experience.
@@ -389,7 +406,7 @@ Game-Over Screen: Appears when the player exhausts all lives. It presents the fi
 #### Sound Integration
 
 
-##### Sound Effects
+#### Sound Effects
 Sound Effects play a pivotal role in enhancing the gaming experience by providing auditory feedback for various in-game events. These effects include:
 
 Pac-Man Movement: Audible cues accompany Pac-Man's movement, indicating direction changes and interactions with the environment.
@@ -399,46 +416,46 @@ Ghost Movement: Each ghost has a distinctive sound, contributing to the immersiv
 Collectibles: Consuming pellets, power pellets, and fruits trigger unique sound effects, providing satisfying feedback for successful actions.
 
 Collision Events: When Pac-Man collides with a ghost or an obstacle, a distinct sound is played to signify the event.
-##### Background Music
+#### Background Music
 Background Music sets the overall tone of the game, creating an immersive atmosphere. The soundtrack dynamically adapts to different game states, intensifying during moments of tension and becoming more subdued during less critical phases. Transitions between levels or during significant events are accompanied by seamless shifts in the musical score.
 
 
 
 
-### Software requirements
+## Software requirements
 
-#### NASM version
+### NASM version
 ver 2.16.01 (2021-03-22), is the lastest stable version of NASM.
 This version will be used due to long term support.
 
-#### NASM installation
-##### Windows
+### NASM installation
+#### Windows
 Latest stable version of [NASM](https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/win64/) for Windows 
 
-##### MacOS
+#### MacOS
 Latest stable version of [NASM](https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/macosx/) for MacOS
 
 
-#### NASM setup
-##### Windows
+### NASM setup
+#### Windows
 After installing NASM, run the **nasmSetup.cmd** script to add NASM on the Pacman folder on Windows.
 
 
-##### MacOS
+#### MacOS
 After installing NASM, run the **nasmSetup.sh** script to add NASM on the Pacman folder on MacOS.
 
-#### Compilation
-##### Windows
+### Compilation
+#### Windows
 Run the **buildPacman.cmd** script to compile the Pacman game on Windows.
 
-##### MacOS
+#### MacOS
 Run the **buildPacman.sh** script to compile the Pacman game on MacOS.
 
-#### Execution
-##### Windows
+### Execution
+#### Windows
 Run the **runDOSbox.cmd** script to run the Pacman game on Windows.
 
-##### MacOS
+#### MacOS
 Run the **runDOSbox.sh** script to run the Pacman game on MacOS.
 
 
@@ -446,43 +463,43 @@ Run the **runDOSbox.sh** script to run the Pacman game on MacOS.
 
 
 
-###  Out of Scope
+##  Out of Scope
 
 
 
 
 
-##### Accessibility 
+### Accessibility 
 Features Implementing specific accessibility features, such as screen readers or alternative control methods for players with disabilities, is not included in the current scope.
 
 
 
 
 
-### Future Goals
-##### Additional Levels
+## Future Goals
+### Additional Levels
 The project focuses on recreating the original Pac-Man with improvements. Future goals may include designing and implementing additional levels with new challenges and features.
 
-##### Customization Options
+### Customization Options
 Introduce options for players to customize the game experience, such as adjusting difficulty levels, modifying ghost behavior, or creating custom mazes.
 
-##### Leaderboards and Achievements 
+### Leaderboards and Achievements 
 Implement a system for tracking high scores and achievements, adding a competitive element to the game.
 
 
 
 
-### Assumptions
-##### Emulator Compatibility
+## Assumptions
+### Emulator Compatibility
 The game assumes that players will use the DOSBox emulator for running the Pac-Man game on both Windows and MacOS.
 
-##### Copyright Compliance
+### Copyright Compliance
 It is assumed that the development team will adhere to copyright regulations and that the project is solely for educational purposes, without commercial intent.
 
-##### Stable Development Environment
+### Stable Development Environment
 The development team assumes a stable and well-configured development environment with the necessary tools and libraries readily available.
 
-##### No External Dependencies
+### No External Dependencies
 The project assumes minimal reliance on external libraries or dependencies that could complicate the development process.
 
 
