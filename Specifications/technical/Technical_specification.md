@@ -255,7 +255,7 @@ The Pacman game will utilize the **[VGA](https://en.wikipedia.org/wiki/Video_Gra
 ## Software architecture
 
 
-####Compilation process
+#### Compilation process
 
 The compilation process is a crucial step in transforming the high-level source code of the Pacman game into executable machine code that can run on the Intel 8086 CPU. The process involves several stages, each contributing to the creation of an efficient and functional executable.
 
@@ -349,7 +349,7 @@ The path finder will be implemented with the **[A* algorithm](https://en.wikiped
 
 #### Blinky
 Blinky is the red ghost, he will have a path finder for chasing pacman behind him. According the number of pullet eaten, this speed is slightly increase.
-In scatter mode, he will go to the top right corner of the maze.
+In scatter mode, he will go to the top right corner of the maze.<br>
 ![Blinky](../img/blinky-targeting.png)
 #### Pinky
 Pinky is the pink ghost, he will have a path finder for ambushing pacman in front of him.
