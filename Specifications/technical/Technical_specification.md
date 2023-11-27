@@ -357,7 +357,7 @@ In scatter mode, he will go to the top left corner of the maze.
 #### Inky
 Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according to Pacman and Blinky position. He will try to ambush pacman in front of him and go to the way where Blinky goes.
 In scatter mode, he will go to the top right corner of the maze.
-![Inky](../img\inky-targeting.png)
+![Inky](../img/inky-targeting.png)
 #### Clyde
 Clyde is the orange ghost, he will have a path finder for chasing pacman behind him. However, when he is close to pacman, he will go to the bottom left corner of the maze (scatter mode).
 ![Clyde](../img/clyde-targeting2.png)
