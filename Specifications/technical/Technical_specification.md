@@ -349,7 +349,7 @@ The path finder will be implemented with the **[A* algorithm](https://en.wikiped
 
 #### Blinky
 Blinky is the red ghost, he will have a path finder for chasing pacman behind him. According the number of pullet eaten, this speed is slightly increase.
-In scatter mode, he will go to the top right corner of the maze.
+In scatter mode, he will go to the top right corner of the maze.<br>
 ![Blinky](../img/blinky-targeting.png)
 #### Pinky
 Pinky is the pink ghost, he will have a path finder for ambushing pacman in front of him.
