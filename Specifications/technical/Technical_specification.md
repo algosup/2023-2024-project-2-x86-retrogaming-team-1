@@ -105,7 +105,7 @@ Assembly language x86 will be used for the implementation of the Pac-Man game.
 ##### Graphics
 Simple graphics will be created using **bitmaps** files for the maze, UI and sprites. 
 ##### Sprites 
-Sprite size will be 8x8 pixels.
+Sprite size will be **8x8 pixels**.
 ##### Sounds
 Sound effects and background music will be implemented using **.wav** files.
 ## Code Organization
