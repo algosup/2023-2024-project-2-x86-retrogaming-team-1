@@ -353,11 +353,11 @@ When the player press an arrow key, the pacman will move in the direction of the
 Pacman is able to move in the 4 directions, up, down, right and left.
 #### Collectible
 
-##### Pullet
-Pullet are the most common collectible in the game,it disposes on all path on the maze and according to number eaten and the level, the speed of the ghost slighly change.Eat all pullet on the maze to complete the level and earn point.
+##### Pellet
+Pellet are the most common collectible in the game, it disposes on all path on the maze and according to the number eaten and the level, the speed of the ghosts slightly changes. Eat all pellets on the maze to complete the level and earn points.
 
 ##### Power Pellet
-When pacman eat a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman. When pacman eat a ghost, the ghost will be sent to the ghost house and pacman will earn points. The timer is frozen when ghost is eaten.
+When Pacman eats a power pellet, the ghosts will be in frightened mode, during this phase, the ghosts will be blue and will have a random path finder for running away from pacman. When Pacman eats a ghost, the ghosts will be sent to the ghost house and pacman will earn points. The timer is frozen when a ghost is eaten.
 
 ##### Fruit
 Fruit are bonus collectible, they appear on the maze at a specific time, when pacman eat a fruit, he will earn points. The fruit will disappear after a certain time.
