@@ -6,7 +6,7 @@
 | | |
 | ----- | ----- |
 | Author(s) |[Salaheddine NAMIR](https://github.com/T3rryc)|
-| Reviewer(s) |[Victor LEROY](https://github.com/Victor-Leroy)|
+| Reviewer(s) |[Victor LEROY](https://github.com/Victor-Leroy), [Alexis LASSELIN](https://github.com/AlexisLasselin)|
 | Created on |11/20/2023|
 | Last updated |11/27/2023|
 
