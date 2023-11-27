@@ -1,23 +1,44 @@
 # Test Plan
 
-
+---
 
 <details>
 
 <summary>📖 Table of content</summary>
 
+- [Test Plan](#test-plan)
+  - [Testing Strategy](#testing-strategy)
+  - [Testing Schedule](#testing-schedule)
+  - [Test Cases](#test-cases)
+  - [Testing Tools](#testing-tools)
+    - [Hardware](#hardware)
+    - [Software](#software)
+    - [Defects Tracking](#defects-tracking)
+
 </details>
 
-<hr>
+---
 
-
-The following document describes the test plan for the Pac-man project. 
+The following document describes the test plan for the Pac-man project.
 
 The main goal of this game testing plan is to ensure that the game is working as expected and that the game is playable.
 
-# Testing Strategy
+## Glossary
 
-The testing strategy for this game is to test the game manually. The tester will test the gamed during and after the development process to ensure that the game is playable and that the game is working as expected.
+| Term | Definition |
+| --- | --- |
+| Smoke Test | A smoke test is a type of software testing that comprises of a non-exhaustive set of tests that aim at ensuring that the most important functions work. |
+| Functional Test | Functional testing is a quality assurance (QA) process and a type of black-box testing that bases its test cases on the specifications of the software component under test. |
+| Regression Test | Regression testing is a type of software testing that seeks to uncover new software bugs, or regressions, in existing functional and non-functional areas of a system after changes such as enhancements, patches or configuration changes. |
+| Test Case | A test case is a set of conditions or variables under which a tester will determine whether an application, software system or one of its features is working as it was originally established for it to do. |
+
+## Testing Strategy
+
+The testing strategy for this game is to test the game manually. The tester will test the gamed during and after the development process to ensure that the game is playable and that the game is working as expected. 
+
+At first we will do a smoke test to ensure that the game is working and that the game is playable. Then we will do a functional test to ensure that the game is working as expected. Finally we will do a regression test to ensure that the game is still working after each update.
+
+Here are the different main areas that we will test during the testing of the game:
 
 | Area | Action | Description |
 | --- | --- | --- |
@@ -38,12 +59,13 @@ The testing strategy for this game is to test the game manually. The tester will
 | Game | Collision | The player should be able to collide with the walls |
 | Game | Collision | The player should be able to collide with the ghosts |
 
+Test areas might change according to the development of the game.
 
-# Testing Schedule
+## Testing Schedule
 
 This test plan is written before the development of the game, so the testing schedule is not yet defined. We started the development of the game on the 6th of November and the deadline is on the 21st of December. We will update this section when we have a better idea of the testing schedule, based on how the development of the game is going.
 
-# Test Cases
+## Test Cases
 
 The following table will be an example of a test case that we will use to test the game. We will create a test case for each test that we will do during the testing of the game. We will also add a label to the test case to indicate the priority of the test case.
 
@@ -59,15 +81,14 @@ The following table will be an example of a test case that we will use to test t
 | Test Case Priority | Defines if a test is important or not. Using symbols : Low 🟢 / Medium 🟠 / High 🔴|
 | Test Case Assigned To | Name of the tester |
 
+## Testing Tools
 
-# Testing Tools
-
-## Hardware
+### Hardware
 
 - [MacBook Air 2020](https://www.apple.com/fr/macbook-air-m1/)
-    - 13.3 inch (2560 x 1600)
-    - macOS Ventura 13.0
-    - Apple M1 Chip
+  - 13.3 inch (2560 x 1600)
+  - macOS Ventura 13.0
+  - Apple M1 Chip
 
 - [Lenovo Thinkbook 14](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkbook-series/thinkbook-14-iil/20sl)
   - Windows 11 Pro
@@ -83,27 +104,18 @@ The following table will be an example of a test case that we will use to test t
   - RAM: 16.0 GB
   - System type: 64-bit operating system, x64-based processor
 
-## Software
+### Software
 
 - [Visual Studio Code](https://code.visualstudio.com/) for the development of the game
-
-
 - [GitHub](https://github.com) for the version control
-
-
 - [NASM](https://www.nasm.us/) for the assembly language
+- [DOSBox 0.74-3 for macOS](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox-0.74-3-3.dmg/download) for the testing of the game on macOS, emulating a DOS environment, with a 16-bit processor, x86 architecture and 65536 Bytes of memory.
+- [DOSBox 0.74-3 for Windows](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download) for the testing of the game on Windows.
 
+### Defects Tracking
 
-- [DOSBox 0.74-3 for macOS](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox-0.74-3-3.dmg/download) for the testing of the game on macOS
-
-
-- [DOSBox 0.74-3 for Windows](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download) for the testing of the game on Windows
-
-## Defects Tracking
-
-We will use GitHub issues to track the defects of the game. We will create a new issue for each defect that we find during the testing of the game. Every issue will be labeled with the `bug` label and will be assigned to the developer who will fix the defect. But also with a description of the defect, the steps to reproduce the defect and the expected result and finally the actual result. We will also add a screenshot of the defect if it's possible. Finally we will add a label to the issue to indicate the priority of the issue.
+We will use GitHub issues to track the defects of the game. We will create a new issue for each defect that we find during the testing of the game. Every issue will be labeled with the `bug` label and will be assigned to the developer who will fix the defect. But also with a description of the defect, the steps to reproduce the defect and the expected result and finally the actual result. We will also add a screenshot or a video of the defect if it's possible. Finally we will add a label to the issue to indicate its priority level.
 
 This is an example of an issue that we will create for a defect:
 
-![Issue example](./images/issue-example.png)
-
+![Issue example](./img/issue-example.png)
