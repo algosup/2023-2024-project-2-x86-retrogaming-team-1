@@ -255,7 +255,7 @@ The Pacman game will utilize the **[VGA](https://en.wikipedia.org/wiki/Video_Gra
 ## Software architecture
 
 
-####Compilation process
+#### Compilation process
 
 The compilation process is a crucial step in transforming the high-level source code of the Pacman game into executable machine code that can run on the Intel 8086 CPU. The process involves several stages, each contributing to the creation of an efficient and functional executable.
 
