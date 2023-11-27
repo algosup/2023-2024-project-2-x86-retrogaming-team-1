@@ -2,6 +2,9 @@
 @REM  @echo off is used to hide the commands from the user
 @echo off
 
+@REM Change the current directory to the directory where the script is located
+CD /D "%~dp0"
+
 @REM Set the path to the directory where the script is located
 set "SCRIPT_DIR=%~dp0"
 
