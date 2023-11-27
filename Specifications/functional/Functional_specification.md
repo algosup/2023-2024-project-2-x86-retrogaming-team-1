@@ -26,10 +26,15 @@
   - [II. Requirements](#ii-requirements)
   - [III. Goals and constraints](#iii-goals-and-constraints)
   - [IV Non-functional requirements](#iv-non-functional-requirements)
-  - [V. Personas and scenario](#v-personas-and-scenario)
-    - [1. Hervé](#1-hervé)
-    - [2. Jessica](#2-jessica)
-    - [3. Vanessa](#3-vanessa)
+  - [V. Personas and scenarios](#v-personas-and-scenarios)
+    - [1. Personas](#1-personas)
+      - [A. Hervé Malignat](#a-hervé-malignat)
+      - [B. Jessica Malignat](#b-jessica-malignat)
+      - [C. Vanessa Olirage](#c-vanessa-olirage)
+    - [2. Scénarios](#2-scénarios)
+      - [A. Hervé Malignat](#a-hervé-malignat-1)
+      - [B. Jessica Malignat](#b-jessica-malignat-1)
+      - [C. Vanessa Olirage](#c-vanessa-olirage-1)
   - [VI. Solution Overview](#vi-solution-overview)
       - [A. User Interface (UI)](#a-user-interface-ui)
       - [B. Game Mechanics](#b-game-mechanics)
@@ -49,6 +54,7 @@
 | Reviewer(s) | Victor LEROY, Salaheddine NAMIR |
 | Created on | 11/06/2023 |
 | Last updated | 11/17/2023 |
+|  |  |
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
@@ -231,36 +237,82 @@ There aren't a lot of non-functional requirements but those that exist are the f
 
 *sources : [sounds](https://www.101soundboards.com/boards/28540-pacman-soundboard) / [music](https://www.auboutdufil.com/index.php?tag=8-bit)
 
-## V. Personas and scenario
+## V. Personas and scenarios
 
  **Target audience**
 
 Pac-Man is a world-wide known game and built its place in the heart of a lot of players. Our product is therefore intended to men and women, young and old people, new players and nostalgic players. Pac-Man is a PEGI 3[^9] game and an Everyone ESRB[^10].
 
-### 1. Hervé
+### 1. Personas
 
-Hervé is a nostalgic player who knows Pac-Man since its release. He is a 52 year old man. He divorced his wife 3 years ago with whom he had two children, Jessica and Nathan who are 12 and 21 years old. He lives in a little house with a garden in Nançay with Jessica. Nathan lives in the UK for his studies. He has all the nostalgic games like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. He works in a little restaurant as a chef.
+#### A. Hervé Malignat
 
-Jessica showed him a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game.
+|  |  |
+| --- | --- |
+| NAME | Hervé Malignat |
+| AGE | 52 |
+| STATUS | divorced 3 years ago |
+| FAMILY | 2 children (Jessica, 12 and Nathan, 21) |
+| LOCATION | house with garden in Nançay |
+| OCCUPATION | chief for a little restaurant in Nançay |
+| PERSONALITY | - nostalgic <br> - competitive <br> - dedicated <br> - active <br> - methodical |
+| WEAKNESS | - bad with new technologies <br> - is conformism |
+|  |  |
+| DETAILS | He live only with Jessica. Nathan lives in the UK for his studies. <br> He has all the nostalgic games like the Game Boy, Atari 7800[^11] or the Apple Pippin[^12]. |
+|  |  |
+
+#### B. Jessica Malignat
+
+|  |  |
+| --- | --- |
+| NAME | Jessica Malignat |
+| AGE | 12 |
+| STATUS | single |
+| FAMILY | Hervé's daugther, Nathan is her 21 years old brother and he lives in UK for his studies |
+| LOCATION | house with garden in Nançay |
+| OCCUPATION | middle school student |
+| PERSONALITY | - dynamic <br> - curious <br> - stand-alone <br> - likes to learn <br> - créatif |
+| WEAKNESS | - is never focused <br> - isn't patient |
+|  |  |
+| DETAILS | Her father gave her a passion for retrogaming, and for the past two years she has been discovering new versions of arcade games on her computer. |
+|  |  |
+
+#### C. Vanessa Olirage
+
+|  |  |
+| --- | --- |
+| NAME | Vanessa Olirage |
+| AGE | 25 |
+| STATUS | single |
+| FAMILY | Allan is her 31-year-old older brother and he lives in Poitier |
+| LOCATION | apartment in Angoulême |
+| OCCUPATION | YouTube artist |
+| PERSONALITY | - playful <br> - active <br> - ambitious <br> - curious <br> - combative |
+| WEAKNESS | - fear of failure <br> - dislike repetitive game |
+|  |  |
+| DETAILS | Vanessa has been passionate about video games of all kinds since childhood. She grew up watching her older brother play video games. Her love of video games has followed her into adulthood. <br> She specializes in game speed-running, which means that her aim is to finish games as quickly as possible but not with the best score. |
+|  |  |
+
+### 2. Scénarios
+
+#### A. Hervé Malignat
+
+Jessica showed to Hervé a new version of Pac-Man on her computer with new features and he wanted to try to play this game to get a flashback of the good old times he had playing it. He installs the game on his computer and launches the game.
 He is on the home page of the game with play, exit and settings buttons. He directly clicks on the play button and the maze is displayed with the Inky, Pinky and Clyde ghosts in their house in the middle of the maze, Blinky outside the door house in the top of the house, Pac-Man in the middle of the seventh line from the bottom of the maze.
 Nothing moves but the music starts and when he clicks on the right arrow, Pac-Man starts to move to the right. He eats his first pac-gum with the sound and add fifty points on the score. After, he goes up with the up arrow, right and down. Hervé eats a pac-gum and it gives him 50 points and the power to eat ghosts during 10 seconds. So he decides to eat Blinky because he is in front of him.
 He continues to browse the maze but Pinky eats him once and he loses one life. During 3 minutes, Hervé tries to eat all the pac-dots on the maze but loses all his lives. The Game over screen appears on the display for 5 seconds and then returns to the home page. He wants to retry, but he has to go to work. He clicks on the exit button and the game closes.
 He'll take his revenge in the evening.
 
-### 2. Jessica
+#### B. Jessica Malignat
 
-Jessica is the Hervé's daughter, 12 years old and she lives with her father. She has a brother, Nathan, 21 years old but he lives in UK for his studies. She's a middle school student. Her father gave her a passion for retrogaming, and for the past two years she has been discovering new versions of arcade games on her computer.
-
-Today, while browsing a site where all the games can be found, she discovered Pac-Man and decided to install it.
+Today, while browsing a site where all the games can be found, Jessica discovered Pac-Man and decided to install it.
 She arrives on the home page with the play, exit and setting buttons. She doesn't know the game, so she clicks on settings and finds the bindings required to play the game. She can also switch music and sounds, or turn them on and off. Once she's made her few adjustments, she clicks on the back button to return to the home page.
 She clicks on play and moves Pac-Man to the left using the left arrow. Jessica doesn't like playing with music and sounds, so she turned everything off. All she sees are people passing over the dots to make them disappear and increase her score.
 She gets caught by the ghosts, which causes her to lose lives, but after several trial rounds, she discovers a new bonus, a cherry. Thanks to this bonus, she has earn 200 points.
 She finally finishes the game and the Win page is displayed for 5 seconds with her score, then she returns to the home page.
 She then decides to go and see her father to show him the game she's just discovered and loves.
 
-### 3. Vanessa
-
-Vanessa is a young woman of 25 years old and she lives alone in Angoulême. Vanessa has been passionate about video games of all kinds since childhood. She grew up watching her older brother play video games. Her love of video games has followed her into adulthood. She specializes in game speed-running, which means that her aim is to finish games as quickly as possible but not with the best score (any%). In fact, she's made it her job to make YouTube videos on these games, which she finishes in no time.
+#### C. Vanessa Olirage
 
 Today, Vanessa wants to rediscover an old game for a little YouTube video on her computer and she finds our game. The goal is always the same : eat every dots as fast as possible without getting eaten by the ghosts. She launches the game and the home page appears. She clicks on setting to remove only the music, while keeping the sounds, and launches the game. She starts to move Pac-Man, and goes back and forth up and down and left and right without latency or crash.
 She finishes the game in 1 hour.
