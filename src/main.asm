@@ -5,7 +5,7 @@
 ; fix color of the clearScreen;
 ; fix character printing
 
-%include "bitmaps.asm"          ; include the file with the sprites
+%include "pacman.asm"          ; include the file with the sprites
 
 org 100h    
 
@@ -24,17 +24,14 @@ section .text
     mov ah, 00h                 ; set video mode requirement
     mov al, 13h                 ; set video mode option to 320 x 200 256 colors
     int 10h                     ; interupt the process
-
+    mov si, pacmanR             ; select the sprite to be displayed
+    call drawPacman             ; call the function to display the sprite
 
     mainLoop:
 
     mov al, 0FFh                 ; select the color of the background
     call clearScreen            ; set the backround to the selected color
-
-    ; Display the sprite:
-    mov si, pacmanR             ; select the sprite to be displayed
     mov di, [xPos]              ; set the original coordinate of the sprite
-    call drawPacman             ; call the function to display the sprite
 
     ; This loop is to slow down the animation
     mov cx, 50000               ; 20000 is the time we wait before moving the sprite
@@ -83,9 +80,9 @@ section .text
     mov bx, 0xA000              ; set the video memory segment to 0xA000
     mov es, bx
     pop bx
-    mov dx, 16                   ; set the destination index to 8
+    mov dx, 16                   ; set the destination index to 1§
     .eachLine:      
-        mov cx, 16              ; set the count register to 8(number of pixel to copy per line)
+        mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
         rep stosb               ; repeat the move byte action (copying pixel)
         add di, 320-16          ; move the destination index to the next line (320 pixel per line)
         dec dx                  ; decrement the loop counter (dx)
@@ -98,9 +95,9 @@ section .text
     drawPacman:
     mov bx, 0xA000              ; memory location of the video mode
     mov es, bx
-    mov dx, 16                   ; set the destination index to 8 (starting position in video memory)
+    mov dx, 16                   ; set the destination index to 16 (starting position in video memory)
     .eachLine:                  ; loop till each line of the sprite is printed
-        mov cx, 16               ; set the count register to 8 (number of pixel to copy per line)
+        mov cx, 16               ; set the count register to 16 (number of pixel to copy per line)
         rep movsb               ; repeat the move byte action (copying pixel)
         add di, 320-16           ; move the destination index to the next line (320 pixel per line)
         dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
@@ -116,6 +113,8 @@ section .text
     mov bx, [xPos]              ; the position is increased by the speed of the character (here 1)
     add bx, [xVelocity]
     mov [xPos], bx              ; update the new position and speed of the character
+    mov si, pacmanR
+    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [xVelocity]    ; reverse the value of velocity to 1
@@ -131,6 +130,8 @@ section .text
     mov bx, [xPos]              ; the position is increased by the speed of the character (here -1)
     add bx, [xVelocity]
     mov [xPos], bx              ; update the new position and speed of the character
+    mov si, pacmanL
+    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [xVelocity]    ; reverse the value of velocity to -1
@@ -145,6 +146,8 @@ section .text
     mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
     add bx, [yVelocity]
     mov [xPos], bx              ; update the position and speed of the sprite
+    mov si, pacmanUp
+    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to -320
@@ -159,6 +162,8 @@ section .text
     mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
     add bx, [yVelocity]
     mov [xPos], bx              ; update the position and speed of the sprite
+    mov si, pacmanDown
+    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to +320
