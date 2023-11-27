@@ -336,7 +336,7 @@ Pinky is the pink ghost, he will have a path finder for ambushing pacman in fron
 In scatter mode, he will go to the top left corner of the maze.
 ![Pinky](..\img\pinky-targeting.png)
 ##### Inky
-Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according the Pacman and Blinky position. He will try to ambush pacman in front of him and go to the way where Blinky goes.
+Inky is the blue ghost, contrary to the other ghosts, he will have a path finder according to Pacman and Blinky position. He will try to ambush pacman in front of him and go to the way where Blinky goes.
 In scatter mode, he will go to the top right corner of the maze.
 ![Inky](..\img\inky-targeting.png)
 ##### Clyde
