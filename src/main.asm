@@ -5,7 +5,7 @@
 ; fix color of the clearScreen;
 ; fix character printing
 
-%include "pacman.asm"          ; include the file with the sprites
+%include "sprites.asm"          ; include the file with the sprites
 
 org 100h    
 
