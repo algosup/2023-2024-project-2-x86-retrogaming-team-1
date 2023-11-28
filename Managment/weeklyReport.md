@@ -285,3 +285,17 @@ Alexis Lasselin
 - Create the map for the PACMAN game
 - Add the collision against the borders and the ghosts
 - Update all the management documents
+
+## Week 4 - 27/11/2023 - 01/12/2023
+
+### Technical specifications
+
+The technical specifications are reviewed and merged to the main branch.
+
+Done
+
+Salaheddine Namir & Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 27/11/2023 |
