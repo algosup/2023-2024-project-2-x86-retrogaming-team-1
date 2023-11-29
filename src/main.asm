@@ -1,5 +1,6 @@
 ; TODO
-; fix sprites
+; fix initial sprite
+; fix blinking sprite
 ; start of a map
 ; fix collisions
 ; fix color of the clearScreen;
@@ -12,6 +13,9 @@ section .data
 
     yVelocity dw 320            ; to go from one line to another
     xVelocity dw 1              ; horizontal speed
+    currentBuffer db 0          ; the current buffer
+
+    
 
 
 section .text
@@ -104,14 +108,15 @@ section .text
     right:
     ; Move the sprite to the right
     mov ax, 0C01h               ; reset the keyboard buffer
+    mov si, pacmanR            ; select the sprite to be displayed
+    call drawPacman            ; call the function to display the sprite
+
     int 21h
     cmp word [xVelocity], 0     ; check if velocity is positif
     jl .reverse                 ; if not go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the character (here 1)
     add bx, [xVelocity]
     mov [xPos], bx              ; update the new position and speed of the character
-    mov si, pacmanR
-    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [xVelocity]    ; reverse the value of velocity to 1
@@ -121,14 +126,14 @@ section .text
     left:
     ; Move the sprite to the left
     mov ax, 0C01h               ; reset the keyboard buffer
+    mov si, pacmanL
+    call drawPacman
     int 21h
     cmp word [xVelocity], 0     ; check if velocity is negatif
     jg .reverse                 ; if not go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the character (here -1)
     add bx, [xVelocity]
     mov [xPos], bx              ; update the new position and speed of the character
-    mov si, pacmanR
-    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [xVelocity]    ; reverse the value of velocity to -1
@@ -137,14 +142,14 @@ section .text
     up:
     ; Move the sprite upward
     mov ax, 0C01h               ;reset the keyboard buffer
+    mov si, pacmanUp
+    call drawPacman
     int 21h
     cmp word [yVelocity], 0     ; check the value of velocity
     jg .reverse                 ; if the value is positive go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
     add bx, [yVelocity]
     mov [xPos], bx              ; update the position and speed of the sprite
-    mov si, pacmanDown
-    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to -320
@@ -153,14 +158,14 @@ section .text
     down:
     ; Move the sprite down
     mov ax, 0C01h               ; reset the keyboard buffer
+    mov si, pacmanDown
+    call drawPacman
     int 21h
     cmp word [yVelocity], 0     ; check the value of velocity
     jl .reverse                 ; if the value is negative go to sub procedure .reverse
     mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
     add bx, [yVelocity]
     mov [xPos], bx              ; update the position and speed of the sprite
-    mov si, pacmanUp
-    call drawPacman
     jmp mainLoop                ; return to the main loop
     .reverse:
         neg word [yVelocity]    ; negate the value of velocity to +320

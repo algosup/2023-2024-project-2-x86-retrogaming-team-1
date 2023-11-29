@@ -27,4 +27,4 @@ set "CONFIG_LOC=%ROOT_DIR%"
 @REM Go to the C drive
 @REM Clear the screen
 
-"%DOSBOX_BIN%" -c "MOUNT c %BIN_DIR%" -c "c:" -c "cls"
+"%DOSBOX_BIN%" -c "MOUNT c %BIN_DIR%" -c "c:" -c "cls" -c main
