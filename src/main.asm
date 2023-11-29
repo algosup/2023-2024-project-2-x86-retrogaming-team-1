@@ -1,22 +1,8 @@
 ; TODO
-; fix initial sprite
-; fix blinking sprite
 ; start of a map
-; fix collisions
 ; fix color of the clearScreen;
 ; fix character printing
 org 100h    
-
-section .data
-
-    xPos dw 0                   ; the starting x coordinate of the sprite
-
-    yVelocity dw 320            ; to go from one line to another
-    xVelocity dw 1              ; horizontal speed
-    currentBuffer db 0          ; the current buffer
-
-    
-
 
 section .text
 
@@ -29,29 +15,16 @@ section .text
 
     mainLoop:
 
-    mov al, 0FFh                 ; select the color of the background
+    mov al, 0FFh                ; select the color of the background
     call clearScreen            ; set the backround to the selected color
     mov di, [xPos]              ; set the original coordinate of the sprite
-    call drawPacman             ; call the function to display the sprite
+    
+    call readKeyb
 
     ; This loop is to slow down the animation
-    mov cx, 50000               ; 20000 is the time we wait before moving the sprite
+    mov cx, 50000               ; 50000 is the time we wait before moving the sprite
     waitloop:                   ; cx is a loop register
     loop waitloop               ; once count = 0 exit the loop
-
-    ; Read keyboard input
-    mov ah, 01h                 ; BIOS function to read keyboard input
-    int 21h                     ; Call BIOS interrupt
-    cmp al, 77                  ; 'd' in ascii is 100
-    je collisionR                    ; If 'd' is pressed, jump to label 'collisionR'
-    cmp al, 75                  ; 'q' in ascii is 113
-    je collisionL                     ; If 'q' is pressed, jump to label 'left'
-    cmp al, 72                  ; 'z' in ascii is 122
-    je collisisonUp                       ; If 'z' is pressed, jump to label 'up'
-    cmp al, 80                  ; 's' in ascii is 115
-    je collisionDown                     ; If 's' is pressed, jump to label 'down'
-    cmp al, 27                  ; ASCII value of escape key
-    je exit                     ; go to the exit function if the comparison return an equal
     
     mov bl, 0xFF                ; move into bl the color we want to clear with
     call clearGhost             ; call clearGhost
@@ -105,102 +78,10 @@ section .text
         jnz .eachLine
         ret                     ; return to the main loop
 
-    right:
-    ; Move the sprite to the right
-    mov ax, 0C01h               ; reset the keyboard buffer
-    mov si, pacmanR            ; select the sprite to be displayed
-    call drawPacman            ; call the function to display the sprite
-
-    int 21h
-    cmp word [xVelocity], 0     ; check if velocity is positif
-    jl .reverse                 ; if not go to sub procedure .reverse
-    mov bx, [xPos]              ; the position is increased by the speed of the character (here 1)
-    add bx, [xVelocity]
-    mov [xPos], bx              ; update the new position and speed of the character
-    jmp mainLoop                ; return to the main loop
-    .reverse:
-        neg word [xVelocity]    ; reverse the value of velocity to 1
-        jmp right               ; return to the procedure right
-
-
-    left:
-    ; Move the sprite to the left
-    mov ax, 0C01h               ; reset the keyboard buffer
-    mov si, pacmanL
-    call drawPacman
-    int 21h
-    cmp word [xVelocity], 0     ; check if velocity is negatif
-    jg .reverse                 ; if not go to sub procedure .reverse
-    mov bx, [xPos]              ; the position is increased by the speed of the character (here -1)
-    add bx, [xVelocity]
-    mov [xPos], bx              ; update the new position and speed of the character
-    jmp mainLoop                ; return to the main loop
-    .reverse:
-        neg word [xVelocity]    ; reverse the value of velocity to -1
-        jmp left                ; return to the procedure left 
-
-    up:
-    ; Move the sprite upward
-    mov ax, 0C01h               ;reset the keyboard buffer
-    mov si, pacmanUp
-    call drawPacman
-    int 21h
-    cmp word [yVelocity], 0     ; check the value of velocity
-    jg .reverse                 ; if the value is positive go to sub procedure .reverse
-    mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here 320)
-    add bx, [yVelocity]
-    mov [xPos], bx              ; update the position and speed of the sprite
-    jmp mainLoop                ; return to the main loop
-    .reverse:
-        neg word [yVelocity]    ; negate the value of velocity to -320
-        jmp up                  ; return to the procedure up
-
-    down:
-    ; Move the sprite down
-    mov ax, 0C01h               ; reset the keyboard buffer
-    mov si, pacmanDown
-    call drawPacman
-    int 21h
-    cmp word [yVelocity], 0     ; check the value of velocity
-    jl .reverse                 ; if the value is negative go to sub procedure .reverse
-    mov bx, [xPos]              ; the position is increased by the speed of the sprite to go to the next line (here -320)
-    add bx, [yVelocity]
-    mov [xPos], bx              ; update the position and speed of the sprite
-    jmp mainLoop                ; return to the main loop
-    .reverse:
-        neg word [yVelocity]    ; negate the value of velocity to +320
-        jmp down                ; return to the procedure down
-
-    collisionR:
-    mov cl, [xPos]              ; put the position in the "checker"
-    inc cl                      ; increase the position to simulate going to the right
-    cmp cl, '#'                 ; check if there is a wall at this position
-    je mainLoop                 ; if yes go back to the main loop
-    jmp right                   ; if no go to the 'right' procedure
-
-    collisionL:
-    mov cl, [xPos]              ; put the position in the "checker"
-    dec cl                      ; decrease the position to simulate going to the left
-    cmp cl, '#'                 ; check if there is a wall at this position
-    je mainLoop                 ; if yes go back to the main loop
-    jmp left                    ; if no go to the 'left' procedure
-
-    collisisonUp:
-    mov cl, [xPos]              ; put the position in the "checker"
-    sub cl, [yVelocity]         ; decresease the position to simulate going up 
-    cmp cl, '#'                 ; check if there is a wall at this position
-    je mainLoop                 ; if yes go back to the main loop
-    jmp up                      ; if no go to the 'up' procedure
-
-    collisionDown:
-    mov cl, [xPos]              ; put the position in the "checker"
-    add cl, [yVelocity]         ; increase the position to simulate going down
-    cmp cl, '#'                 ; check if there is a wall at this position
-    je mainLoop                 ; if yes go back to the main loop
-    jmp down                    ; if no go to the 'down' procedure
-
+    
     exit:                       ; If escape key is pressed, jump to label 'exit'
     mov ah, 4ch                 ; DOS function to exit program
     int 21h                     ; Call DOS interrupt
 
     %include "sprites.asm"          ; include the file with the sprites
+    %include "movement.asm"
