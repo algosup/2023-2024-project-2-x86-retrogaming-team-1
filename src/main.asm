@@ -4,9 +4,6 @@
 ; fix collisions
 ; fix color of the clearScreen;
 ; fix character printing
-
-%include "sprites.asm"          ; include the file with the sprites
-
 org 100h    
 
 section .data
@@ -200,3 +197,5 @@ section .text
     exit:                       ; If escape key is pressed, jump to label 'exit'
     mov ah, 4ch                 ; DOS function to exit program
     int 21h                     ; Call DOS interrupt
+
+    %include "sprites.asm"          ; include the file with the sprites
