@@ -1,88 +1,79 @@
-animationLoop:
-    call timerElapsedStopWatch  ; this will tell the time elapsed ince the start of the program
-    cmp eax, ecx                ; compare the old time to the new one
-    jg .nextFrame
-    mov ecx, eax                ; save the old time 
-
     ; identify the current frame
-    .nextFrame:
-        cmp si, pacmanR_00
-        je fn1
-        cmp si, pacmanR_01
-        je fn2
-        cmp si, pacmanR_02
-        je fn3
-        cmp si, pacmanL_00
-        je fn4
-        cmp si, pacmanL_01
-        je fn5
-        cmp si, pacmanL_02
-        je fn6
-        cmp si, pacmanUp_00
-        je fn7
-        cmp si, pacmanUp_01
-        je fn8
-        cmp si, pacmanUp_02
-        je fn9
-        cmp si, pacmanDown_00
-        je fn10
-        cmp si, pacmanDown_01
-        je fn11
-        cmp si, pacmanDown_02
-        je fn12
-    
-    ret
-
+findFrame:
+    cmp si, pacmanR_00
+    je nf1
+    cmp si, pacmanR_01
+    je nf2
+    cmp si, pacmanR_02
+    je nf3
+    cmp si, pacmanL_00
+    je nf4
+    cmp si, pacmanL_01
+    je nf5
+    cmp si, pacmanL_02
+    je nf6
+    cmp si, pacmanUp_00
+    je nf7
+    cmp si, pacmanUp_01
+    je nf8
+    cmp si, pacmanUp_02
+    je nf9
+    cmp si, pacmanDown_00
+    je nf10
+    cmp si, pacmanDown_01
+    je nf11
+    cmp si, pacmanDown_02
+    je nf12
 ;---------------------------------
-;   fn land
+;   nf land
 ; move into si the new sprite to be displayed
 ; display that sprite
 ; go back into the loop
-fn1:
+nf1:
     mov si, pacmanR_01
     call drawPacman
-    jmp animationLoop
-fn2:
+    ret
+nf2:
     mov si, pacmanR_02
     call drawPacman
-    jmp animationLoop
-fn3:
+    ret
+nf3:
     mov si, pacmanR_00
     call drawPacman
-    jmp animationLoop
-fn4:
+    ret
+nf4:
     mov si, pacmanL_01
     call drawPacman
-    jmp animationLoop
-fn5:
+    ret
+nf5:
     mov si, pacmanL_02
     call drawPacman
-    jmp animationLoop
-fn6:
+    ret
+nf6:
     mov si, pacmanL_00
     call drawPacman
-    jmp animationLoop
-fn7:
-    mov si, pacmanUp_01
-    call drawPacman
-    jmp animationLoop
-fn8:
-    mov si, pacmanUp_02
-    call drawPacman
-    jmp animationLoop
-fn9:
+    ret
+nf7:
     mov si, pacmanUp_00
     call drawPacman
-    jmp animationLoop
-fn10:
-    mov si, pacmanDown_01
+    ret
+nf8:
+    mov si, pacmanUp_01
     call drawPacman
-    jmp animationLoop
-fn11:
-    mov si, pacmanDown_02
+    ret
+nf9:
+    mov si, pacmanUp_02
     call drawPacman
-    jmp animationLoop
-fn12:
+    ret
+nf10:
     mov si, pacmanDown_00
     call drawPacman
-    jmp animationLoop
+    ret
+nf11:
+    mov si, pacmanDown_01
+    call drawPacman
+    ret
+nf12:
+    mov si, pacmanDown_02
+    call drawPacman
+    ret

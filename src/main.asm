@@ -1,5 +1,6 @@
 ; TODO
 ; start of a map
+; fix animations
 ; fix character printing
 org 100h    
 
@@ -11,7 +12,6 @@ section .text
 
     _start:
     
-    call timerStartStopWatch
     call heapInit
     mov ax, 1000h
     call heapAllocParagraph
@@ -28,11 +28,7 @@ section .text
 
     mainLoop:
 
-    ;mov al, 0FFh                ; select the color of the background
     call clearScreen            ; set the backround to the selected color
-    mov di, [xPos]              ; set the original coordinate of the sprite
-    mov di, [xPos]              ; set the original coordinate of the sprite
-    
     mov di, [xPos]              ; set the original coordinate of the sprite    
     
     call readKeyb
@@ -70,7 +66,7 @@ section .text
     mov bx, 0xA000              ; set the video memory segment to 0xA000
     mov es, bx
     pop bx
-    mov dx, 16                   ; set the destination index to 1§
+    mov dx, 16                  ; set the destination index to 1§
     .eachLine:      
         mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
         rep stosb               ; repeat the move byte action (copying pixel)
@@ -85,11 +81,11 @@ section .text
     drawPacman:
     mov bx, 0xA000              ; memory location of the video mode
     mov es, bx
-    mov dx, 16                   ; set the destination index to 16 (starting position in video memory)
+    mov dx, 16                  ; set the destination index to 16 (starting position in video memory)
     .eachLine:                  ; loop till each line of the sprite is printed
-        mov cx, 16               ; set the count register to 16 (number of pixel to copy per line)
+        mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
         rep movsb               ; repeat the move byte action (copying pixel)
-        add di, 320-16           ; move the destination index to the next line (320 pixel per line)
+        add di, 320-16          ; move the destination index to the next line (320 pixel per line)
         dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
         jnz .eachLine
         ret                     ; return to the main loop
@@ -117,5 +113,4 @@ section .text
     %include "sprites.inc"          ; include the file with the sprites
     %include "movement.inc"         ; include the file for the movement
     %include "heapLibrarie.inc"     ; include the heap librarie
-    %include "stopwatch.inc"        ; include the stopwatch
-    %include "animations.inc"
+    %include "animations.inc"       ; include the animations 
