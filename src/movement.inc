@@ -12,9 +12,9 @@ readKeyb:
     mov ah, 01h                 ; BIOS function to read keyboard input
     int 21h                     ; Call BIOS interrupt
     cmp al, 77                  ; 'right arrow' in ascii is 77
-    je checkDirectionR               ; If right arrow is pressed, jump to label 'playerMovR'
+    je playerMovR               ; If right arrow is pressed, jump to label 'playerMovR'
     cmp al, 75                  ; 'left arrow' in ascii is 75
-    je checkDirectionL               ; If 'left arrow' is pressed, jump to label 'playerMov'
+    je playerMovL               ; If 'left arrow' is pressed, jump to label 'playerMov'
     cmp al, 72                  ; 'up arrow' in ascii is 72
     je playerMovUp              ; If 'up arrow' is pressed, jump to label 'playerMov'
     cmp al, 80                  ; 'down arrow' in ascii is 80
@@ -24,33 +24,7 @@ readKeyb:
 
     ret                         ; return to the main loop
 
-checkDirectionR:
-    cmp si, pacmanR_00
-    jne .direction
-    je playerMovR
-    cmp si, pacmanR_01
-    jne .direction
-    je playerMovR
-    cmp si, pacmanR_02
-    jne .direction
-    je playerMovR
-    .direction:
-        mov si, pacmanR_00
-        jmp playerMovR
 
-checkDirectionL:
-    cmp si, pacmanL_00
-    jne .direction
-    je playerMovL
-    cmp si, pacmanL_01
-    jne .direction
-    je playerMovL
-    cmp si, pacmanL_02
-    jne .direction
-    je playerMovL
-    .direction:
-        mov si, pacmanL_00
-        jmp playerMovL
 
 
 

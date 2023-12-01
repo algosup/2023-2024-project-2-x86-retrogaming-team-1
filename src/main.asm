@@ -22,7 +22,7 @@ section .text
     int 10h                     ; interupt the process
 
     mov di, [xPos]              ; set the original coordinate of the sprite
-    mov si, pacmanR_00          ; select the sprite to be displayed
+    mov si, [currentSprite]     ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
     call backBuffer
 
@@ -34,7 +34,7 @@ section .text
     call readKeyb
 
     ; This loop is to slow down the animation
-    mov cx, 50000               ; 50000 is the time we wait before moving the sprite
+    mov cx, 5000               ; 50000 is the time we wait before moving the sprite
     waitloop:                   ; cx is a loop register
     loop waitloop               ; once count = 0 exit the loop
     
