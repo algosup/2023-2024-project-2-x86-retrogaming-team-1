@@ -12,6 +12,7 @@ section .text
     mov al, 13h                 ; set video mode option to 320 x 200 256 colors
     int 10h                     ; interupt the process
     mov si, pacmanR             ; select the sprite to be displayed
+    call drawPacman             ; display the selected sprite
 
     mainLoop:
 
@@ -84,4 +85,4 @@ section .text
     int 21h                     ; Call DOS interrupt
 
     %include "sprites.asm"          ; include the file with the sprites
-    %include "movement.asm"
+    %include "movement.asm"         ; include the file for the movement
