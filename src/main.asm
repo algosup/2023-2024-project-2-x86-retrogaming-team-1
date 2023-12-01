@@ -1,24 +1,39 @@
 ; TODO
 ; start of a map
-; fix color of the clearScreen;
 ; fix character printing
+; fix heap librarie
 org 100h    
+
+section .bss
+
+    backBufferSeg resw 1
 
 section .text
 
     _start:
+    
+    ;call heapInit
+    ;mov ax, 1000h
+    ;call heapAllocParagraph
+    ;mov [backBufferSeg], ax
 
     mov ah, 00h                 ; set video mode requirement
     mov al, 13h                 ; set video mode option to 320 x 200 256 colors
     int 10h                     ; interupt the process
+
+    mov di, [xPos]              ; set the original coordinate of the sprite
     mov si, pacmanR             ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
+    ;call backBuffer
 
     mainLoop:
 
-    mov al, 0FFh                ; select the color of the background
+    ;mov al, 0FFh                ; select the color of the background
     call clearScreen            ; set the backround to the selected color
     mov di, [xPos]              ; set the original coordinate of the sprite
+    mov di, [xPos]              ; set the original coordinate of the sprite
+    
+    mov di, [xPos]              ; set the original coordinate of the sprite    
     
     call readKeyb
 
@@ -44,7 +59,7 @@ section .text
     ; Clear the screen
     mov ah, 06h                 ; BIOS function to clear screen
     mov al, 0                   ; Clear entire screen
-    mov bh, 07h                 ; Attribute
+    mov bh, 00h                 ; Attribute
     mov cx, 0                   ; Upper left corner
     mov dx, 184fh               ; Lower right corner  
     int 10h                     ; Call BIOS interrupt
@@ -79,6 +94,21 @@ section .text
         jnz .eachLine
         ret                     ; return to the main loop
 
+    backBuffer:
+    push ds
+    push es
+    mov ax, [cs:backBufferSeg]
+    mov ds, ax
+    mov ax, 0A000h
+    mov es, ax
+    xor si, si
+    xor di, di
+    mov cx, 320*200
+    rep movsb
+    pop es
+    pop ds
+    ret
+
     
     exit:                       ; If escape key is pressed, jump to label 'exit'
     mov ah, 4ch                 ; DOS function to exit program
@@ -86,3 +116,4 @@ section .text
 
     %include "sprites.asm"          ; include the file with the sprites
     %include "movement.asm"         ; include the file for the movement
+    %include "heapLibrarie.inc"     ; include the heap librarie
