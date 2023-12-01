@@ -38,6 +38,10 @@ The testing strategy for this game is to test the game manually. The tester will
 
 At first we will do a smoke test to ensure that the game is working and that the game is playable. Then we will do a functional test to ensure that the game is working as expected. Finally we will do a regression test to ensure that the game is still working after each update.
 
+The QA will also be in charge to verify the documents to make sure that they are up to date and that they are correct.
+
+## Scope of testing
+
 Here are the different main areas that we will test during the testing of the game:
 
 | Area | Action | Description |
@@ -65,6 +69,20 @@ Test areas might change according to the development of the game.
 
 This test plan is written before the development of the game, so the testing schedule is not yet defined. We started the development of the game on the 6th of November and the deadline is on the 21st of December. We will update this section when we have a better idea of the testing schedule, based on how the development of the game is going.
 
+## Smoke Testing 
+
+The smoke testing will be done during the development of the game. 
+
+It will be composed of the following tests:
+- Start the game
+- Pause the game
+- Basic movement of the player
+- Collision with the walls
+- Collision with the ghosts
+- Basic interactions
+
+The goal is to test if the main features of the game are working and if the game is playable. If we find a defect during the smoke testing, we will create an issue on GitHub and we will assign it to the developer who will fix the defect.
+
 ## Test Cases
 
 The following table will be an example of a test case that we will use to test the game. We will create a test case for each test that we will do during the testing of the game. We will also add a label to the test case to indicate the priority of the test case.
@@ -80,6 +98,8 @@ The following table will be an example of a test case that we will use to test t
 | Test Case Status | Status of the test (To Test ⏳, Testing 🔎, Tested ✅) |
 | Test Case Priority | Defines if a test is important or not. Using symbols : Low 🟢 / Medium 🟠 / High 🔴|
 | Test Case Assigned To | Name of the tester |
+
+All these test cases will be stored in a Google Sheets document : [TestCases_BugReport_x86Assembly_Team1](https://docs.google.com/spreadsheets/d/1J5YRSXsImOCFuaOzA-Vpo5ZxYwILIXlkPwnCMQx_Muw/edit?usp=sharing), but can also be found on the ```TestCases.md```.
 
 ## Testing Tools
 
@@ -107,14 +127,14 @@ The following table will be an example of a test case that we will use to test t
 ### Software
 
 - [Visual Studio Code](https://code.visualstudio.com/) for the development of the game
-- [GitHub](https://github.com) for the version control
+- [GitHub](https://github.com) for the version control and to track the defects
 - [NASM](https://www.nasm.us/) for the assembly language
 - [DOSBox 0.74-3 for macOS](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox-0.74-3-3.dmg/download) for the testing of the game on macOS, emulating a DOS environment, with a 16-bit processor, x86 architecture and 65536 Bytes of memory.
 - [DOSBox 0.74-3 for Windows](https://sourceforge.net/projects/dosbox/files/dosbox/0.74-3/DOSBox0.74-3-win32-installer.exe/download) for the testing of the game on Windows.
 
 ### Defects Tracking
 
-We will use GitHub issues to track the defects of the game. We will create a new issue for each defect that we find during the testing of the game. Every issue will be labeled with the `bug` label and will be assigned to the developer who will fix the defect. But also with a description of the defect, the steps to reproduce the defect and the expected result and finally the actual result. We will also add a screenshot or a video of the defect if it's possible. Finally we will add a label to the issue to indicate its priority level.
+We will use GitHub Issues to track the defects of the game. We will create a new issue for each defect that we find during the testing of the game. Every issue will be labeled with the `bug` label and will be assigned to the developer who will fix the defect. But also with a description of the defect, the steps to reproduce the defect and the expected result and finally the actual result. We will also add a screenshot or a video of the defect if it's possible. Finally we will add a label to the issue to indicate its priority level.
 
 This is an example of an issue that we will create for a defect:
 
