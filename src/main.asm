@@ -1,7 +1,6 @@
 ; TODO
 ; start of a map
 ; fix character printing
-; fix heap librarie
 org 100h    
 
 section .bss
@@ -12,19 +11,19 @@ section .text
 
     _start:
     
-    ;call heapInit
-    ;mov ax, 1000h
-    ;call heapAllocParagraph
-    ;mov [backBufferSeg], ax
+    call heapInit
+    mov ax, 1000h
+    call heapAllocParagraph
+    mov [backBufferSeg], ax
 
     mov ah, 00h                 ; set video mode requirement
-    mov al, 13h                 ; set video mode option to 320 x 200 256 colors
+    mov al, 013h                ; set Video Mode 4F02h (VBE mode 101h) - 640x480, 256 colors
     int 10h                     ; interupt the process
 
     mov di, [xPos]              ; set the original coordinate of the sprite
     mov si, pacmanR             ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
-    ;call backBuffer
+    call backBuffer
 
     mainLoop:
 
