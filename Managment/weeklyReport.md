@@ -1,6 +1,6 @@
 # Weekly report - Team 1
 
-| | | |
+| | |
 | ----- | ----- |
 | Title | Weekly report - Team 1 |
 | Author(s) | Alexis Lasselin |
@@ -8,6 +8,16 @@
 | Reviewer(s) |  |
 | Created on | 09/11/2023 |
 | Last updated | 10/11/2023 |
+
+---
+
+## Table of contents
+
+1. [Purpose](#purpose)
+2. [Week 1 - 06/11/2023 - 10/11/2023](#week-1---06112023---10112023)
+3. [Week 2 - 13/11/2023 - 17/11/2023](#week-2---13112023---17112023)
+4. [Week 3 - 20/11/2023 - 24/11/2023](#week-3---20112023---24112023)
+5. [Week 4 - 27/11/2023 - 01/12/2023](#week-4---27112023---01122023)
 
 ## Purpose
 
@@ -286,6 +296,8 @@ Alexis Lasselin
 - Add the collision against the borders and the ghosts
 - Update all the management documents
 
+---
+
 ## Week 4 - 27/11/2023 - 01/12/2023
 
 ### Technical specifications
@@ -299,3 +311,61 @@ Salaheddine Namir & Victor Leroy
 |Time allocated|Time needed|Deadline|
 |-|-|-|
 | 1 half-day | 1 half-day | 27/11/2023 |
+
+### PACMAN
+
+#### Sprite and animations
+
+During the whole Friday, our software engineers worked on the animations of the sprites (mouth movement and ghost floating effect).
+
+WIP
+
+Jason Grosso & Abderrazaq Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 day | 1 day | 11/12/2023 |
+
+#### Map creation
+
+On Friday afternoon, our program manager worked on the map creation.
+
+WIP
+
+Gregory Pagnoux
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 11/12/2023 |
+
+### Bug report
+
+Our QA found typo errors in the technical specifications and decided to create a google spreadsheet to report bugs.
+
+Done
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 01/12/2023 |
+
+### Project follow-up
+
+As usual, the project follow-up is updated.
+
+Done
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 01/12/2023 |
+
+### What is planned for the next week
+
+- Continue the PACMAN game
+- Deliver the test plan
+- Update all the management documents
+
+---
