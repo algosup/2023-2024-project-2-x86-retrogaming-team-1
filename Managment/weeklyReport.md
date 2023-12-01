@@ -362,10 +362,21 @@ Alexis Lasselin
 |-|-|-|
 | 1 half-day | 1 half-day | 01/12/2023 |
 
+### Test plan
+
+The test plan is completed.
+
+Done
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 08/12/2023 |
+
 ### What is planned for the next week
 
 - Continue the PACMAN game
-- Deliver the test plan
 - Update all the management documents
 
 ---
