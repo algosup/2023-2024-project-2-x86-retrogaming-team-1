@@ -28,7 +28,7 @@ playerMovR:
     mov bx, [xPos]              ; move the position inside the bx register
     add bx, [xVelocity]         ; add the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update the position 
-    mov si, pacmanR             ; move the sprite to be displayed inside the si register
+    mov si, pacmanR_00          ; move the sprite to be displayed inside the si register
     call drawPacman             ; draw the sprite that was selected
     jmp readKeyb                ; jump back to the keyboard reader
 
@@ -36,7 +36,7 @@ playerMovL:
     mov bx, [xPos]              ; move the position inside the bx register
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update the position 
-    mov si, pacmanL             ; move the sprite to be displayed inside the si register
+    mov si, pacmanL_00          ; move the sprite to be displayed inside the si register
     call drawPacman             ; draw the sprite that was selected
     jmp readKeyb                ; jump back to the keyboard reader
 
@@ -44,7 +44,7 @@ playerMovUp:
     mov bx, [xPos]              ; move the position inside the bx register
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
     mov word [xPos], bx         ; update the position 
-    mov si, pacmanUp            ; move the sprite to be displayed inside the si register
+    mov si, pacmanUp_00         ; move the sprite to be displayed inside the si register
     call drawPacman             ; draw the sprite that was selected
     jmp readKeyb                ; jump back to the keyboard reader
 
@@ -52,6 +52,6 @@ playerMovDown:
     mov bx, [xPos]              ; move the position inside the bx register
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
     mov word [xPos], bx         ; update the position 
-    mov si, pacmanDown          ; move the sprite to be displayed inside the si register
+    mov si, pacmanDown_00       ; move the sprite to be displayed inside the si register
     call drawPacman             ; draw the sprite that was selected
     jmp readKeyb                ; jump back to the keyboard reader

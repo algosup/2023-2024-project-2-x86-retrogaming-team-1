@@ -11,6 +11,7 @@ section .text
 
     _start:
     
+    call timerStartStopWatch
     call heapInit
     mov ax, 1000h
     call heapAllocParagraph
@@ -21,7 +22,7 @@ section .text
     int 10h                     ; interupt the process
 
     mov di, [xPos]              ; set the original coordinate of the sprite
-    mov si, pacmanR             ; select the sprite to be displayed
+    mov si, pacmanR_00          ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
     call backBuffer
 
@@ -113,6 +114,8 @@ section .text
     mov ah, 4ch                 ; DOS function to exit program
     int 21h                     ; Call DOS interrupt
 
-    %include "sprites.asm"          ; include the file with the sprites
-    %include "movement.asm"         ; include the file for the movement
+    %include "sprites.inc"          ; include the file with the sprites
+    %include "movement.inc"         ; include the file for the movement
     %include "heapLibrarie.inc"     ; include the heap librarie
+    %include "stopwatch.inc"        ; include the stopwatch
+    %include "animations.inc"
