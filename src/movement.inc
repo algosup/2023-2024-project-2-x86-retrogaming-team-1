@@ -18,16 +18,16 @@ readKeyb:
     mov ah, 00h                 ; BIOS function to read keyboard input
     int 16h                     ; Call BIOS interrupt
 
-    cmp al, [keyRight]          ; compare the value of the key pressed to the value of keyRight
+    cmp ah, [keyRight]          ; compare the value of the key pressed to the value of keyRight
     je playerMovR               ; if equal jump to the playerMovRight procedure
 
-    cmp al, [keyLeft]           ; compare the value of the key pressed to the value of keyLeft
+    cmp ah, [keyLeft]           ; compare the value of the key pressed to the value of keyLeft
     je playerMovL               ; if equal jump to the playerMovLeft procedure
 
-    cmp al, [keyUp]             ; compare the value of the key pressed to the value of keyUp
+    cmp ah, [keyUp]             ; compare the value of the key pressed to the value of keyUp
     je playerMovUp              ; if equal jump to the playerMovUp procedure
 
-    cmp al, [keyDown]           ; compare the value of the key pressed to the value of keyDown
+    cmp ah, [keyDown]           ; compare the value of the key pressed to the value of keyDown
     je playerMovDown            ; if equal jump to playerMovDown procedure
 
     cmp al, [keyExit]           ; compare the value of the key pressed to the value of keyExit
