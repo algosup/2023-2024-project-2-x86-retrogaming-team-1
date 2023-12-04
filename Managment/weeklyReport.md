@@ -5,7 +5,7 @@
 | Title | Weekly report - Team 1 |
 | Author(s) | Alexis Lasselin |
 | Team | Team 1 |
-| Reviewer(s) |  |
+| Reviewer(s) | Victor Leroy |
 | Created on | 09/11/2023 |
 | Last updated | 10/11/2023 |
 
@@ -21,10 +21,10 @@
 
 ## Purpose
 
-This document is the weekly report of the team 1. It contains the work done during the week.
+This document is the weekly report of the team 1. It contains the work  ✅ during the week.
 
 ```markdown
-Task name
+Task name 
 
 Description. Status of the task.
 
@@ -42,9 +42,7 @@ Accomptable people.
 
 ### Project discovery
 
-On Monday morning, we got a meeting with the client to discover the project.
-
-Done
+On Monday morning, we got a meeting with the client to discover the project. ✅
 
 All the team
 
@@ -54,9 +52,7 @@ All the team
 
 ### Team preparation
 
-After the meeting, we decided to prepare the project by creating the repository, a github project and a Slack space.
-
-Done
+After the meeting, we decided to prepare the project by creating the repository, a GitHub project and a Slack space. ✅
 
 Alexis Lasselin and Salaheddine Namir
 
@@ -66,9 +62,7 @@ Alexis Lasselin and Salaheddine Namir
 
 ### Project charter
 
-To start the project, we decided to write the project charter.
-
-Done
+To start the project, we decided to write the project charter. ✅
 
 Alexis Lasselin
 
@@ -80,9 +74,7 @@ Alexis Lasselin
 
 As we must deliver the functional specifications for the next week, we decided to start it.
 
-#### Writing the functional specifications
-
-WIP
+#### Writing the functional specifications ⌛️
 
 Gregory Pagnoux as the program manager but all the team is participating
 
@@ -90,9 +82,7 @@ Gregory Pagnoux as the program manager but all the team is participating
 |-|-|-|
 | 3 half-days | 3 half-day | 13/11/2023 |
 
-#### Reviewing the functional specifications
-
-WIP
+#### Reviewing the functional specifications ⌛️
 
 Victor Leroy
 
@@ -102,9 +92,7 @@ Victor Leroy
 
 ### Assembly language discovery
 
-As we will use assembly language for the project, we decided to discover it.
-
-WIP
+As we will use assembly language for the project, we decided to discover it. ⌛️
 
 Jason Grosso & Abderrazaq Namir as the software engineers.
 
@@ -116,9 +104,7 @@ Jason Grosso & Abderrazaq Namir as the software engineers.
 
 Even if the deadline for the technical is the November 27th, we decided to start it. We will have more time to do it and we will be able to focus on the project.
 
-#### Writing the technical specifications
-
-WIP
+#### Writing the technical specifications ⌛️
 
 Salaheddine Namir
 
@@ -126,9 +112,7 @@ Salaheddine Namir
 |-|-|-|
 | 1 half-day | 1 half-day | 27/11/2023 |
 
-#### Reviewing the technical specifications
-
-Not started
+#### Reviewing the technical specifications ❌
 
 Victor Leroy
 
@@ -136,9 +120,7 @@ Victor Leroy
 
 For the test plan, we decided to start it as early as possible to avoid mistakes from the beginning.
 
-#### Writing the test plan
-
-WIP
+#### Writing the test plan ⌛️
 
 Victor Leroy
 
@@ -159,9 +141,7 @@ Victor Leroy
 
 ### Functional specifications
 
-The functional specifications deadline arrived, but we are not impacted by it. The functional specifications writing and reviewing has been done during the week-end of the 11/11/2023.
-
-Done
+The functional specifications deadline arrived, but we are not impacted by it. The functional specifications writing and reviewing has been done during the week-end of the 11/11/2023. ✅
 
 Gregory Pagnoux
 
@@ -171,9 +151,7 @@ Gregory Pagnoux
 
 ### Technical specifications
 
-After the feedbacks on the functional specifications, we improved the technical specifications.
-
-WIP
+After the feedbacks on the functional specifications, we improved the technical specifications. ⌛️
 
 Salaheddine Namir
 
@@ -183,9 +161,7 @@ Salaheddine Namir
 
 ### Test plan
 
-The test plan is nearly completed, some test cases are missing.
-
-WIP
+The test plan is nearly completed, some test cases are missing. ⌛️
 
 Victor Leroy
 
@@ -195,9 +171,7 @@ Victor Leroy
 
 ### PACMAN start
 
-This week, after Garry's classes, our software engineers started to code the PACMAN game, currently, you're able to move the sprite on the screen, even if there is no map and no collision against the borders yet.
-
-WIP
+This week, after Garry's classes, our software engineers started to code the PACMAN game, currently, you're able to move the sprite on the screen, even if there is no map and no collision against the borders yet. ⌛️
 
 Jason Grosso
 
@@ -207,9 +181,7 @@ Jason Grosso
 
 ### Project follow-up
 
-Instead of using a gantt chart, we're using a follow-up table to follow the project.
-
-WIP
+Instead of using a gantt chart, we're using a follow-up table to follow the project. ⌛️
 
 Alexis Lasselin
 
@@ -231,9 +203,7 @@ Alexis Lasselin
 
 ### Technical specifications
 
-The technical specifications are completed and reviewed. Ready to meet the deadline.
-
-Done
+The technical specifications are completed and reviewed. Ready to meet the deadline. ✅
 
 Salaheddine Namir
 
@@ -243,9 +213,7 @@ Salaheddine Namir
 
 ### QA's review
 
-The QA reviewed the technical specifications.
-
-Done
+The QA reviewed the technical specifications. ✅
 
 Victor Leroy
 
@@ -255,9 +223,7 @@ Victor Leroy
 
 ### Test plan
 
-Victor nearly completed the test cases but completed the test plan.
-
-WIP
+Victor nearly completed the test cases but completed the test plan. ⌛️
 
 Victor Leroy
 
@@ -267,9 +233,7 @@ Victor Leroy
 
 ### PACMAN
 
-This week, our softwares engineers worked on the PACMAN game. They implemented the controls and the different sprites.
-
-WIP
+This week, our softwares engineers worked on the PACMAN game. They implemented the controls and the different sprites. ⌛️
 
 Jason Grosso & Abderrazaq Namir
 
@@ -279,9 +243,7 @@ Jason Grosso & Abderrazaq Namir
 
 ### Project follow-up
 
-The project follow-up is updated.
-
-Done
+The project follow-up is updated. ✅
 
 Alexis Lasselin
 
@@ -302,9 +264,7 @@ Alexis Lasselin
 
 ### Technical specifications
 
-The technical specifications are reviewed and merged to the main branch.
-
-Done
+The technical specifications are reviewed and merged to the main branch. ✅
 
 Salaheddine Namir & Victor Leroy
 
@@ -316,9 +276,7 @@ Salaheddine Namir & Victor Leroy
 
 #### Sprite and animations
 
-During the whole Friday, our software engineers worked on the animations of the sprites (mouth movement and ghost floating effect).
-
-WIP
+During the whole Friday, our software engineers worked on the animations of the sprites (mouth movement and ghost floating effect). ⌛️
 
 Jason Grosso & Abderrazaq Namir
 
@@ -328,9 +286,7 @@ Jason Grosso & Abderrazaq Namir
 
 #### Map creation
 
-On Friday afternoon, our program manager worked on the map creation.
-
-WIP
+On Friday afternoon, our program manager worked on the map creation. ⌛️
 
 Gregory Pagnoux
 
@@ -340,9 +296,7 @@ Gregory Pagnoux
 
 ### Bug report
 
-Our QA found typo errors in the technical specifications and decided to create a google spreadsheet to report bugs.
-
-Done
+Our QA found typo errors in the technical specifications and decided to create a google spreadsheet to report bugs. ✅
 
 Victor Leroy
 
@@ -352,9 +306,7 @@ Victor Leroy
 
 ### Project follow-up
 
-As usual, the project follow-up is updated.
-
-Done
+As usual, the project follow-up is updated. ✅
 
 Alexis Lasselin
 
@@ -364,9 +316,7 @@ Alexis Lasselin
 
 ### Test plan
 
-The test plan is completed.
-
-Done
+The test plan is completed. ✅
 
 Victor Leroy
 
