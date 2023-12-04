@@ -21,12 +21,12 @@
 
 ## Purpose
 
-This document is the weekly report of the team 1. It contains the work  ✅ during the week.
+This document is the weekly report of the team 1. It contains the work done during the week.
 
 ```markdown
 Task name 
 
-Description. Status of the task.
+Description. Status of the task: Done(✅); Work In Progress(⌛️); Not started but planned (❌)
 
 Accomptable people. 
 
