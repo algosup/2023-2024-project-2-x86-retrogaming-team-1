@@ -72,11 +72,11 @@ Alexis Lasselin
 
 ### Functional specifications
 
-As we must deliver the functional specifications for the next week, we decided to start it.
+As we must deliver the functional specifications for next week, we decided to start writing it.
 
 #### Writing the functional specifications ⌛️
 
-Gregory Pagnoux as the program manager but all the team is participating
+Gregory Pagnoux as the program manager but all the team is participating.
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
@@ -94,7 +94,7 @@ Victor Leroy
 
 As we will use assembly language for the project, we decided to discover it. ⌛️
 
-Jason Grosso & Abderrazaq Namir as the software engineers.
+Jason Grosso & Abderrazaq Makran as the software engineers.
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
@@ -128,7 +128,7 @@ Victor Leroy
 |-|-|-|
 | 1 half-day | 1 half-day | 08/12/2023 |
 
-### What is planned for the next week
+### What is planned for next week
 
 - Finish the functional specifications
 - Continue the technical specifications and the test plan
@@ -189,7 +189,7 @@ Alexis Lasselin
 |-|-|-|
 | 1 half-day | 1 half-day | 17/11/2023 |
 
-### What is planned for the next week
+### What is planned for next week
 
 - Finish the technical specifications
 - Conclude the test plan
@@ -203,7 +203,7 @@ Alexis Lasselin
 
 ### Technical specifications
 
-The technical specifications are completed and reviewed. Ready to meet the deadline. ✅
+The technical specifications is completed and reviewed. Ready to meet the deadline. ✅
 
 Salaheddine Namir
 
@@ -233,9 +233,9 @@ Victor Leroy
 
 ### PACMAN
 
-This week, our softwares engineers worked on the PACMAN game. They implemented the controls and the different sprites. ⌛️
+This week, our software engineers worked on PAC-MAN, creating the game's various sprites and controls. ⌛️
 
-Jason Grosso & Abderrazaq Namir
+Jason Grosso & Abderrazaq Makran
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
@@ -251,7 +251,7 @@ Alexis Lasselin
 |-|-|-|
 | 1 half-day | 1 half-day | 24/11/2023 |
 
-### What is planned for the next week
+### What is planned for next week
 
 - Merge the technical specifications to the main branch
 - Create the map for the PACMAN game
@@ -278,7 +278,7 @@ Salaheddine Namir & Victor Leroy
 
 During the whole Friday, our software engineers worked on the animations of the sprites (mouth movement and ghost floating effect). ⌛️
 
-Jason Grosso & Abderrazaq Namir
+Jason Grosso & Abderrazaq Makran
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
@@ -296,7 +296,7 @@ Gregory Pagnoux
 
 ### Bug report
 
-Our QA found typo errors in the technical specifications and decided to create a google spreadsheet to report bugs. ✅
+Our QA found typo errors in the technical specifications and decided to create a Google Spreadsheet to report bugs. ✅
 
 Victor Leroy
 
@@ -324,7 +324,7 @@ Victor Leroy
 |-|-|-|
 | 1 half-day | 1 half-day | 08/12/2023 |
 
-### What is planned for the next week
+### What is planned for next week
 
 - Continue the PACMAN game
 - Update all the management documents
