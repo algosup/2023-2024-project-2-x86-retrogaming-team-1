@@ -223,7 +223,7 @@ Victor Leroy
 
 ### Test plan
 
-Victor nearly completed the test cases but completed the test plan. ⌛️
+Victor nearly completed the test cases and completed the test plan. ⌛️
 
 Victor Leroy
 
