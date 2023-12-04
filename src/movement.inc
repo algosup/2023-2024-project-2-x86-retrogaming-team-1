@@ -1,59 +1,70 @@
 section .data
 
-    xPos dw 0
+    xPos dw 0                   ; the position of the sprite 
     
-    xVelocity dw 1
-    yVelocity dw 320
+    xVelocity dw 1              ; horizontal speed of pacman
+    yVelocity dw 320            ; vertical speed of pacman
+
+    keyRight db 4Dh             ; the hexa value of the right arrow key
+    keyLeft db 4Bh              ; the hexa value of the left arrow key
+    keyUp db 48h                ; the hexa value of the up arrow key
+    keyDown db 50h              ; the hexa value of the down arrow key
+    keyExit db 27               ; the ascii value of the esc key
 
 section .text
 
 readKeyb:
     ; Read keyboard input
-    mov ah, 01h                 ; BIOS function to read keyboard input
-    int 21h                     ; Call BIOS interrupt
-    cmp al, 77                  ; 'right arrow' in ascii is 77
-    je playerMovR               ; If right arrow is pressed, jump to label 'playerMovR'
-    cmp al, 75                  ; 'left arrow' in ascii is 75
-    je playerMovL               ; If 'left arrow' is pressed, jump to label 'playerMov'
-    cmp al, 72                  ; 'up arrow' in ascii is 72
-    je playerMovUp              ; If 'up arrow' is pressed, jump to label 'playerMov'
-    cmp al, 80                  ; 'down arrow' in ascii is 80
-    je playerMovDown            ; If 'down arrow' is pressed, jump to label 'playerMovDown'
-    cmp al, 27                  ; 'escape' in ascii is 27
-    je exit                     ; If 'escape' is pressed jump to label 'exit'
+    mov ah, 00h                 ; BIOS function to read keyboard input
+    int 16h                     ; Call BIOS interrupt
 
-    ret                         ; return to the main loop
+    cmp al, [keyRight]          ; compare the value of the key pressed to the value of keyRight
+    je playerMovR               ; if equal jump to the playerMovRight procedure
 
+    cmp al, [keyLeft]           ; compare the value of the key pressed to the value of keyLeft
+    je playerMovL               ; if equal jump to the playerMovLeft procedure
 
+    cmp al, [keyUp]             ; compare the value of the key pressed to the value of keyUp
+    je playerMovUp              ; if equal jump to the playerMovUp procedure
 
+    cmp al, [keyDown]           ; compare the value of the key pressed to the value of keyDown
+    je playerMovDown            ; if equal jump to playerMovDown procedure
 
+    cmp al, [keyExit]           ; compare the value of the key pressed to the value of keyExit
+    je exit                     ; if equal jump to the exit procedure
 
 playerMovR:
     mov bx, [xPos]              ; move the position inside the bx register
     add bx, [xVelocity]         ; add the horizontal speed inside the vector bx
-    mov word [xPos], bx         ; update the position 
-    call findFrame
-    jmp readKeyb                ; jump back to the keyboard reader
+    mov word [xPos], bx         ; update xPos 
+    mov di, [xPos]              ; update the position
+    mov si, pacmanR_00          ; choose the sprite to be displayed
+    call drawPacman             ; draw the sprite 
+    ret                         ; return
 
 playerMovL:
     mov bx, [xPos]              ; move the position inside the bx register
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
-    mov word [xPos], bx         ; update the position 
-    call findFrame
-    jmp readKeyb                ; jump back to the keyboard reader
-    
+    mov word [xPos], bx         ; update xPos
+    mov di, [xPos]              ; update the position
+    mov si, pacmanL_00          ; choose the sprite to be displayed
+    call drawPacman             ; draw the sprite
+    ret                         ; return
+
 playerMovUp:
     mov bx, [xPos]              ; move the position inside the bx register
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
-    mov word [xPos], bx         ; update the position 
-    mov si, pacmanUp_00         ; move the sprite to be displayed inside the si register
-    call findFrame
-    jmp readKeyb                ; jump back to the keyboard reader
+    mov word [xPos], bx         ; update xPos
+    mov di, [xPos]              ; update the position
+    mov si, pacmanUp_00         ; choose the sprite to be displayed
+    call drawPacman             ; draw the sprite
+    ret                         ; return
 
 playerMovDown:
     mov bx, [xPos]              ; move the position inside the bx register
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
-    mov word [xPos], bx         ; update the position 
-    mov si, pacmanDown_00       ; move the sprite to be displayed inside the si register
-    call findFrame
-    jmp readKeyb                ; jump back to the keyboard reader
+    mov word [xPos], bx         ; update xPos
+    mov di, [xPos]              ; update the position
+    mov si, pacmanDown_00       ; choose the sprite to be displayed
+    call drawPacman             ; draw the sprite
+    ret                         ; return
