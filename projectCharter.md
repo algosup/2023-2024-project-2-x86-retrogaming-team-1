@@ -6,7 +6,7 @@
 | :-: | :-: |
 | **Document Name** | Project Charter |
 | **Document Writer** | Alexis Lasselin |
-| **Last Update** | 1 December 2023 |
+| **Last Update** | 7 December 2023 |
 | **Creation Date** | 9 November 2023 |
 
 ## Table of content
@@ -79,12 +79,12 @@ Here's the breakdown of the RACI roles:
 | Milestone | Due Date |
 | :-: | :-: |
 | Project Charter | 9 November 2023 9a.m. |
-| Functional Specifications | 13 November 1.30p.m. |
-| Technical Specifications | 27 November 1.30p.m. |
-| Test Plan | 8 December 5p.m. |
-| Working Prototype | 11 December 5p.m. |
-| Final Product | 21 December 5p.m. |
-| Presentation | 22 December 9a.m. |
+| Functional Specifications | 13 November 2023 1.30p.m. |
+| Technical Specifications | 27 November 2023 1.30p.m. |
+| Test Plan | 8 December 2023 5p.m. |
+| Working Prototype | 11 December 2023 5p.m. |
+| Final Product | 21 December 2023 5p.m. |
+| Presentation | 22 December 2023 9a.m. |
 
 ## Deliverables
 
