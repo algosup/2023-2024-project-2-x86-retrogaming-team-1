@@ -101,9 +101,9 @@ global _start
 
 
     ; exit:                       ; If escape key is pressed, jump to label 'exit'
-     mov ah, 4ch
-     xor al, al
-     int 21h
+    ;  mov ah, 4ch
+    ;  xor al, al
+    ;  int 21h
 
     ;%include "sprites.inc"          ; include the file with the sprites
     ;%include "movement.inc"         ; include the file for the movement
