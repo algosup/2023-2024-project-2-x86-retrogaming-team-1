@@ -21,9 +21,9 @@ global _start
 
     mov ah, 00h                 ; set video mode requirement
     mov al, 013h                ; set Video Mode 4F02h (VBE mode 101h) - 640x480, 256 colors
-    int 10h                     ; interupt the process
+    int 10h
 
-    mov di, 0              ; set the original coordinate of the sprite
+    mov di, 0                   ; set the original coordinate of the sprite
 
     mov ax, 0xA000
     call drawMaze
@@ -100,10 +100,10 @@ global _start
     ; ret
 
 
-    ; exit:                       ; If escape key is pressed, jump to label 'exit'
-    ;  mov ah, 4ch
-    ;  xor al, al
-    ;  int 21h
+    exit:                       ; If escape key is pressed, jump to label 'exit'
+    mov ah, 4ch
+    xor al, al
+    int 21h
 
     ;%include "sprites.inc"          ; include the file with the sprites
     ;%include "movement.inc"         ; include the file for the movement

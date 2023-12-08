@@ -28,9 +28,9 @@ section .text
 
 drawMaze:
     mov si, maze                            ; select the sprite of the maze
-    mov cl, 0b1000_0000                     ; set the comparator as cl 
+    mov cx, 0b1000_0000                     ; set the comparator as cl 
     dec si
-    mov al, [si]                            ; set al as the current byte of the si's array
+    mov ax, [si]                            ; set al as the current byte of the si's array
 
     mov di, windowWidth*mazeHeight          ; set the start of the maze
     xor bx, bx                              ; set bx to 0
@@ -40,8 +40,12 @@ drawMaze:
         cmp byte [nb_tile], 8               
         jae resetComp
 
+        cmp di, windowWidth*windowHeight - 8  ; check if the generation is complete
+        jae exit               ; go to entity spawn if the maze generation is complete
+
+
 ; check wether or not a byte is set (1)
-        test al, cl                  
+        test ax, cx                  
         jnz .drawTile                       ; if set (1) means its a wall             
         jmp .drawPath                       ; if not set (0) means its a path
 
@@ -58,8 +62,6 @@ drawMaze:
             mov si, path                    ; select the sprite of the path 
             jmp createTile
 
-        ret
-
 createTile:
 
     call draw_tile                          ; draw the sprite 
@@ -68,7 +70,7 @@ createTile:
     pop cx
     pop si
 
-    shr cl, 1                               ; shift to the right by 1
+    shr cx, 1                               ; shift to the right by 1
 
     sub di, windowWidth*8                   ; after drawing a tile, go back to the previous line 
     add di, 8                               ; add the width of a tile
@@ -80,15 +82,15 @@ createTile:
     xor bx, bx
     jmp loopDraw
 
-    cmp cl, 0                               ; if cl is equal to 0 reset si
+    cmp cx, 0                               ; if cl is equal to 0 reset si
     je resetComp
 
 ;reseting cl means the current byte is finished 
 resetComp:
     mov byte [nb_tile], 0                   ; reset the counter        
-    mov cl, 0b1000_0000                     ; reset cl 
+    mov cx, 0b1000_0000                     ; reset cl 
     inc si                                  ; increase si to get to the next byte in maze
-    mov al, [si]                            ; move the current byte to al
+    mov ax, [si]                            ; move the current byte to al
 
 ;draw in 8x8
 draw_tile:
