@@ -10,7 +10,7 @@
 set "ROOT_DIR=%~dp0"
 
 @REM Set the path to the directory where the main.com file will be placed
-set "BIN_DIR=%ROOT_DIR%debug"
+set "BIN_DIR=%ROOT_DIR%\DosBox_exe"
 
 @REM Set the path to the dosbox executable
 
