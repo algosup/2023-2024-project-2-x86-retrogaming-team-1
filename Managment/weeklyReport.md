@@ -7,7 +7,7 @@
 | Team | Team 1 |
 | Reviewer(s) | Victor Leroy |
 | Created on | 09/11/2023 |
-| Last updated | 10/11/2023 |
+| Last updated | 08/12/2023 |
 
 ---
 
@@ -18,6 +18,7 @@
 3. [Week 2 - 13/11/2023 - 17/11/2023](#week-2---13112023---17112023)
 4. [Week 3 - 20/11/2023 - 24/11/2023](#week-3---20112023---24112023)
 5. [Week 4 - 27/11/2023 - 01/12/2023](#week-4---27112023---01122023)
+6. [Week 5 - 04/12/2023 - 08/12/2023](#week-5---04122023---08122023)
 
 ## Purpose
 
@@ -327,6 +328,57 @@ Victor Leroy
 ### What is planned for next week
 
 - Continue the PACMAN game
+- Update all the management documents
+
+---
+
+## Week 5 - 04/12/2023 - 08/12/2023
+
+### PACMAN
+
+#### Sprite and animations
+
+During the first part of the week, Jason, Salaheddine and Abderrazaq solved a display bug on the sprites spotted by Victor. ✅
+
+Jason Grosso, Salaheddine Namir & Abderrazaq Makran
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 04/12/2023 |
+
+#### Map implemantation
+
+On Thursday and Friday, Jason is implementing the map to the game, trying to solve bugs with the display to make the collision work easier. ⌛️
+
+Jason Grosso
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 half-days | 2 half-days | 11/12/2023 |
+
+### Bug report
+
+Our QA found bugs and typos. He reported them on the Google Spreadsheet allowing the software engineers to fix them. ✅
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 08/12/2023 |
+
+### Project follow-up
+
+As usual, the project follow-up is updated. ✅
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 08/12/2023 |
+
+### What is planned for next week
+
+- Continue the PACMAN game and being able to deliver a correct prototype
 - Update all the management documents
 
 ---
