@@ -1,6 +1,6 @@
 # Test Cases
 
-In the following document, we will describe the test cases that we have used to test our game. We will also describe the results of these tests.
+In the following document, we will describe the test cases that we have used to test our game. We will also describe the results of these tests. You will find every test case in the [TestCases_BugReport_x86Assembly_Team1](https://docs.google.com/spreadsheets/d/1J5YRSXsImOCFuaOzA-Vpo5ZxYwILIXlkPwnCMQx_Muw/edit?usp=sharing).
 
 ## Test Case 1: Start the game
 
