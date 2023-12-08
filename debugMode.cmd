@@ -1,4 +1,5 @@
 @REM Launch dosbox 
+@REM Add turbo debugger to the DosBox_exe folder manually.
 
 @REM @echo off is used to hide the commands from the user
 
@@ -9,7 +10,7 @@
 set "ROOT_DIR=%~dp0"
 
 @REM Set the path to the directory where the main.com file will be placed
-set "BIN_DIR=%ROOT_DIR%DosBox_exe"
+set "BIN_DIR=%ROOT_DIR%debug"
 
 @REM Set the path to the dosbox executable
 
@@ -27,4 +28,4 @@ set "CONFIG_LOC=%ROOT_DIR%"
 @REM Go to the C drive
 @REM Clear the screen
 
-"%DOSBOX_BIN%" -c "MOUNT c %BIN_DIR%" -c "c:" -c "cls" -c main
+"%DOSBOX_BIN%" -c "MOUNT c %BIN_DIR%" -c "c:" -c "cls" -c "td main.com"
