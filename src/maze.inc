@@ -1,17 +1,16 @@
+section .data
 
     windowWidth equ 320
     windowHeight equ 200
     mazeHeight equ 24
     nb_tile equ 0
 
-section .data
-
     wall:       db 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                 db 0x00, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
-                db 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00
-                db 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00
-                db 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00
-                db 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00
+                db 0x00, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
+                db 0x00, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
+                db 0x00, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
+                db 0x00, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
                 db 0x00, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00
                 db 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
        
@@ -28,11 +27,11 @@ section .text
 
 drawMaze:
     mov si, maze                            ; select the sprite of the maze
-    mov cx, 0b1000_0000                     ; set the comparator as cl 
+    mov cl, 0b1000_0000                     ; set the comparator as cl 
     dec si
-    mov ax, [si]                            ; set al as the current byte of the si's array
+    mov al, [si]                            ; set al as the current byte of the si's array
 
-    mov di, windowWidth*mazeHeight          ; set the start of the maze
+    mov di, 0;windowWidth*mazeHeight          ; set the start of the maze
     xor bx, bx                              ; set bx to 0
 
 ; loop until the maze is drawn  
@@ -40,12 +39,11 @@ drawMaze:
         cmp byte [nb_tile], 8               
         jae resetComp
 
-        cmp di, windowWidth*windowHeight - 8  ; check if the generation is complete
-        jae exit               ; go to entity spawn if the maze generation is complete
-
+        cmp di, windowWidth*windowHeight-8
+        jae _start.return
 
 ; check wether or not a byte is set (1)
-        test ax, cx                  
+        test al, cl                  
         jnz .drawTile                       ; if set (1) means its a wall             
         jmp .drawPath                       ; if not set (0) means its a path
 
@@ -70,27 +68,29 @@ createTile:
     pop cx
     pop si
 
-    shr cx, 1                               ; shift to the right by 1
+    shr cl, 1                               ; shift to the right by 1
 
     sub di, windowWidth*8                   ; after drawing a tile, go back to the previous line 
     add di, 8                               ; add the width of a tile
     add bx, 8
     add byte [nb_tile], 1                   ; increase the counter by one 
-    cmp bx, windowWidth                     ; compare to the window width 
+    cmp bx, 224                     ; compare to the window width 
     jb loopDraw                             ; if not finished loop
     add di, windowWidth*7                   ; go to the next row 
     xor bx, bx
     jmp loopDraw
 
-    cmp cx, 0                               ; if cl is equal to 0 reset si
+    cmp cl, 0                               ; if cl is equal to 0 reset si
     je resetComp
 
 ;reseting cl means the current byte is finished 
 resetComp:
     mov byte [nb_tile], 0                   ; reset the counter        
-    mov cx, 0b1000_0000                     ; reset cl 
+    mov cl, 0b1000_0000                     ; reset cl 
     inc si                                  ; increase si to get to the next byte in maze
-    mov ax, [si]                            ; move the current byte to al
+    mov al, [si]                            ; move the current byte to al
+
+    jmp loopDraw
 
 ;draw in 8x8
 draw_tile:
