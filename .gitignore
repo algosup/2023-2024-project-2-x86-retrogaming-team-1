@@ -25,6 +25,7 @@
 *.i*86
 *.x86_64
 *.hex
+*.com
 
 # Fortran module files
 *.mod
@@ -60,6 +61,9 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+*.tdh
+*.sys
+*.c
 [Bb]in
 [Dd]ebug*/
 *.sbr
