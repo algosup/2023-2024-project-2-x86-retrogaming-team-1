@@ -46,7 +46,7 @@ draw_maze:
     dec si
     mov al, [si]
 
-    mov di, windowWidth*mazeHeight
+    mov di, 0
     xor bx, bx
 
     ; loop until the maze is drawn  
@@ -64,14 +64,14 @@ draw_maze:
 
         .drawTile:
             push si                         ; push si, cx and ax to reuse them later on
-            push cx
             push ax
+            push cx
             mov si, wall                    ; select the sprite of the wall
             jmp createTile
         .drawPath:
             push si                         ; push si, cx and ax to reuse them later on
-            push cx
             push ax
+            push cx
             mov si, path                    ; select the sprite of the path 
             jmp createTile
         
@@ -84,8 +84,8 @@ createTile:
 
     call draw_tile                          ; draw the sprite 
 
-    pop ax                                  ; pop si, cx and ax /!\ the order
-    pop cx
+    pop cx                                  ; pop si, cx and ax /!\ the order
+    pop ax
     pop si
 
     shr cl, 1                               ; shift to the right by 1
@@ -94,11 +94,10 @@ createTile:
     add di, 8                               ; add the width of a tile
     add bx, 8
     add byte [nb_tile], 1                   ; increase the counter by one 
-    cmp bx, 256                     ; compare to the window width 
+    cmp bx, windowWidth                             ; compare to the window width 
     jb loopDraw                             ; if not finished loop
     add di, windowWidth*7                   ; go to the next row 
     xor bx, bx
-    jmp loopDraw
 
     cmp cl, 0                               ; if cl is equal to 0 reset si
     je resetComp
