@@ -1,6 +1,6 @@
 section .data
 
-    xPos dw 0                   ; the position of the sprite 
+    xPos dw windowWidth*96+(windowWidth-16)/2                   ; the position of the sprite 
     
     xVelocity dw 1              ; horizontal speed of pacman
     yVelocity dw 320            ; vertical speed of pacman

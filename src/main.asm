@@ -22,11 +22,12 @@ global _start
     mov al, 013h                ; set Video Mode 4F02h (VBE mode 101h) - 640x480, 256 colors
     int 10h
 
-    mov di, 0                   ; set the original coordinate of the sprite
+    mov di, 0
 
-    ; mov ax, 0xA000
-    ; mov es, ax
-    ; call drawMaze
+    mov ax, 0xA000
+    mov es, ax
+    call draw_maze
+    
     mov si, pacmanR_00          ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
 
@@ -102,6 +103,6 @@ global _start
     %include "sprites.inc"          ; include the file with the sprites
     %include "movement.inc"         ; include the file for the movement
     %include "heapLibrarie.inc"     ; include the heap librarie
-    ;%include "maze.inc"             ; include the map drawing
-    ;%include "maze_sprite.inc"
+    %include "maze.inc"             ; include the map drawing
+    %include "maze_sprite.inc"
     %include "keyboard_handler.inc"
