@@ -8,14 +8,10 @@ section .data
 
 section .text
 
-keyhandler:
+ readKeyb:
     xor ax, ax
     mov ah, 00h
     int 16h
-    ret
-
- readKeyb:
-    call keyhandler
 
     cmp ah, [keyRight]          ; compare the value of the key pressed to the value of keyRight
     je playerMovR               ; if equal jump to the playerMovRight procedure
@@ -29,13 +25,12 @@ keyhandler:
     cmp ah, [keyDown]           ; compare the value of the key pressed to the value of keyDown
     je playerMovDown            ; if equal jump to playerMovDown procedure
 
-    
-
     cmp al, [keyExit]           ; compare the value of the key pressed to the value of keyExit
-    je .exit                     ; if equal jump to the exit procedure
-    jmp readKeyb
+    je .exit                    ; if equal jump to the exit procedure
 
-    .exit:                       ; If escape key is pressed, jump to label 'exit'
-    mov ah, 4ch
-    xor al, al
-    int 21h
+    ret
+
+    .exit:                      ; If escape key is pressed, jump to label 'exit'
+        mov ah, 4ch
+        xor al, al
+        int 21h

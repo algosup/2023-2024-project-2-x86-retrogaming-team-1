@@ -27,9 +27,6 @@ global _start
     ; mov ax, 0xA000
     ; mov es, ax
     ; call drawMaze
-
-    .return:
-    jmp .return
     mov si, pacmanR_00          ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
 
@@ -40,7 +37,7 @@ global _start
 
     mov di, [xPos]              ; set the original coordinate of the sprite    
 
-    jmp readKeyb               ; call the keyboard reader
+    call readKeyb               ; call the keyboard reader
 
     ; This loop is to slow down the animation
     mov cx, 5000                ; 50000 is the time we wait before moving the sprite
