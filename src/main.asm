@@ -2,7 +2,7 @@ org 100h
 
 section .data
 
-windowWidth equ 256
+windowWidth equ 320
 windowHeight equ 200
 mazeHeight equ 25
 nb_tile equ 0
@@ -43,6 +43,7 @@ draw_maze:
 
     mov si, maze
     mov cl, 0b1000_0000
+    dec si
     mov al, [si]
 
     mov di, windowWidth*mazeHeight
@@ -93,7 +94,7 @@ createTile:
     add di, 8                               ; add the width of a tile
     add bx, 8
     add byte [nb_tile], 1                   ; increase the counter by one 
-    cmp bx, windowWidth                     ; compare to the window width 
+    cmp bx, 256                     ; compare to the window width 
     jb loopDraw                             ; if not finished loop
     add di, windowWidth*7                   ; go to the next row 
     xor bx, bx
