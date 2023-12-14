@@ -104,5 +104,5 @@ global _start
     %include "movement.inc"         ; include the file for the movement
     %include "heapLibrarie.inc"     ; include the heap librarie
     %include "maze.inc"             ; include the map drawing
-    %include "maze_sprite.inc"
-    %include "keyboard_handler.inc"
+    %include "maze_sprite.inc"      ; include the sprite of the maze
+    %include "keyboard_handler.inc" ; include the generation of the maze
