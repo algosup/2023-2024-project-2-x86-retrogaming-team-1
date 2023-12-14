@@ -1,6 +1,6 @@
 section .data
 
-colorWall dw 0x10
+colorWall dw 0x11
 
 section .text
 
@@ -11,7 +11,10 @@ checkColor:
 
     mov bx, 0
 
-    cmp bx, [colorWall]
-    mov ax, 1
+    cmp al, [colorWall]
+    jmp .wall
+
+    .wall:
+        mov ax, 1
 
     ret
