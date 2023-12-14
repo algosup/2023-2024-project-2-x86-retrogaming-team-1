@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 SCRIPT_DIR="$(pwd)"
 
 # Set the root directory to the parent directory of the script directory
-ROOT_DIR="$SCRIPT_DIR/.."
+ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 
 # Set the path to the nasm executable
 NASM="$ROOT_DIR/nasm/nasm"
