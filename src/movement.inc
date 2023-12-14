@@ -14,6 +14,12 @@ playerMovR:
     mov di, [xPos]              ; update the position
     mov si, pacmanR_00          ; choose the sprite to be displayed
     call drawPacman             ; draw the sprite 
+    call F_note                 ; call the sound procedure
+    call G_note
+    call A_note
+    call B_note
+    call F_note
+
     ret                         ; return
 
 playerMovL:
