@@ -19,15 +19,16 @@ playerMovR:
 
     ; we set cx and dx before invocking 0Dh
     .checkCollision:
+
         mov ax, [xPos]
-        mov cx, [windowWidth]
-        xor dx, dx              ; set dx to 0
-        div cx                  ; isolate the sprite
-        mov [yPos], dx          ; set yPos to 0
-        add word [yPos], 15     ; go to the edge of the sprite
-        mov cx, [yPos]          ; cx set
-        add ax, 8               ; go to the middle of the sprite
-        mov dx, ax              ; dx set
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 8
+        add word [yPos], 15
+        mov cx, [yPos]
+        mov dx, ax
 
         call checkColor         ; file colorChecker
 
