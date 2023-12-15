@@ -1,47 +1,8 @@
 section .data
+    melody db 0, 2, 4, 5, 7, 9, 11, 12 ; Séquence de notes
+
     clock dw 0
-    time dw 0
-    tour dw 0
     frequence dw 0
-
-;    %define Cg 9121
-;    %define C#g 8609
-;    %define Dg 8126
-;    %define D#g 7670
-;    %define Eg 7239
-;    %define Fg 6833
-;    %define F#g 6449
-;    %define Gg 6087
-;    %define G#g 5746
-;    %define Ag 5423
-;    %define A#g 5119
-;    %define Bg 4831
-
-;    %define C 4560
-;    %define C# 4304
-;    %define D 4063
-;    %define D# 3834
-;    %define E 3619
-;    %define F 3416
-;    %define F# 3224
-;    %define G 3043
-;    %define G# 2873
-;    %define A 2711
-;    %define A# 2559
-;    %define B 2415
-
-;    %define Ca 2280
-;    %define C#a 2152
-;    %define Da 2031
-;    %define D#a 1917
-;    %define Ea 1809
-;    %define Fa 1715
-;    %define F#a 1612
-;    %define Ga 1521
-;    %define G#a 1436
-;    %define Aa 1355
-;    %define A#a 1292
-;    %define Ba 1207
 
     Cg dw 9121
     C#g dw 8609
@@ -83,6 +44,29 @@ section .data
     Ba dw 1207
 
 section .text
+        global movMelody
+
+movMelody:
+    add word [time], 1
+    cmp word [time], 120
+    jne .skipChangeNote
+    mov word [time], 0
+    mov bx, [tour]
+
+    cmp bx, 0
+    je Gg_note            ; Jump to Gg_note if bx is 0
+    cmp bx, 1
+    je C_note             ; Jump to C_note if bx is 1
+    cmp bx, 2
+    je D_note             ; Jump to D_note if bx is 2
+    cmp bx, 3
+    je E_note             ; Jump to E_note if bx is 3
+    cmp bx, 4
+    je Gg_note            ; Jump to Gg_note if bx is 4
+
+.skipChangeNote:
+    call play_note
+    ret
 
 delay:
     push ax ; Save the ax register
@@ -94,223 +78,224 @@ InitTime:
     cmp ax, [clock]
     mov cx, 2
     je InitTime
+
     pop ax ; Restore the ax register
     ret ; Return from delay procedure
 
 Cg_note:
     mov ax, [Cg]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 C#g_note:
     mov ax, [C#g]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Dg_note:
     mov ax, [Dg]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 D#g_note:
     mov ax, [D#g]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Eg_note:
     mov ax, [Eg]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Fg_note:
     mov ax, [Fg]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 F#g_note:
     mov ax, [F#g]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Gg_note:
     mov ax, [Gg]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 G#g_note:
     mov ax, [G#g]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Ag_note:
     mov ax, [Ag]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 A#g_note:
     mov ax, [A#g]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Bg_note:
     mov ax, [Bg]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 C_note:
     mov ax, [C]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 C#_note:
     mov ax, [C#]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 D_note:
     mov ax, [D]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 D#_note:
     mov ax, [D#]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 E_note:
     mov ax, [E]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 F_note:
     mov ax, [F]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 F#_note:
     mov ax, [F#]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 G_note:
     mov ax, [G]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 G#_note:
     mov ax, [G#]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 A_note:
     mov ax, [A]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 A#_note:
     mov ax, [A#]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 B_note:
     mov ax, [B]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Ca_note:
     mov ax, [Ca]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 C#a_note:
     mov ax, [C#a]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Da_note:
     mov ax, [Da]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 D#a_note:
     mov ax, [D#a]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Ea_note:
     mov ax, [Ea]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Fa_note:
     mov ax, [Fa]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 F#a_note:
     mov ax, [F#a]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Ga_note:
     mov ax, [Ga]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 G#a_note:
     mov ax, [G#a]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Aa_note:
     mov ax, [Aa]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 A#a_note:
     mov ax, [A#a]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 Ba_note:
     mov ax, [Ba]
     mov [frequence], ax
-    int 21h
+    int 21h                   ; Appel de l'interruption 21h
     ret
 
 play_note:
@@ -323,102 +308,15 @@ play_note:
     in al, 61h
     or al, 00000011b        ; Set bits 1 and 0.
     out 61h, al             ; Send new value.
+
+    ; Stop sound by resetting bit 0 to 0.
+;    in al, 61h
+;    and al, 11111110b
+;    out 61h, al
+
     ret 
 
-;musicStart:
-;    add word [time], 1
-;    cmp word [time], 1
-;    jne .skipChangeNote
-;    mov word [time], 0
-;    mov bx, [tour]
-;    cmp bx, 0
-;    call B_note
-;    cmp bx, 1
-;    call Ba_note
-;    cmp bx, 2
-;    call F#a_note
-;    cmp bx, 3
-;    call D#a_note
-
-;    cmp bx, 4
-;    call Ba_note
-;    cmp bx, 5
-;    call Fa_note
-;    cmp bx, 6
-;    call Ea_note
-;    cmp bx, 7
-;    call delay
-
-;    cmp bx, 8
-;    call B_note
-;    cmp bx, 9
-;    call Ba_note
-;    cmp bx, 10
-;    call F#a_note
-;    cmp bx, 11
-;    call D#a_note
-
-;    cmp bx, 12
-;    call Ba_note
-;    cmp bx, 13
-;    call Fa_note
-;    cmp bx, 14
-;    call Ea_note
-;    cmp bx, 15
-;    call delay
-
-;    cmp bx, 16
-;    call B_note
-;    cmp bx, 17
-;    call Ba_note
-;    cmp bx, 18
-;    call F#a_note
-;    cmp bx, 19
-;    call D#a_note
-
-;    cmp bx, 20
-;    call Ba_note
-;    cmp bx, 21
-;    call Fa_note
-;    cmp bx, 22
-;    call Ea_note
-;    cmp bx, 23
-;    call delay
-
-;    cmp bx, 24
-;    call Ea_note
-;    cmp bx, 25
-;    call Fa_note
-;    cmp bx, 26
-;    call Ga_note
-;    cmp bx, 27
-;    call Aa_note
-;    cmp bx, 28
-;    call Ba_note
-;    .skipChangeNote:
-;    call play_note
-;    ret
-
-movMelody:
-    add word [time], 1
-    cmp word [time], 1
-    jne .skipChangeNote
-    mov word [time], 0
-    mov bx, [tour]
-    cmp bx, 0
-    call Gg_note            ; call the sound procedure
-    cmp bx, 1
-    call C_note
-    cmp bx, 1
-    call D_note
-    cmp bx, 3
-    call E_note
-    cmp bx, 4
-    call Gg_note
-    .skipChangeNote:
-    call play_note
-    ret
-
-;TODO
-;stop musique quand pac-man s'arrête
-;change la note
+section .bss
+    time resw 1               ; Variable pour compter le temps
+    tour resw 1               ; Variable pour stocker le tour
+    message_gg db 'Playing Gg note', 0  ; Message à afficher

@@ -13,14 +13,9 @@ playerMovR:
     mov word [xPos], bx         ; update xPos 
     mov di, [xPos]              ; update the position
     mov si, pacmanR_00          ; choose the sprite to be displayed
-    call drawPacman             ; draw the sprite 
-    call F_note                 ; call the sound procedure
-    call G_note
-    call A_note
-    call B_note
-    call F_note
-
-    ret                         ; return
+    call drawPacman             ; draw the sprite
+    call movMelody              ; play the movMelody
+    ret
 
 playerMovL:
     mov bx, [xPos]              ; move the position inside the bx register
@@ -29,6 +24,7 @@ playerMovL:
     mov di, [xPos]              ; update the position
     mov si, pacmanL_00          ; choose the sprite to be displayed
     call drawPacman             ; draw the sprite
+    call movMelody              ; play the movMelody
     ret                         ; return
 
 playerMovUp:
@@ -38,6 +34,7 @@ playerMovUp:
     mov di, [xPos]              ; update the position
     mov si, pacmanUp_00         ; choose the sprite to be displayed
     call drawPacman             ; draw the sprite
+    call movMelody              ; play the movMelody
     ret                         ; return
 
 playerMovDown:
@@ -47,4 +44,5 @@ playerMovDown:
     mov di, [xPos]              ; update the position
     mov si, pacmanDown_00       ; choose the sprite to be displayed
     call drawPacman             ; draw the sprite
+    call movMelody              ; play the movMelody
     ret                         ; return

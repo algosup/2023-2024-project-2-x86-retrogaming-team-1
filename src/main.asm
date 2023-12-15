@@ -31,6 +31,8 @@ global _start
     mov si, pacmanR_00          ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
 
+;    call musicStart
+
     mainLoop:
 
     mov bl, 0xFF                ; move into bl the color we want to clear with
