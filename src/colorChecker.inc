@@ -6,15 +6,17 @@ section .text
 
 checkColor:
 
+    mov ah, 0Ch
+    mov al, 0Dh
+    int 10h
+
     mov ah, 0Dh
     int 10h
 
     mov bx, 0
 
     cmp al, [colorWall]
-    jmp .wall
+    je .wall
 
     .wall:
-        mov ax, 1
-
     ret

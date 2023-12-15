@@ -25,15 +25,16 @@ playerMovR:
         div cx                  ; isolate the sprite
         mov [yPos], dx          ; set yPos to 0
         add word [yPos], 15     ; go to the edge of the sprite
-        mov cx, [xPos]          ; cx set
+        mov cx, [yPos]          ; cx set
         add ax, 8               ; go to the middle of the sprite
         mov dx, ax              ; dx set
 
         call checkColor         ; file colorChecker
-        cmp ax, 1               ; check if there is a wall 
-        je .stop                ; if yes go to stop
-        jmp .move
 
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+        
     .move:
         mov di, [xPos]          ; update the position
         mov si, pacmanR_00      ; choose the sprite to be displayed
