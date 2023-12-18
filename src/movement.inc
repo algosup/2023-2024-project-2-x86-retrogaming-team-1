@@ -86,13 +86,74 @@ playerMovR:
         ret                     ; return
 
 playerMovL:
+    
     mov bx, [xPos]              ; move the position inside the bx register
+    mov [oldPos], bx
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-    mov di, [xPos]              ; update the position
-    mov si, pacmanL_00          ; choose the sprite to be displayed
-    call drawSprite             ; draw the sprite
-    ret                         ; return
+
+    .checkCollisionMiddle:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 8
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+    
+    .checkCollisionUp:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+    .checkCollisionDown:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 15
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+    .move:
+        mov di, [xPos]          ; update the position
+        mov si, pacmanL_00      ; choose the sprite to be displayed
+        call drawSprite         ; draw the sprite 
+
+        ret                     ; return
+
+    .stop:
+        mov bx, [oldPos]        ; revive the old position
+        mov [xPos], bx          ; update the xPos
+        mov dx, [xPos]          ; update the position
+        mov si, pacmanL_00      ; select the sprite
+        call drawSprite         ; draw the sprite
+
+        ret                     ; return
 
 playerMovUp:
     mov bx, [xPos]              ; move the position inside the bx register
