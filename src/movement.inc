@@ -18,7 +18,7 @@ playerMovR:
     mov word [xPos], bx         ; update xPos 
 
     ; we set cx and dx before invocking 0Dh
-    .checkCollision:
+    .checkCollisionMiddle:
 
         mov ax, [xPos]
         mov cx, windowWidth
@@ -35,11 +35,44 @@ playerMovR:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
-        
+    .checkCollisionUp:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add word [yPos], 15
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+    .checkCollisionDown:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 15
+        add word [yPos], 15
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+     
     .move:
         mov di, [xPos]          ; update the position
         mov si, pacmanR_00      ; choose the sprite to be displayed
-        call drawPacman         ; draw the sprite 
+        call drawSprite         ; draw the sprite 
 
         ret                     ; return
     
@@ -48,7 +81,7 @@ playerMovR:
         mov [xPos], bx          ; update the xPos
         mov dx, [xPos]          ; update the position
         mov si, pacmanR_00      ; select the sprite
-        call drawPacman         ; draw the sprite
+        call drawSprite         ; draw the sprite
 
         ret                     ; return
 
@@ -58,7 +91,7 @@ playerMovL:
     mov word [xPos], bx         ; update xPos
     mov di, [xPos]              ; update the position
     mov si, pacmanL_00          ; choose the sprite to be displayed
-    call drawPacman             ; draw the sprite
+    call drawSprite             ; draw the sprite
     ret                         ; return
 
 playerMovUp:
@@ -67,7 +100,7 @@ playerMovUp:
     mov word [xPos], bx         ; update xPos
     mov di, [xPos]              ; update the position
     mov si, pacmanUp_00         ; choose the sprite to be displayed
-    call drawPacman             ; draw the sprite
+    call drawSprite             ; draw the sprite
     ret                         ; return
 
 playerMovDown:
@@ -76,7 +109,7 @@ playerMovDown:
     mov word [xPos], bx         ; update xPos
     mov di, [xPos]              ; update the position
     mov si, pacmanDown_00       ; choose the sprite to be displayed
-    call drawPacman             ; draw the sprite
+    call drawSprite             ; draw the sprite
     ret                         ; return
 
 %include "colorChecker.inc"

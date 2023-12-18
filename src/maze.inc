@@ -41,7 +41,7 @@ draw_maze:
         jae resetComp
 
         cmp di, windowWidth*windowHeight-8
-        jae mainLoop
+        jae drawGhosts
 
 ; check wether or not a byte is set (1)
         test al, cl                  

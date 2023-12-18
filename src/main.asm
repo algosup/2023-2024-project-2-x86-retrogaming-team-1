@@ -28,8 +28,8 @@ global _start
     mov es, ax
     call draw_maze              ; in maze.inc
     
-    mov si, pacmanR_00          ; select the sprite to be displayed
-    call drawPacman             ; main.asm
+    mov si, pacmanR_00
+    call drawSprite             ; main.asm
 
     mainLoop:
 
@@ -73,7 +73,7 @@ global _start
 
     ; si must have the sprite address
     ; di must have the target address
-    drawPacman:
+    drawSprite:
     mov ax, 0xA000              ; memory location of the video mode
     mov es, ax
     mov dx, 16                  ; set the destination index to 16 (starting position in video memory)
@@ -106,3 +106,4 @@ global _start
     %include "maze.inc"             ; include the map drawing
     %include "maze_sprite.inc"      ; include the sprite of the maze
     %include "keyboard_handler.inc" ; include the generation of the maze
+    %include "ghost.inc"
