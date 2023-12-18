@@ -21,9 +21,9 @@ global _start
     mov al, 013h                ; set Video Mode 4F02h (VBE mode 101h) - 640x480, 256 colors
     int 10h
 
-    mov di, 0
+    mov di, 0                   ; set the starting position
 
-    mov ax, 0xA000
+    mov ax, 0xA000              
     mov es, ax
     call draw_maze              ; in maze.inc
     
@@ -33,9 +33,9 @@ global _start
     mainLoop:
 
     mov bl, 0xFF                ; move into bl the color we want to clear with
-    call clearPacman             ; in main.com
+    call clearPacman            ; in main.com
 
-    mov di, [xPos] ; set the original coordinate of the sprite    
+    mov di, [xPos]              ; set the original coordinate of the sprite    
 
     call readKeyb               ; in keyboard_handler
 
@@ -104,4 +104,5 @@ global _start
     %include "maze.inc"             ; include the map drawing
     %include "maze_sprite.inc"      ; include the sprite of the maze
     %include "keyboard_handler.inc" ; include the generation of the maze
-    %include "ghost.inc"
+    %include "ghost.inc"            ; include the file handling the ghosts
+    %include "colorChecker.inc"     ; include the color checker for the colisions
