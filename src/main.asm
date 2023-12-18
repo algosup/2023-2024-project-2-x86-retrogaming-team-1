@@ -32,6 +32,8 @@ global _start
 
     mainLoop:
 
+;    call musicStart             ; start a little musical theme
+
     mov bl, 0xFF                ; move into bl the color we want to clear with
     call clearPacman             ; in main.com
 
@@ -82,7 +84,7 @@ global _start
         dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
         jnz .eachLine
         ret                     ; return to the main loop
-    
+
     presentBackBuffer:
     push ds
     push es
@@ -104,4 +106,5 @@ global _start
     %include "maze.inc"             ; include the map drawing
     %include "maze_sprite.inc"      ; include the sprite of the maze
     %include "keyboard_handler.inc" ; include the generation of the maze
-    %include "ghost.inc"
+    %include "ghost.inc"            ; include the ghost
+    %include "sound.inc"            ; include the souns library
