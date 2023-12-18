@@ -19,6 +19,7 @@ playerMovR:
     mov [oldPos], bx            ; set the old position in case
     add bx, [xVelocity]         ; add the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos 
+    call movMelody              ; play the movMelody
 
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
@@ -107,6 +108,7 @@ playerMovL:
     mov [oldPos], bx            ; set the old position in case of colision
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos
+    call movMelody              ; play the movMelody
 
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
@@ -192,6 +194,7 @@ playerMovUp:
     mov [oldPos], bx            ; set the old position in case of colision
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
+    call movMelody              ; play the movMelody
     
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
@@ -278,6 +281,7 @@ playerMovDown:
     mov [oldPos], bx            ; set the old position in case of colision
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
+    call movMelody              ; play the movMelody
    
    ; we set cx and dx before invocking 0Dh
    .checkCollisionMiddle:
