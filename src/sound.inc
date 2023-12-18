@@ -318,7 +318,7 @@ play_note:
 extendNote:
     push bx
     mov cx, 9121
-    mov bx, 15
+    mov bx, 10
     .pause1:
         mov cx, 2500
     .pause2:
