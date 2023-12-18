@@ -1,6 +1,7 @@
-section .data
+section .data                  ; the position of the sprite
 
-    xPos dw windowWidth*96+(windowWidth-16)/2                   ; the position of the sprite
+    xPos dw windowWidth*96+(windowWidth-16)/2
+    startPos dw windowWidth*96+(windowWidth-16)/2
 
     ; these two are used for the collision
     yPos dw 0       
@@ -35,6 +36,9 @@ playerMovR:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
+        cmp bx, 5
+        je .ghost
+
     .checkCollisionUp:
 
         mov ax, [xPos]
@@ -67,7 +71,6 @@ playerMovR:
 
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
-
      
     .move:
         mov di, [xPos]          ; update the position
@@ -76,6 +79,15 @@ playerMovR:
 
         ret                     ; return
     
+    .ghost:
+        mov bx, [startPos]
+        mov word [xPos], bx
+        mov di, [xPos] 
+        mov si, pacmanR_00
+        call drawSprite
+
+        ret
+
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
@@ -107,6 +119,9 @@ playerMovL:
 
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
+
+        cmp bx, 5
+        je .ghost
     
     .checkCollisionUp:
 
@@ -146,6 +161,15 @@ playerMovL:
 
         ret                     ; return
 
+    .ghost:
+        mov bx, [startPos]
+        mov word [xPos], bx
+        mov di, [xPos] 
+        mov si, pacmanR_00
+        call drawSprite
+
+        ret
+
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
@@ -176,6 +200,9 @@ playerMovUp:
 
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
+
+        cmp bx, 5
+        je .ghost
     
     .checkCollisionLeft:
 
@@ -215,6 +242,15 @@ playerMovUp:
 
         ret                     ; return
 
+    .ghost:
+        mov bx, [startPos]
+        mov word [xPos], bx
+        mov di, [xPos] 
+        mov si, pacmanR_00
+        call drawSprite
+
+        ret
+
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
@@ -247,6 +283,9 @@ playerMovDown:
 
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
+
+        cmp bx, 5
+        je .ghost
     
     .checkCollisionLeft:
 
@@ -287,6 +326,15 @@ playerMovDown:
         call drawSprite         ; draw the sprite 
 
         ret                     ; return
+
+    .ghost:
+        mov bx, [startPos]
+        mov word [xPos], bx
+        mov di, [xPos] 
+        mov si, pacmanR_00
+        call drawSprite
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position

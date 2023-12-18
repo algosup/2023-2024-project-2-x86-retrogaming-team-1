@@ -1,5 +1,4 @@
 ; TODO
-; map
 ; collisions
 org 100h    
 
@@ -34,9 +33,9 @@ global _start
     mainLoop:
 
     mov bl, 0xFF                ; move into bl the color we want to clear with
-    call clearGhost             ; in main.com
+    call clearPacman             ; in main.com
 
-    mov di, [xPos]              ; set the original coordinate of the sprite    
+    mov di, [xPos] ; set the original coordinate of the sprite    
 
     call readKeyb               ; in keyboard_handler
 
@@ -55,13 +54,13 @@ global _start
 
     ; procedures:
 
-    clearGhost:
+    clearPacman:
     mov di, [xPos]              ; input the position of the sprite
     push bx                     
     mov bx, 0xA000              ; set the video memory segment to 0xA000
     mov es, bx
     pop bx
-    mov dx, 16                  ; set the destination index to 1§
+    mov dx, 16                  ; set the destination index to 16
     .eachLine:      
         mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
         rep movsb               ; repeat the move byte action (copying pixel)
@@ -69,7 +68,6 @@ global _start
         dec dx                  ; decrement the loop counter (dx)
         jnz .eachLine           ; jump to .eachline if not zero
     ret                         ; return to the caller
-
 
     ; si must have the sprite address
     ; di must have the target address
