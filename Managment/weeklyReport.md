@@ -20,6 +20,8 @@
 5. [Week 4 - 27/11/2023 - 01/12/2023](#week-4---27112023---01122023)
 6. [Week 5 - 04/12/2023 - 08/12/2023](#week-5---04122023---08122023)
 7. [Week 6 - 11/12/2023 - 15/12/2023](#week-6---11122023---15122023)
+8. [Week 7 - 18/12/2023 - 22/12/2023](#week-7---18122023---22122023)
+
 ## Purpose
 
 This document is the weekly report of the team 1. It contains the work done during the week.
@@ -445,3 +447,21 @@ The next week is the last week of the project. We need to focus on the missing f
 - Update all the management documents
 - Prepare the presentation
 - Create a project closure report
+
+---
+
+## Week 7 - 18/12/2023 - 22/12/2023
+
+This week is the last week of the project. Leading to the presentation and the project closure.
+
+### PACMAN
+
+#### Collision
+
+On Monday, Jason and Salaheddine fixed the collision with the walls. ✅
+
+Jason Grosso & Salaheddine Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 18/12/2023 |
