@@ -87,186 +87,222 @@ section .text
 Cg_note:
     mov ax, [Cg]
     mov [frequence], ax
+    call play_note
     ret
 
 C#g_note:
     mov ax, [C#g]
     mov [frequence], ax
+    call play_note
     ret
 
 Dg_note:
     mov ax, [Dg]
     mov [frequence], ax
+    call play_note
     ret
 
 D#g_note:
     mov ax, [D#g]
     mov [frequence], ax
+    call play_note
     ret
 
 Eg_note:
     mov ax, [Eg]
     mov [frequence], ax
+    call play_note
     ret
 
 Fg_note:
     mov ax, [Fg]
     mov [frequence], ax
+    call play_note
     ret
 
 F#g_note:
     mov ax, [F#g]
     mov [frequence], ax
+    call play_note
     ret
 
 Gg_note:
     mov ax, [Gg]
     mov [frequence], ax
+    call play_note
     ret
 
 G#g_note:
     mov ax, [G#g]
     mov [frequence], ax
+    call play_note
     ret
 
 Ag_note:
     mov ax, [Ag]
     mov [frequence], ax
+    call play_note
     ret
 
 A#g_note:
     mov ax, [A#g]
     mov [frequence], ax
+    call play_note
     ret
 
 Bg_note:
     mov ax, [Bg]
     mov [frequence], ax
+    call play_note
     ret
 
 C_note:
     mov ax, [C]
     mov [frequence], ax
+    call play_note
     ret
 
 C#_note:
     mov ax, [C#]
     mov [frequence], ax
+    call play_note
     ret
 
 D_note:
     mov ax, [D]
     mov [frequence], ax
+    call play_note
     ret
 
 D#_note:
     mov ax, [D#]
     mov [frequence], ax
+    call play_note
     ret
 
 E_note:
     mov ax, [E]
     mov [frequence], ax
+    call play_note
     ret
 
 F_note:
     mov ax, [F]
     mov [frequence], ax
+    call play_note
     ret
 
 F#_note:
     mov ax, [F#]
     mov [frequence], ax
+    call play_note
     ret
 
 G_note:
     mov ax, [G]
     mov [frequence], ax
+    call play_note
     ret
 
 G#_note:
     mov ax, [G#]
     mov [frequence], ax
+    call play_note
     ret
 
 A_note:
     mov ax, [A]
     mov [frequence], ax
+    call play_note
     ret
 
 A#_note:
     mov ax, [A#]
     mov [frequence], ax
+    call play_note
     ret
 
 B_note:
     mov ax, [B]
     mov [frequence], ax
+    call play_note
     ret
 
 Ca_note:
     mov ax, [Ca]
     mov [frequence], ax
+    call play_note
     ret
 
 C#a_note:
     mov ax, [C#a]
     mov [frequence], ax
+    call play_note
     ret
 
 Da_note:
     mov ax, [Da]
     mov [frequence], ax
+    call play_note
     ret
 
 D#a_note:
     mov ax, [D#a]
     mov [frequence], ax
+    call play_note
     ret
 
 Ea_note:
     mov ax, [Ea]
     mov [frequence], ax
+    call play_note
     ret
 
 Fa_note:
     mov ax, [Fa]
     mov [frequence], ax
+    call play_note
     ret
 
 F#a_note:
     mov ax, [F#a]
     mov [frequence], ax
+    call play_note
     ret
 
 Ga_note:
     mov ax, [Ga]
     mov [frequence], ax
+    call play_note
     ret
 
 G#a_note:
     mov ax, [G#a]
     mov [frequence], ax
+    call play_note
     ret
 
 Aa_note:
     mov ax, [Aa]
     mov [frequence], ax
+    call play_note
     ret
 
 A#a_note:
     mov ax, [A#a]
     mov [frequence], ax
+    call play_note
     ret
 
 Ba_note:
     mov ax, [Ba]
     mov [frequence], ax
+    call play_note
     ret
 
 play_note:
-    mov al, 182             ; Prepare the speaker for the note.
-    out 43h, al             ; Send the value to port 43h.
+    mov al, 8253               ; Prepare the speaker for the note.
+    out 80h, al             ; Send the value to port 80h.
     mov ax, [frequence]
     out 42h, al             ; Output low byte.
     mov al, ah              ; Output high byte.
@@ -274,75 +310,64 @@ play_note:
     in al, 61h
     or al, 00000011b        ; Set bits 1 and 0.
     out 61h, al             ; Send new value.
+
+    call extendNote
+    inc bx
     ret 
 
-;musicStart:
-;    add word [time], 1
-;    cmp word [time], 1
-;    jne .skipChangeNote
-;    mov word [time], 0
-;    mov bx, [tour]
-;    cmp bx, 0
-;    call B_note
-;    cmp bx, 1
-;    call Ba_note
-;    cmp bx, 2
-;    call F#a_note
-;    cmp bx, 3
-;    call D#a_note
+extendNote:
+    push bx
+    mov cx, 9121
+    mov bx, 15
+    .pause1:
+        mov cx, 2500
+    .pause2:
+        dec cx
+        jne .pause2
+        dec bx
+        jne .pause1
 
-;    cmp bx, 4
-;    call Ba_note
-;    cmp bx, 5
-;    call Fa_note
-;    cmp bx, 6
-;    call Ea_note
+        in  al, 0x61
+        and al, 11111100b
+        out 0x61, al
 
-;    cmp bx, 8
-;    call B_note
-;    cmp bx, 9
-;    call Ba_note
-;    cmp bx, 10
-;    call F#a_note
-;    cmp bx, 11
-;    call D#a_note
+    pop bx
+    ret
 
-;    cmp bx, 12
-;    call Ba_note
-;    cmp bx, 13
-;    call Fa_note
-;    cmp bx, 14
-;    call Ea_note
+musicStart:
+    call B_note
+    call Ba_note
+    call F#a_note
+    call D#a_note
 
-;    cmp bx, 16
-;    call B_note
-;    cmp bx, 17
-;    call Ba_note
-;    cmp bx, 18
-;    call F#a_note
-;    cmp bx, 19
-;    call D#a_note
+    call Ba_note
+    call Fa_note
+    call Ea_note
 
-;    cmp bx, 20
-;    call Ba_note
-;    cmp bx, 21
-;    call Fa_note
-;    cmp bx, 22
-;    call Ea_note
+    call B_note
+    call Ba_note
+    call F#a_note
+    call D#a_note
 
-;    cmp bx, 24
-;    call Ea_note
-;    cmp bx, 25
-;    call Fa_note
-;    cmp bx, 26
-;    call Ga_note
-;    cmp bx, 27
-;    call Aa_note
-;    cmp bx, 28
-;    call Ba_note
-;    .skipChangeNote:
-;    call play_note
-;    ret
+    call Ba_note
+    call Fa_note
+    call Ea_note
+
+    call B_note
+    call Ba_note
+    call F#a_note
+    call D#a_note
+
+    call Ba_note
+    call Fa_note
+    call Ea_note
+
+    call Ea_note
+    call Fa_note
+    call Ga_note
+    call Aa_note
+    call Ba_note
+    ret
 
 movMelody:
     add word [time], 1
@@ -351,19 +376,29 @@ movMelody:
     mov word [time], 0
     mov bx, [tour]
     cmp bx, 0
-    call Gg_note            ; call the sound procedure
-    cmp bx, 1
+    call Gg_note                ; call the sound procedure
+    cmp bx, 20
     call C_note
-    cmp bx, 1
+    cmp bx, 40
     call D_note
-    cmp bx, 3
+    cmp bx, 60
     call E_note
-    cmp bx, 4
+    cmp bx, 80
     call Gg_note
     .skipChangeNote:
     call play_note
     ret
 
-;TODO
-;stop musique quand pac-man s'arrête
-;change la note
+musicDeath:
+    call Cg_note
+    call A_note
+    call Dg_note
+    call B_note
+    call Eg_note
+    call Cg_note
+    call Fg_note
+    call Dg_note
+    call Ag_note
+    call Eg_note
+    call Bg_note
+    call Fg_note

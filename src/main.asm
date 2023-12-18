@@ -31,9 +31,9 @@ global _start
     mov si, pacmanR_00          ; select the sprite to be displayed
     call drawPacman             ; display the selected sprite
 
-;    call musicStart
-
     mainLoop:
+
+;    call musicStart             ; start a little musical theme
 
     mov bl, 0xFF                ; move into bl the color we want to clear with
     call clearGhost             ; clear the previous ghost
@@ -86,7 +86,7 @@ global _start
         dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
         jnz .eachLine
         ret                     ; return to the main loop
-    
+
     presentBackBuffer:
     push ds
     push es
