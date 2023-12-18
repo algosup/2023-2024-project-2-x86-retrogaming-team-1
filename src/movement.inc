@@ -84,8 +84,8 @@ playerMovR:
         mov word [xPos], bx
         mov di, [xPos] 
         mov si, pacmanR_00
-        call check_game_over
         call drawSprite
+        call check_game_over
 
         ret
 

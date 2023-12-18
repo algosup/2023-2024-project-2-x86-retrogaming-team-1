@@ -6,9 +6,6 @@ section .bss
 
     backBufferSeg resw 1
 
-    livesCounter resb 1  ; Keep a byte for the counter
-
-
 section .text
 
 global _start
@@ -31,6 +28,7 @@ global _start
     call draw_maze              ; in maze.inc
     
     mov si, pacmanR_00
+    mov di, [startPos]                ; set the original coordinate of the sprite
     call drawSprite             ; main.asm
 
     mov byte [livesCounter], 3  ; initialize the number of lives to 3
