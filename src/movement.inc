@@ -157,20 +157,144 @@ playerMovL:
 
 playerMovUp:
     mov bx, [xPos]              ; move the position inside the bx register
+    mov [oldPos], bx
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-    mov di, [xPos]              ; update the position
-    mov si, pacmanUp_00         ; choose the sprite to be displayed
-    call drawSprite             ; draw the sprite
-    ret                         ; return
+    
+    .checkCollisionMiddle:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add word [yPos], 8
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+    
+    .checkCollisionLeft:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+    .checkCollisionRight:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add word [yPos], 15
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+    .move:
+        mov di, [xPos]          ; update the position
+        mov si, pacmanUp_00      ; choose the sprite to be displayed
+        call drawSprite         ; draw the sprite 
+
+        ret                     ; return
+
+    .stop:
+        mov bx, [oldPos]        ; revive the old position
+        mov [xPos], bx          ; update the xPos
+        mov dx, [xPos]          ; update the position
+        mov si, pacmanUp_00      ; select the sprite
+        call drawSprite         ; draw the sprite
+
+        ret                     ; return
+
 
 playerMovDown:
     mov bx, [xPos]              ; move the position inside the bx register
+    mov [oldPos], bx
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-    mov di, [xPos]              ; update the position
-    mov si, pacmanDown_00       ; choose the sprite to be displayed
-    call drawSprite             ; draw the sprite
-    ret                         ; return
+   
+   .checkCollisionMiddle:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 15
+        add word [yPos], 8
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+    
+    .checkCollisionLeft:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 15
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+    
+    .checkCollisionRight:
+
+        mov ax, [xPos]
+        mov cx, windowWidth
+        xor dx, dx
+        div cx
+        mov [yPos], dx
+        add ax, 15
+        add word [yPos], 15
+        mov cx, [yPos]
+        mov dx, ax
+
+        call checkColor         ; file colorChecker
+
+        cmp bx, 0               ; check if there is a wall 
+        je .stop                ; if yes go to stop
+
+    .move:
+        mov di, [xPos]          ; update the position
+        mov si, pacmanDown_00   ; choose the sprite to be displayed
+        call drawSprite         ; draw the sprite 
+
+        ret                     ; return
+
+    .stop:
+        mov bx, [oldPos]        ; revive the old position
+        mov [xPos], bx          ; update the xPos
+        mov dx, [xPos]          ; update the position
+        mov si, pacmanDown_00   ; select the sprite
+        call drawSprite         ; draw the sprite
+
+        ret                     ; return
 
 %include "colorChecker.inc"
