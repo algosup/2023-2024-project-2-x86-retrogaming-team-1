@@ -71,7 +71,7 @@ playerMovR:
 
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
-     
+
     .move:
         mov di, [xPos]          ; update the position
         mov si, pacmanR_00      ; choose the sprite to be displayed
@@ -84,6 +84,7 @@ playerMovR:
         mov word [xPos], bx
         mov di, [xPos] 
         mov si, pacmanR_00
+        call check_game_over
         call drawSprite
 
         ret
@@ -344,5 +345,3 @@ playerMovDown:
         call drawSprite         ; draw the sprite
 
         ret                     ; return
-
-%include "colorChecker.inc"

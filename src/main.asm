@@ -6,6 +6,9 @@ section .bss
 
     backBufferSeg resw 1
 
+    livesCounter resb 1  ; Keep a byte for the counter
+
+
 section .text
 
 global _start
@@ -29,6 +32,9 @@ global _start
     
     mov si, pacmanR_00
     call drawSprite             ; main.asm
+
+    mov byte [livesCounter], 3  ; initialize the number of lives to 3
+
 
     mainLoop:
 
@@ -105,3 +111,5 @@ global _start
     %include "maze_sprite.inc"      ; include the sprite of the maze
     %include "keyboard_handler.inc" ; include the generation of the maze
     %include "ghost.inc"
+    %include "lives.inc"
+    %include "colorChecker.inc"
