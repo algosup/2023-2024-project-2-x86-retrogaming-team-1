@@ -1,5 +1,7 @@
-section .data                  ; the position of the sprite
+section .data 
 
+    ; the position that will be used during the game
+    ; and the position you are sent to after you loose a life
     xPos dw windowWidth*96+(windowWidth-16)/2
     startPos dw windowWidth*96+(windowWidth-16)/2
 
@@ -14,20 +16,20 @@ section .text
 
 playerMovR:
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx
+    mov [oldPos], bx            ; set the old position in case
     add bx, [xVelocity]         ; add the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos 
 
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
-
+        
         mov ax, [xPos]
         mov cx, windowWidth
         xor dx, dx
         div cx
         mov [yPos], dx
-        add ax, 8
-        add word [yPos], 15
+        add ax, 8               ; that line set the row of the sprite
+        add word [yPos], 15     ; and this one the column of the sprite
         mov cx, [yPos]
         mov dx, ax
 
@@ -36,9 +38,10 @@ playerMovR:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
-        cmp bx, 5
-        je .ghost
+        cmp bx, 5               ; check for a ghost
+        je .ghost               ; if yes go to ghost
 
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionUp:
 
         mov ax, [xPos]
@@ -46,15 +49,16 @@ playerMovR:
         xor dx, dx
         div cx
         mov [yPos], dx
-        add word [yPos], 15
-        mov cx, [yPos]
+        add word [yPos], 15     ; this line set the column of the sprite
+        mov cx, [yPos]          ; the default row is the top one so we dont need to touch it
         mov dx, ax
 
         call checkColor         ; file colorChecker
 
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
-
+    
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionDown:
 
         mov ax, [xPos]
@@ -62,8 +66,8 @@ playerMovR:
         xor dx, dx
         div cx
         mov [yPos], dx
-        add ax, 15
-        add word [yPos], 15
+        add ax, 15              ; this line set the row of the sprite
+        add word [yPos], 15     ; this one the column of the sprite
         mov cx, [yPos]
         mov dx, ax
 
@@ -76,18 +80,22 @@ playerMovR:
         mov di, [xPos]          ; update the position
         mov si, pacmanR_00      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
     
     .ghost:
-        mov bx, [startPos]
-        mov word [xPos], bx
-        mov di, [xPos] 
-        mov si, pacmanR_00
-        call drawSprite
+        mov al, 0x00
+        call clearPacman
+        mov bx, [startPos]      ; prepare the starting position
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
         call check_game_over
 
-        ret
+        ret                     ; return
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
@@ -101,10 +109,11 @@ playerMovR:
 playerMovL:
     
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx
+    mov [oldPos], bx            ; set the old position in case of collision
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos
 
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
 
         mov ax, [xPos]
@@ -112,8 +121,8 @@ playerMovL:
         xor dx, dx
         div cx
         mov [yPos], dx
-        add ax, 8
-        mov cx, [yPos]
+        add ax, 8               ; this line set the column of the sprite
+        mov cx, [yPos]          ; we dont modify the row since it's already on the left side
         mov dx, ax
 
         call checkColor         ; file colorChecker
@@ -121,9 +130,11 @@ playerMovL:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
-        cmp bx, 5
-        je .ghost
+        cmp bx, 5               ; check if there is a ghost
+        je .ghost               ; go to ghost
     
+    ; we set cx and dx before invocking 0Dh
+    ; no need to modify the row/column since its the starting pixel
     .checkCollisionUp:
 
         mov ax, [xPos]
@@ -131,7 +142,7 @@ playerMovL:
         xor dx, dx
         div cx
         mov [yPos], dx
-        mov cx, [yPos]
+        mov cx, [yPos]          
         mov dx, ax
 
         call checkColor         ; file colorChecker
@@ -139,6 +150,7 @@ playerMovL:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionDown:
 
         mov ax, [xPos]
@@ -146,7 +158,7 @@ playerMovL:
         xor dx, dx
         div cx
         mov [yPos], dx
-        add ax, 15
+        add ax, 15              ; only need to modify the column in the sprite
         mov cx, [yPos]
         mov dx, ax
 
@@ -159,18 +171,22 @@ playerMovL:
         mov di, [xPos]          ; update the position
         mov si, pacmanL_00      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
 
     .ghost:
-        mov bx, [startPos]
-        mov word [xPos], bx
-        mov di, [xPos] 
-        mov si, pacmanR_00
-        call drawSprite
+        mov al, 0x00
+        call clearPacman
+        mov bx, [startPos]      ; prepare the starting position
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
         call check_game_over
 
-        ret
+        ret                     ; return
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
@@ -183,10 +199,11 @@ playerMovL:
 
 playerMovUp:
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx
+    mov [oldPos], bx            ; set the old position in case of collision
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
     
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
 
         mov ax, [xPos]
@@ -194,7 +211,7 @@ playerMovUp:
         xor dx, dx
         div cx
         mov [yPos], dx
-        add word [yPos], 8
+        add word [yPos], 8      ; change the column of the sprite 
         mov cx, [yPos]
         mov dx, ax
 
@@ -203,9 +220,11 @@ playerMovUp:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
-        cmp bx, 5
-        je .ghost
+        cmp bx, 5               ; check if there is a ghost
+        je .ghost               ; if yes go to ghost
     
+    ; we set cx and dx before invocking 0Dh
+    ; no need to modify the row/column since its the starting pixel
     .checkCollisionLeft:
 
         mov ax, [xPos]
@@ -221,6 +240,7 @@ playerMovUp:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionRight:
 
         mov ax, [xPos]
@@ -228,7 +248,7 @@ playerMovUp:
         xor dx, dx
         div cx
         mov [yPos], dx
-        add word [yPos], 15
+        add word [yPos], 15     ; change the column of the sprite
         mov cx, [yPos]
         mov dx, ax
 
@@ -241,18 +261,22 @@ playerMovUp:
         mov di, [xPos]          ; update the position
         mov si, pacmanUp_00      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
 
     .ghost:
-        mov bx, [startPos]
-        mov word [xPos], bx
-        mov di, [xPos] 
-        mov si, pacmanR_00
-        call drawSprite
+        mov al, 0x00
+        call clearPacman
+        mov bx, [startPos]      ; prepare the starting position
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
         call check_game_over
 
-        ret
+        ret                     ; return
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
@@ -266,11 +290,12 @@ playerMovUp:
 
 playerMovDown:
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx
+    mov [oldPos], bx            ; set the old position in case of collision
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-   
-   .checkCollisionMiddle:
+
+    ; we set cx and dx before invocking 0Dh
+    .checkCollisionMiddle:
 
         mov ax, [xPos]
         mov cx, windowWidth
@@ -287,9 +312,10 @@ playerMovDown:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
 
-        cmp bx, 5
-        je .ghost
+        cmp bx, 5               ; check if there is a ghost
+        je .ghost               ; if yes go to ghost
     
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionLeft:
 
         mov ax, [xPos]
@@ -306,6 +332,7 @@ playerMovDown:
         cmp bx, 0               ; check if there is a wall 
         je .stop                ; if yes go to stop
     
+    ; we set cx and dx before invocking 0Dh
     .checkCollisionRight:
 
         mov ax, [xPos]
@@ -327,18 +354,22 @@ playerMovDown:
         mov di, [xPos]          ; update the position
         mov si, pacmanDown_00   ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
 
     .ghost:
-        mov bx, [startPos]
-        mov word [xPos], bx
-        mov di, [xPos] 
-        mov si, pacmanR_00
-        call drawSprite
+        mov al, 0x00
+        call clearPacman
+        mov bx, [startPos]      ; prepare the starting position
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
         call check_game_over
 
-        ret
+        ret                     ; return
 
     .stop:
         mov bx, [oldPos]        ; revive the old position

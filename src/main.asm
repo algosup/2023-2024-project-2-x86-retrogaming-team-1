@@ -2,6 +2,10 @@
 ; collisions
 org 100h    
 
+section .data
+
+clearValue dw 0xFF
+
 section .bss
 
     backBufferSeg resw 1
@@ -21,9 +25,9 @@ global _start
     mov al, 013h                ; set Video Mode 4F02h (VBE mode 101h) - 640x480, 256 colors
     int 10h
 
-    mov di, 0
+    mov di, 0                   ; set the starting position
 
-    mov ax, 0xA000
+    mov ax, 0xA000              
     mov es, ax
     call draw_maze              ; in maze.inc
     
@@ -36,10 +40,7 @@ global _start
 
     mainLoop:
 
-    mov bl, 0xFF                ; move into bl the color we want to clear with
-    call clearPacman             ; in main.com
-
-    mov di, [xPos] ; set the original coordinate of the sprite    
+    mov di, [xPos]              ; set the original coordinate of the sprite    
 
     call readKeyb               ; in keyboard_handler
 
@@ -60,14 +61,14 @@ global _start
 
     clearPacman:
     mov di, [xPos]              ; input the position of the sprite
-    push bx                     
-    mov bx, 0xA000              ; set the video memory segment to 0xA000
-    mov es, bx
-    pop bx
+    push ax
+    mov ax, 0xA000              ; set the video memory segment to 0xA000
+    mov es, ax
+    pop ax
     mov dx, 16                  ; set the destination index to 16
-    .eachLine:      
+    .eachLine:
         mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
-        rep movsb               ; repeat the move byte action (copying pixel)
+        rep stosb               ; repeat the move byte action (copying pixel)
         add di, 320-16          ; move the destination index to the next line (320 pixel per line)
         dec dx                  ; decrement the loop counter (dx)
         jnz .eachLine           ; jump to .eachline if not zero
@@ -86,7 +87,7 @@ global _start
         dec dx                  ; decrement the loop counter (dx) and jump to .eachLine if not zero
         jnz .eachLine
         ret                     ; return to the main loop
-    
+
     presentBackBuffer:
     push ds
     push es
@@ -108,6 +109,7 @@ global _start
     %include "maze.inc"             ; include the map drawing
     %include "maze_sprite.inc"      ; include the sprite of the maze
     %include "keyboard_handler.inc" ; include the generation of the maze
-    %include "ghost.inc"
-    %include "lives.inc"
-    %include "colorChecker.inc"
+    %include "ghost.inc"            ; include the ghost
+    %include "sound.inc"            ; include the souns library
+    %include "colorChecker.inc"     ; include the color checker for the collisions
+    %include "lives.inc"            ; include the lives system and the game over screen

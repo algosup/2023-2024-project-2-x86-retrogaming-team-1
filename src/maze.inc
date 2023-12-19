@@ -27,21 +27,23 @@ section .text
 
 draw_maze:
 
-    mov si, maze
-    mov cl, 0b1000_0000
-    dec si
-    mov al, [si]
+    call musicStart                         ; start a little musical theme
 
-    mov di, 0
-    xor bx, bx
+    mov si, maze                            ; set the sprite of the maze
+    mov cl, 0b1000_0000                     ; set the counter
+    dec si                                  ; decrease the sprite (idk why but it works)
+    mov al, [si]                            ; set al as an comparison tool
+
+    mov di, 0                               ; set the position
+    xor bx, bx                              ; make sure bx is reset
 
     ; loop until the maze is drawn  
     loopDraw: 
         cmp byte [nb_tile], 8               
         jae resetComp
 
-        cmp di, windowWidth*windowHeight-8
-        jae drawGhosts
+        cmp di, windowWidth*windowHeight-8  ; when finished draw the ghosts
+        jae drawGhosts                      ; in ghosts.inc
 
 ; check wether or not a byte is set (1)
         test al, cl                  
