@@ -85,6 +85,7 @@ playerMovR:
         ret                     ; return
     
     .ghost:
+        call check_game_over
         mov al, 0x00
         call clearPacman
         mov bx, [startPos]      ; prepare the starting position
@@ -93,7 +94,6 @@ playerMovR:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
-        call check_game_over
 
         ret                     ; return
 
@@ -176,6 +176,7 @@ playerMovL:
         ret                     ; return
 
     .ghost:
+        call check_game_over
         mov al, 0x00
         call clearPacman
         mov bx, [startPos]      ; prepare the starting position
@@ -184,7 +185,6 @@ playerMovL:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
-        call check_game_over
 
         ret                     ; return
 
@@ -266,6 +266,7 @@ playerMovUp:
         ret                     ; return
 
     .ghost:
+        call check_game_over
         mov al, 0x00
         call clearPacman
         mov bx, [startPos]      ; prepare the starting position
@@ -274,7 +275,6 @@ playerMovUp:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
-        call check_game_over
 
         ret                     ; return
 
@@ -359,6 +359,7 @@ playerMovDown:
         ret                     ; return
 
     .ghost:
+        call check_game_over
         mov al, 0x00
         call clearPacman
         mov bx, [startPos]      ; prepare the starting position
@@ -367,7 +368,6 @@ playerMovDown:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
-        call check_game_over
 
         ret                     ; return
 

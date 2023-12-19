@@ -1,7 +1,7 @@
 section .data
-    message dw "Game Over, Try again$"
+    message dw "Game Over. Try again!$", 0
 
-    livesCounter db 3  ; Initialize the lives counter to 3
+    livesCounter db 2  ; Initialize the lives counter to 3
 
 section .text
 
@@ -9,6 +9,8 @@ check_game_over:
     ; If touched, this code occurs
     dec byte [livesCounter]  ; Decrease the life amount by 1
     ; TODO : Add a sound effect
+
+    call musicDeath  ; Play the death music
 
     ; If there is no more life, this code occurs
     cmp byte [livesCounter], 0
