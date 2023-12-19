@@ -37,10 +37,6 @@ global _start
 
     mainLoop:
 
-;    call musicStart             ; start a little musical theme
-
-    
-
     mov di, [xPos]              ; set the original coordinate of the sprite    
 
     call readKeyb               ; in keyboard_handler

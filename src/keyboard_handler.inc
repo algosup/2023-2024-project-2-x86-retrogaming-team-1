@@ -31,7 +31,8 @@ section .text
     ret
 
     ; exit the program
-    .exit:                      
+    .exit:   
+        call musicDeath                   
         mov ah, 4ch
         xor al, al
         int 21h
