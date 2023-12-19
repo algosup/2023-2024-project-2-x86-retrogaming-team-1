@@ -478,7 +478,7 @@ Alexis Lasselin
 
 #### Music & Sound Effects
 
-All Monday and Tuesday afternoon, Gregory finished the music and the sound effects. He's now trying to make them readable for the Pentium. ✅
+All Monday and Tuesday afternoon, Gregory finished the music and the sound effects. ✅
 
 Gregory Pagnoux
 
@@ -488,9 +488,9 @@ Gregory Pagnoux
 
 ### Oral presentation
 
-During monday and tuesday afternoon, Victor and Abderrazaq are making on the oral presentation. ⌛️
+During monday and tuesday afternoon, Victor and Abderrazaq are making on the oral presentation. Gregory joined them at the end of Tuesday afternoon.⌛️
 
-Victor Leroy & Abderrazaq Makran
+Victor Leroy, Abderrazaq Makran & Gregory Pagnoux
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
