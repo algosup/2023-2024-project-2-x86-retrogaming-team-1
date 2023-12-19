@@ -32,7 +32,7 @@ section .text
 
     ; exit the program
     .exit:   
-        call musicDeath                   
+        call musicGO                   
         mov ah, 4ch
         xor al, al
         int 21h

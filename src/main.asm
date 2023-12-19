@@ -1,5 +1,3 @@
-; TODO
-; collisions
 org 100h    
 
 section .data
@@ -34,9 +32,6 @@ global _start
     mov si, pacmanR_00
     mov di, [startPos]                ; set the original coordinate of the sprite
     call drawSprite             ; main.asm
-
-
-
 
     mainLoop:
 

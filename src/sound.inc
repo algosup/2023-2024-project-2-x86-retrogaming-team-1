@@ -407,3 +407,30 @@ musicDeath:
     call Fg_note
     call B_note
     call Eg_note
+    call extendNote
+
+musicGO:
+    call Ea_note
+    call Ea_note
+    call Fa_note
+    call Fa_note
+    call Ga_note
+    call Ga_note
+    call A_note
+    call A_note
+    call B_note
+    call B_note
+    call Ca_note
+    call Ca_note
+    call C_note
+    call C_note
+    call D_note
+    call D_note
+    call E_note
+    call E_note
+    call Dg_note
+    call Dg_note
+    call Eg_note
+    call Eg_note
+    call Fg_note
+    call Fg_note
