@@ -27,6 +27,8 @@ section .text
 
 draw_maze:
 
+    call musicStart                         ; start a little musical theme
+
     mov si, maze                            ; set the sprite of the maze
     mov cl, 0b1000_0000                     ; set the counter
     dec si                                  ; decrease the sprite (idk why but it works)

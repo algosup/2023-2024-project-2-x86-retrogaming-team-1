@@ -4,45 +4,6 @@ section .data
     tour dw 0
     frequence dw 0
 
-;    %define Cg 9121
-;    %define C#g 8609
-;    %define Dg 8126
-;    %define D#g 7670
-;    %define Eg 7239
-;    %define Fg 6833
-;    %define F#g 6449
-;    %define Gg 6087
-;    %define G#g 5746
-;    %define Ag 5423
-;    %define A#g 5119
-;    %define Bg 4831
-
-;    %define C 4560
-;    %define C# 4304
-;    %define D 4063
-;    %define D# 3834
-;    %define E 3619
-;    %define F 3416
-;    %define F# 3224
-;    %define G 3043
-;    %define G# 2873
-;    %define A 2711
-;    %define A# 2559
-;    %define B 2415
-
-;    %define Ca 2280
-;    %define C#a 2152
-;    %define Da 2031
-;    %define D#a 1917
-;    %define Ea 1809
-;    %define Fa 1715
-;    %define F#a 1612
-;    %define Ga 1521
-;    %define G#a 1436
-;    %define Aa 1355
-;    %define A#a 1292
-;    %define Ba 1207
-
     Cg dw 9121
     C#g dw 8609
     Dg dw 8126
@@ -336,36 +297,66 @@ extendNote:
 
 musicStart:
     call B_note
+    call B_note
+    call Ba_note
     call Ba_note
     call F#a_note
+    call F#a_note
+    call D#a_note
     call D#a_note
 
     call Ba_note
+    call Ba_note
     call Fa_note
+    call Fa_note
+    call Ea_note
+    call Ea_note
+    call Ea_note
     call Ea_note
 
     call B_note
+    call B_note
+    call Ba_note
     call Ba_note
     call F#a_note
+    call F#a_note
+    call D#a_note
     call D#a_note
 
     call Ba_note
+    call Ba_note
     call Fa_note
+    call Fa_note
+    call Ea_note
+    call Ea_note
+    call Ea_note
     call Ea_note
 
     call B_note
+    call B_note
+    call Ba_note
     call Ba_note
     call F#a_note
+    call F#a_note
+    call D#a_note
     call D#a_note
 
     call Ba_note
+    call Ba_note
     call Fa_note
+    call Fa_note
+    call Ea_note
+    call Ea_note
+    call Ea_note
     call Ea_note
 
     call Ea_note
+    call Fa_note
     call Fa_note
     call Ga_note
     call Aa_note
+    call Ba_note
+    call Ba_note
     call Ba_note
     ret
 
@@ -389,16 +380,30 @@ movMelody:
     call play_note
     ret
 
+;musicLive:
+;    call Cg_note
+;    call A_note
+;    call Dg_note
+;    call B_note
+;    call Eg_note
+;    call Ca_note
+;    call Fg_note
+;    call Da_note
+;    call Ag_note
+;    call Ea_note
+;    call Bg_note
+;    call Fa_note
+
 musicDeath:
-    call Cg_note
-    call A_note
-    call Dg_note
+    call Ga_note
+    call C_note
+    call Fa_note
+    call Bg_note
+    call Ea_note
+    call Ag_note
+    call Da_note
+    call Gg_note
+    call Ca_note
+    call Fg_note
     call B_note
     call Eg_note
-    call Cg_note
-    call Fg_note
-    call Dg_note
-    call Ag_note
-    call Eg_note
-    call Bg_note
-    call Fg_note

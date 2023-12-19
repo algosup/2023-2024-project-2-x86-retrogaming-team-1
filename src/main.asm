@@ -32,8 +32,6 @@ global _start
 
     mainLoop:
 
-;    call musicStart             ; start a little musical theme
-
     mov bl, 0xFF                ; move into bl the color we want to clear with
     call clearPacman            ; in main.com
 
