@@ -1,7 +1,7 @@
 section .data
     message dw "Game Over, Try again$"
 
-    livesCounter db 3  ; Keep a byte for the counter
+    livesCounter db 3  ; Initialize the lives counter to 3
 
 section .text
 
@@ -18,6 +18,13 @@ check_game_over:
     ret
 
     .game_over:
+
+        ; Clear the screen
+        mov ah, 0   ; Function 00h - Set video mode
+        mov al, 3   ; Video mode 3h - Text mode 80x25, 16 colors
+        int 10h     ; Interrupt BIOS call to set video mode
+
+
         ; Print the Game Over message
         mov ah, 9  ; Code of the function to display a string
         mov dx, message  ; The message to display
