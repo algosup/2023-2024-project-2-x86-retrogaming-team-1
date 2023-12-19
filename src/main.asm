@@ -1,10 +1,4 @@
-; TODO
-; collisions
 org 100h    
-
-section .data
-
-clearValue dw 0xFF
 
 section .bss
 
@@ -32,11 +26,8 @@ global _start
     call draw_maze              ; in maze.inc
     
     mov si, pacmanR_00
-    mov di, [startPos]                ; set the original coordinate of the sprite
+    mov di, [startPos]          ; set the original coordinate of the sprite
     call drawSprite             ; main.asm
-
-
-
 
     mainLoop:
 
