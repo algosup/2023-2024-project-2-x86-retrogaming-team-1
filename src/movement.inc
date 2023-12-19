@@ -186,8 +186,6 @@ playerMovL:
         call drawSprite         ; display the sprite
         call drawGhosts
 
-        ret                     ; return
-
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
@@ -275,8 +273,6 @@ playerMovUp:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
-
-        ret                     ; return
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
@@ -368,8 +364,6 @@ playerMovDown:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
-
-        ret                     ; return
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
