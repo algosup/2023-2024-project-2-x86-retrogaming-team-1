@@ -19,7 +19,6 @@ playerMovR:
     mov [oldPos], bx            ; set the old position in case
     add bx, [xVelocity]         ; add the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos 
-    call movMelody              ; play the movMelody
 
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
@@ -81,6 +80,7 @@ playerMovR:
         mov di, [xPos]          ; update the position
         mov si, pacmanR_00      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
     
@@ -108,7 +108,6 @@ playerMovL:
     mov [oldPos], bx            ; set the old position in case of colision
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-    call movMelody              ; play the movMelody
 
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
@@ -168,6 +167,7 @@ playerMovL:
         mov di, [xPos]          ; update the position
         mov si, pacmanL_00      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
 
@@ -194,7 +194,6 @@ playerMovUp:
     mov [oldPos], bx            ; set the old position in case of colision
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-    call movMelody              ; play the movMelody
     
     ; we set cx and dx before invocking 0Dh
     .checkCollisionMiddle:
@@ -254,6 +253,7 @@ playerMovUp:
         mov di, [xPos]          ; update the position
         mov si, pacmanUp_00      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
 
@@ -281,7 +281,6 @@ playerMovDown:
     mov [oldPos], bx            ; set the old position in case of colision
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
-    call movMelody              ; play the movMelody
    
    ; we set cx and dx before invocking 0Dh
    .checkCollisionMiddle:
@@ -343,6 +342,7 @@ playerMovDown:
         mov di, [xPos]          ; update the position
         mov si, pacmanDown_00   ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
+        call movMelody              ; play the movMelody
 
         ret                     ; return
 

@@ -301,7 +301,7 @@ Ba_note:
     ret
 
 play_note:
-    mov al, 8253               ; Prepare the speaker for the note.
+    mov al, 3               ; Prepare the speaker for the note.
     out 80h, al             ; Send the value to port 80h.
     mov ax, [frequence]
     out 42h, al             ; Output low byte.
