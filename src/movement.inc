@@ -108,7 +108,7 @@ playerMovR:
 playerMovL:
     
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx            ; set the old position in case of colision
+    mov [oldPos], bx            ; set the old position in case of collision
     sub bx, [xVelocity]         ; substract the horizontal speed inside the vector bx
     mov word [xPos], bx         ; update xPos
 
@@ -197,7 +197,7 @@ playerMovL:
 
 playerMovUp:
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx            ; set the old position in case of colision
+    mov [oldPos], bx            ; set the old position in case of collision
     sub bx, [yVelocity]         ; substract the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
     
@@ -287,7 +287,7 @@ playerMovUp:
 
 playerMovDown:
     mov bx, [xPos]              ; move the position inside the bx register
-    mov [oldPos], bx            ; set the old position in case of colision
+    mov [oldPos], bx            ; set the old position in case of collision
     add bx, [yVelocity]         ; add the vertical speed inside the vector bx
     mov word [xPos], bx         ; update xPos
    

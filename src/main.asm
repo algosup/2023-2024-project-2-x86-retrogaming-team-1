@@ -61,19 +61,19 @@ global _start
     ; procedures:
 
     clearPacman:
-    mov di, [xPos]
+    mov di, [xPos]              ; input the position of the sprite
     push ax
-    mov ax, 0xA000
+    mov ax, 0xA000              ; set the video memory segment to 0xA000
     mov es, ax
     pop ax
-    mov dx, 16
+    mov dx, 16                  ; set the destination index to 16
     .eachLine:
-        mov cx, 16
-        rep stosb
-        add di, 320-16
-        dec dx
-        jnz .eachLine
-    ret
+        mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
+        rep stosb               ; repeat the move byte action (copying pixel)
+        add di, 320-16          ; move the destination index to the next line (320 pixel per line)
+        dec dx                  ; decrement the loop counter (dx)
+        jnz .eachLine           ; jump to .eachline if not zero
+    ret                         ; return to the caller
 
     ; si must have the sprite address
     ; di must have the target address
@@ -112,4 +112,4 @@ global _start
     %include "keyboard_handler.inc" ; include the generation of the maze
     %include "ghost.inc"            ; include the ghost
     %include "sound.inc"            ; include the souns library
-    %include "colorChecker.inc"     ; include the color checker for the colisions
+    %include "colorChecker.inc"     ; include the color checker for the collisions

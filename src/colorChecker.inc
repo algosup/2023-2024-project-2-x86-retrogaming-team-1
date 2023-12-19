@@ -23,7 +23,7 @@ checkColor:
 
     mov bx, 0                   ; set the page 
 
-    cmp al, [colorWall]         ; check for a wall colision
+    cmp al, [colorWall]         ; check for a wall collision
     je .return                  
 
     mov bx, 1                   ; set the page 
@@ -39,10 +39,10 @@ checkColor:
     cmp al, [colorGhost4]
     je .ghost
 
-    ; incase there is no colision
+    ; incase there is no collision
     jmp .return                 
 
-    ; incase there is a colision with a ghost
+    ; incase there is a collision with a ghost
     .ghost:                     
     mov bx, 5
     jmp .return
