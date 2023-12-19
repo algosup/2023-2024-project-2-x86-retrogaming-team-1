@@ -168,6 +168,7 @@ playerMovL:
         mov di, [xPos] 
         mov si, pacmanR_00
         call drawSprite
+        call check_game_over
 
         ret
 
@@ -249,6 +250,7 @@ playerMovUp:
         mov di, [xPos] 
         mov si, pacmanR_00
         call drawSprite
+        call check_game_over
 
         ret
 
@@ -334,6 +336,7 @@ playerMovDown:
         mov di, [xPos] 
         mov si, pacmanR_00
         call drawSprite
+        call check_game_over
 
         ret
 

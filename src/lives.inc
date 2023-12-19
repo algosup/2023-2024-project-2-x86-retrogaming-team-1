@@ -1,5 +1,5 @@
 section .data
-    message dw "Game Over$", 0
+    message dw "Game Over, Try again$"
 
     livesCounter db 3  ; Keep a byte for the counter
 
