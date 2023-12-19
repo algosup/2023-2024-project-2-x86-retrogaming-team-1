@@ -31,7 +31,7 @@ global _start
     mov di, [startPos]                ; set the original coordinate of the sprite
     call drawSprite             ; main.asm
 
-    mov byte [livesCounter], 3  ; initialize the number of lives to 3
+
 
 
     mainLoop:

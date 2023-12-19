@@ -1,13 +1,13 @@
 section .data
-    message dw "Game Over", 0
+    message dw "Game Over$", 0
 
-    livesCounter db 1  ; Keep a byte for the counter
+    livesCounter db 3  ; Keep a byte for the counter
 
 section .text
 
 check_game_over:
     ; If touched, this code occurs
-    dec byte [livesCounter] ; Decrease the life amount by 1
+    dec byte [livesCounter]  ; Decrease the life amount by 1
     ; TODO : Add a sound effect
 
     ; If there is no more life, this code occurs
