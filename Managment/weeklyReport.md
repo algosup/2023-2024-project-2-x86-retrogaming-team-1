@@ -465,3 +465,33 @@ Jason Grosso & Salaheddine Namir
 |Time allocated|Time needed|Deadline|
 |-|-|-|
 | 1 half-day | 1 half-day | 18/12/2023 |
+
+#### Lives & Game Over
+
+On Monday and Tuesday afternoon, Alexis implemented the lives and the game over system. ✅
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 half-days | 2 half-days | 19/12/2023 |
+
+#### Music & Sound Effects
+
+All Monday and Tuesday afternoon, Gregory finished the music and the sound effects. He's now trying to make them readable for the Pentium. ✅
+
+Gregory Pagnoux
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 day and a half | 1 day and a half | 19/12/2023 |
+
+### Oral presentation
+
+During monday and tuesday afternoon, Victor and Abderrazaq are making on the oral presentation. ⌛️
+
+Victor Leroy & Abderrazaq Makran
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 days | 2 days | 22/12/2023 |
