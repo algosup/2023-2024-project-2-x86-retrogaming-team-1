@@ -85,11 +85,14 @@ playerMovR:
         ret                     ; return
     
     .ghost:
+        mov al, 0x00
+        call clearPacman
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
-        mov si, pacmanR_00      ; select the sprite to be displayed
+        mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
+        call drawGhosts
 
         ret                     ; return
 
@@ -172,11 +175,14 @@ playerMovL:
         ret                     ; return
 
     .ghost:
+        mov al, 0x00
+        call clearPacman
         mov bx, [startPos]      ; prepare the starting position
-        mov word [xPos], bx     ; update xPos
-        mov di, [xPos]          ; update the position to the starting position
-        mov si, pacmanR_00      ; select the sprite to be displayed
-        call drawSprite         ; draw the sprite
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
 
         ret                     ; return
 
@@ -258,11 +264,14 @@ playerMovUp:
         ret                     ; return
 
     .ghost:
+        mov al, 0x00
+        call clearPacman
         mov bx, [startPos]      ; prepare the starting position
-        mov word [xPos], bx     ; update xPos 
-        mov di, [xPos]          ; update the position to the starting one 
-        mov si, pacmanR_00      ; select the sprite 
-        call drawSprite         ; draw the sprite
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
 
         ret                     ; return
 
@@ -346,12 +355,15 @@ playerMovDown:
 
         ret                     ; return
 
-    .ghost:
+   .ghost:
+        mov al, 0x00
+        call clearPacman
         mov bx, [startPos]      ; prepare the starting position
-        mov word [xPos], bx     ; update xPos
-        mov di, [xPos]          ; update the position to the strating position
-        mov si, pacmanR_00      ; select the sprite 
-        call drawSprite         ; draw the sprite
+        mov word [xPos], bx     ; update the xPos to the starting one
+        mov di, [xPos]          ; update the actual position
+        mov si, pacmanR_02      ; select the sprite to be displayed
+        call drawSprite         ; display the sprite
+        call drawGhosts
 
         ret                     ; return
 

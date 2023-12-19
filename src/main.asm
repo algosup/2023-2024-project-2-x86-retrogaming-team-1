@@ -2,6 +2,10 @@
 ; collisions
 org 100h    
 
+section .data
+
+clearValue dw 0xFF
+
 section .bss
 
     backBufferSeg resw 1
@@ -27,15 +31,15 @@ global _start
     mov es, ax
     call draw_maze              ; in maze.inc
     
-    mov si, pacmanR_00
+    mov di, [xPos]
+    mov si, pacmanR_02
     call drawSprite             ; main.asm
 
     mainLoop:
 
 ;    call musicStart             ; start a little musical theme
 
-    mov bl, 0xFF                ; move into bl the color we want to clear with
-    call clearPacman            ; in main.com
+    
 
     mov di, [xPos]              ; set the original coordinate of the sprite    
 
@@ -57,19 +61,19 @@ global _start
     ; procedures:
 
     clearPacman:
-    mov di, [xPos]              ; input the position of the sprite
-    push bx                     
-    mov bx, 0xA000              ; set the video memory segment to 0xA000
-    mov es, bx
-    pop bx
-    mov dx, 16                  ; set the destination index to 16
-    .eachLine:      
-        mov cx, 16              ; set the count register to 16 (number of pixel to copy per line)
-        rep movsb               ; repeat the move byte action (copying pixel)
-        add di, 320-16          ; move the destination index to the next line (320 pixel per line)
-        dec dx                  ; decrement the loop counter (dx)
-        jnz .eachLine           ; jump to .eachline if not zero
-    ret                         ; return to the caller
+    mov di, [xPos]
+    push ax
+    mov ax, 0xA000
+    mov es, ax
+    pop ax
+    mov dx, 16
+    .eachLine:
+        mov cx, 16
+        rep stosb
+        add di, 320-16
+        dec dx
+        jnz .eachLine
+    ret
 
     ; si must have the sprite address
     ; di must have the target address
@@ -107,5 +111,5 @@ global _start
     %include "maze_sprite.inc"      ; include the sprite of the maze
     %include "keyboard_handler.inc" ; include the generation of the maze
     %include "ghost.inc"            ; include the ghost
-    %include "sound.inc"            ; include the souns library            ; include the file handling the ghosts
+    %include "sound.inc"            ; include the souns library
     %include "colorChecker.inc"     ; include the color checker for the colisions
