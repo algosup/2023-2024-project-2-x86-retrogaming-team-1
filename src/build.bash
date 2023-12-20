@@ -1,37 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# This script is used to build the main.com file
+# Set options for strict error handling (-e), preventing clobbering existing files (-C), and echoing commands (-u)
+set -Cue
 
-# Change the current directory to the directory where the script is located
-cd "$(dirname "$0")"
+# Set the THIS_DIR variable to the absolute path of the directory containing the script
+THIS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Set the path to the directory where the script is located
-SCRIPT_DIR="$(pwd)"
+# Set the ROOT_DIR variable to the absolute path of the project's root directory
+ROOT_DIR="$(cd "${THIS_DIR}/.." && pwd)"
 
-# Set the root directory to the parent directory of the script directory
-ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+# Set the BIN_DIR variable to the absolute path of the 'bin' directory within the project
+BIN_DIR="${ROOT_DIR}/DosBox_exe"
 
-# Set the path to the nasm executable
-NASM="$ROOT_DIR/nasm/nasm"
+# Print the absolute path of the project's root directory
+echo "${ROOT_DIR}"
 
-# Set the path to the directory where the main.com file will be placed
-BIN_DIR="$ROOT_DIR/DosBox_exe"
+# Change the current directory to THIS_DIR and assemble the keyboard.asm file to a binary file in BIN_DIR
+cd "${THIS_DIR}" && \
+    nasm main.asm -f bin -o "${BIN_DIR}/main.com"
 
-# Set the path to the dosbox configuration file
-CONFIG_LOC="$ROOT_DIR"
-
-# Execute the nasm command to build the main.com file
-"$NASM" main.asm -f bin -o "$BIN_DIR/main.com"
-
-# Set the path to the dosbox executable
-DOSBOX_BIN="/Applications/DOSBox.app/Contents/MacOS/DOSBox"
-
-# Execute the dosbox command to go to the DosBox_exe folder
-# Mount the DosBox_exe folder as the C drive
-# Go to the C drive
-# Clear the screen
-
-"$DOSBOX_BIN" -c "MOUNT c $BIN_DIR" -c "c:" -c "cls" -c main
-
-# Pause the script
-read -p "Press any key to continue . . . " -n1 -s
+# chmod +x build.bash

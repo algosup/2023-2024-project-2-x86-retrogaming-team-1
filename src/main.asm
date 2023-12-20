@@ -25,7 +25,7 @@ global _start
     mov es, ax
     call draw_maze              ; in maze.inc
     
-    mov si, pacmanR_00
+    mov si, pacmanR_02
     mov di, [startPos]          ; set the original coordinate of the sprite
     call drawSprite             ; main.asm
 

@@ -26,5 +26,5 @@ drawGhosts:
     mov si, inkyUp
     call drawSprite
 
-    ; jump to the main loop when finished
-    jmp mainLoop
+    ; return ro main.asm
+    ret
