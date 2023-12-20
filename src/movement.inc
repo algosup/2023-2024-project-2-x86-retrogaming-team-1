@@ -85,9 +85,9 @@ playerMovR:
         ret                     ; return
     
     .ghost:
-        call check_game_over
         mov al, 0x00
         call clearPacman
+        call check_game_over
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
@@ -176,15 +176,17 @@ playerMovL:
         ret                     ; return
 
     .ghost:
-        call check_game_over
         mov al, 0x00
         call clearPacman
+        call check_game_over
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
@@ -273,6 +275,8 @@ playerMovUp:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
@@ -364,6 +368,8 @@ playerMovDown:
         mov si, pacmanR_02      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position

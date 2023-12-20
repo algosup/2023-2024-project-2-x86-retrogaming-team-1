@@ -1,7 +1,7 @@
 section .data
     message dw "Game Over. Try again!$", 0
 
-    livesCounter db 1  ; Initialize the lives counter to 3
+    livesCounter db 3  ; Initialize the lives counter to 3
 
 section .text
 
