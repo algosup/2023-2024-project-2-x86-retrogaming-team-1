@@ -78,20 +78,20 @@ playerMovR:
 
     .move:
         mov di, [xPos]          ; update the position
-        mov si, pacmanR_00      ; choose the sprite to be displayed
+        mov si, pacmanR_01      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
         call movMelody              ; play the movMelody
 
         ret                     ; return
     
     .ghost:
-        call check_game_over
         mov al, 0x00
         call clearPacman
+        call check_game_over
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
-        mov si, pacmanR_02      ; select the sprite to be displayed
+        mov si, pacmanR_01      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
 
@@ -101,7 +101,7 @@ playerMovR:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
         mov dx, [xPos]          ; update the position
-        mov si, pacmanR_00      ; select the sprite
+        mov si, pacmanR_01      ; select the sprite
         call drawSprite         ; draw the sprite
 
         ret                     ; return
@@ -169,28 +169,30 @@ playerMovL:
 
     .move:
         mov di, [xPos]          ; update the position
-        mov si, pacmanL_00      ; choose the sprite to be displayed
+        mov si, pacmanL_01      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
         call movMelody              ; play the movMelody
 
         ret                     ; return
 
     .ghost:
-        call check_game_over
         mov al, 0x00
         call clearPacman
+        call check_game_over
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
-        mov si, pacmanR_02      ; select the sprite to be displayed
+        mov si, pacmanR_01      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
         mov dx, [xPos]          ; update the position
-        mov si, pacmanL_00      ; select the sprite
+        mov si, pacmanL_01     ; select the sprite
         call drawSprite         ; draw the sprite
 
         ret                     ; return
@@ -257,7 +259,7 @@ playerMovUp:
 
     .move:
         mov di, [xPos]          ; update the position
-        mov si, pacmanUp_00      ; choose the sprite to be displayed
+        mov si, pacmanUp_01      ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
         call movMelody              ; play the movMelody
 
@@ -270,15 +272,17 @@ playerMovUp:
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
-        mov si, pacmanR_02      ; select the sprite to be displayed
+        mov si, pacmanR_01      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
         mov dx, [xPos]          ; update the position
-        mov si, pacmanUp_00      ; select the sprite
+        mov si, pacmanUp_01      ; select the sprite
         call drawSprite         ; draw the sprite
 
         ret                     ; return
@@ -348,7 +352,7 @@ playerMovDown:
 
     .move:
         mov di, [xPos]          ; update the position
-        mov si, pacmanDown_00   ; choose the sprite to be displayed
+        mov si, pacmanDown_01   ; choose the sprite to be displayed
         call drawSprite         ; draw the sprite 
         call movMelody              ; play the movMelody
 
@@ -361,15 +365,17 @@ playerMovDown:
         mov bx, [startPos]      ; prepare the starting position
         mov word [xPos], bx     ; update the xPos to the starting one
         mov di, [xPos]          ; update the actual position
-        mov si, pacmanR_02      ; select the sprite to be displayed
+        mov si, pacmanR_01      ; select the sprite to be displayed
         call drawSprite         ; display the sprite
         call drawGhosts
+
+        ret
 
     .stop:
         mov bx, [oldPos]        ; revive the old position
         mov [xPos], bx          ; update the xPos
         mov dx, [xPos]          ; update the position
-        mov si, pacmanDown_00   ; select the sprite
+        mov si, pacmanDown_01   ; select the sprite
         call drawSprite         ; draw the sprite
 
         ret                     ; return
