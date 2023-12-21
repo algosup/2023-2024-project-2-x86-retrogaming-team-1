@@ -30,7 +30,9 @@ section .text
 
     ret
 
-    .exit:                      ; If escape key is pressed, jump to label 'exit'
+    ; exit the program
+    .exit:   
+        call musicGO                   
         mov ah, 4ch
         xor al, al
         int 21h
