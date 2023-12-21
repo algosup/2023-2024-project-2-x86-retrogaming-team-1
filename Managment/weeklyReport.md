@@ -488,10 +488,22 @@ Gregory Pagnoux
 
 ### Oral presentation
 
-During monday and tuesday afternoon, Victor and Abderrazaq are making on the oral presentation. Gregory joined them at the end of Tuesday afternoon.⌛️
+During monday and tuesday afternoon, Victor and Abderrazaq are making on the oral presentation. Gregory joined them at the end of Tuesday afternoon, but we all started to work on it on Wednesday afternoon and Thursday morning. ✅
 
-Victor Leroy, Abderrazaq Makran & Gregory Pagnoux
+All the team
 
 |Time allocated|Time needed|Deadline|
 |-|-|-|
-| 2 days | 2 days | 22/12/2023 |
+| 2 days | 2 days | 21/12/2023 |
+
+### Project closure
+
+On Thursday afternoon, Alexis wrote the project closure report. ✅
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 21/12/2023 |
+
+The project is now closed. ✅
