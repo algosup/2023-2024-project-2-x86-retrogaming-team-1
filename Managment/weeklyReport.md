@@ -19,6 +19,8 @@
 4. [Week 3 - 20/11/2023 - 24/11/2023](#week-3---20112023---24112023)
 5. [Week 4 - 27/11/2023 - 01/12/2023](#week-4---27112023---01122023)
 6. [Week 5 - 04/12/2023 - 08/12/2023](#week-5---04122023---08122023)
+7. [Week 6 - 11/12/2023 - 15/12/2023](#week-6---11122023---15122023)
+8. [Week 7 - 18/12/2023 - 22/12/2023](#week-7---18122023---22122023)
 
 ## Purpose
 
@@ -382,3 +384,126 @@ Alexis Lasselin
 - Update all the management documents
 
 ---
+
+## Week 6 - 11/12/2023 - 15/12/2023
+
+### PACMAN
+
+#### Map implemantation
+
+On Monday, Jason finished the map implementation. ✅
+
+Jason Grosso & Salaheddine Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 day | 1 day | 11/12/2023 |
+
+#### Collision
+
+Between Thursday and Friday, Jason and Salaheddine worked on the collision between PACMAN and the walls. ⌛️
+
+Jason Grosso & Salaheddine Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 half-days | 2 half-days | 15/12/2023 |
+
+#### Music
+
+During the week, Abderrazaq and Gregory worked on the music implementation. Trying to create sounds with Assembly language. ⌛️
+
+Abderrazaq Makran & Gregory Pagnoux
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 4 half-days | 4 half-days | 15/12/2023 |
+
+### Bug report
+
+Victor found an issue with the collision and reported it on GitHub. ✅
+
+Victor Leroy
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 15/12/2023 |
+
+### Project follow-up
+
+As usual, the project follow-up is updated. ✅
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 15/12/2023 |
+
+### What is planned for next week
+
+The next week is the last week of the project. We need to focus on the missing features and the presentation.
+
+- Continue the PACMAN game and being able to deliver a bug-free game with ghosts and points
+- Update all the management documents
+- Prepare the presentation
+- Create a project closure report
+
+---
+
+## Week 7 - 18/12/2023 - 22/12/2023
+
+This week is the last week of the project. Leading to the presentation and the project closure.
+
+### PACMAN
+
+#### Collision
+
+On Monday, Jason and Salaheddine fixed the collision with the walls. ✅
+
+Jason Grosso & Salaheddine Namir
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 18/12/2023 |
+
+#### Lives & Game Over
+
+On Monday and Tuesday afternoon, Alexis implemented the lives and the game over system. ✅
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 half-days | 2 half-days | 19/12/2023 |
+
+#### Music & Sound Effects
+
+All Monday and Tuesday afternoon, Gregory finished the music and the sound effects. ✅
+
+Gregory Pagnoux
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 day and a half | 1 day and a half | 19/12/2023 |
+
+### Oral presentation
+
+During monday and tuesday afternoon, Victor and Abderrazaq are making on the oral presentation. Gregory joined them at the end of Tuesday afternoon, but we all started to work on it on Wednesday afternoon and Thursday morning. ✅
+
+All the team
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 2 days | 2 days | 21/12/2023 |
+
+### Project closure
+
+On Thursday afternoon, Alexis wrote the project closure report. ✅
+
+Alexis Lasselin
+
+|Time allocated|Time needed|Deadline|
+|-|-|-|
+| 1 half-day | 1 half-day | 21/12/2023 |
+
+The project is now closed. ✅
